@@ -1,0 +1,17 @@
+# Dependencies (npm install)
+node_modules/
+
+# Rendered video, chunks and render logs
+out/
+
+# Generated audio (mixes, stems, comparisons)
+audio/build/
+
+# Third-party sample libraries — too large for GitHub and some forbid redistribution.
+# Sources are listed in audio/CREDITS.md.
+audio/assets/
+
+*.log
+
+# Local-only notes
+docs/AUTHORING.md
