@@ -30,7 +30,8 @@ fs.mkdirSync(tmp, { recursive: true });
 // ---- chunk plan: cut at segment boundaries, then split anything longer than maxChunk evenly
 // (parsed from the source text: film.js imports browser-only modules)
 let cuts = [0, 30];
-const table = fs.readFileSync(path.join(ROOT, 'web/src/film.js'), 'utf8').match(/SEGMENT_TABLE\s*=\s*\[([\s\S]*?)\];/);
+const filmSrc = path.join(ROOT, `web/src/${film}.js`);
+const table = fs.readFileSync(fs.existsSync(filmSrc) ? filmSrc : path.join(ROOT, 'web/src/film.js'), 'utf8').match(/SEGMENT_TABLE\s*=\s*\[([\s\S]*?)\];/);
 for (const m of (table ? table[1] : '').matchAll(/start:\s*([\d.]+),\s*end:\s*([\d.]+)/g)) cuts.push(+m[1], +m[2]);
 if (cuts.length < 4) for (let t = 0; t <= 145; t += 10) cuts.push(t);
 cuts = [...new Set([from, to, ...cuts.filter((t) => t > from && t < to)])].sort((a, b) => a - b);

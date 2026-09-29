@@ -14,7 +14,10 @@ import puppeteer from 'puppeteer-core';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1')), '..');
 const WEB = path.join(ROOT, 'web');
 const OUT = path.join(ROOT, 'out');
-const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const CHROME = process.env.CHROME || {
+  win32: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  darwin: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+}[process.platform];
 
 // ------------------------------------------------------------------ args
 const [cmd, ...rest] = process.argv.slice(2);
@@ -63,14 +66,21 @@ await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const PORT = server.address().port;
 
 // ------------------------------------------------------------------ browser
+const ANGLE = process.env.ANGLE || { win32: 'd3d11', darwin: 'metal' }[process.platform] || 'swiftshader';
 const browser = await puppeteer.launch({
   executablePath: CHROME,
   headless: args.headful ? false : true,
   protocolTimeout: 0,
   args: [
-    '--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--force_high_performance_gpu',
+    // ANGLE backend: d3d11 on Windows, metal on macOS, swiftshader (CPU WebGL; slow, fine for
+    // previews) on a Linux box with no GPU. Override with ANGLE=vulkan|gl on a Linux GPU machine.
+    // JS_HEAP_MB caps V8 memory.
+    `--use-angle=${ANGLE}`,
+    ...(ANGLE === 'swiftshader' ? ['--enable-unsafe-swiftshader'] : []),
+    ...(process.platform === 'linux' ? ['--no-sandbox'] : []),
+    '--enable-gpu', '--ignore-gpu-blocklist', '--force_high_performance_gpu',
     '--disable-gpu-watchdog', '--disable-background-timer-throttling', '--disable-renderer-backgrounding',
-    '--disable-backgrounding-occluded-windows', '--js-flags=--max-old-space-size=12288',
+    '--disable-backgrounding-occluded-windows', `--js-flags=--max-old-space-size=${process.env.JS_HEAP_MB || 12288}`,
     '--enable-features=SharedArrayBuffer', `--window-size=1280,760`,
   ],
 });

@@ -1,8 +1,15 @@
 import puppeteer from 'puppeteer-core';
-const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+// Prints the WebGL renderer Chrome actually got. On a GPU machine it must name the GPU
+// (NVIDIA, Apple, ...); "SwiftShader" means it fell back to CPU rendering.
+const CHROME = process.env.CHROME || {
+  win32: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  darwin: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+}[process.platform];
+const ANGLE = process.env.ANGLE || { win32: 'd3d11', darwin: 'metal' }[process.platform] || 'swiftshader';
 const flagsets = {
   default: [],
-  d3d11: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--force_high_performance_gpu'],
+  [ANGLE]: [`--use-angle=${ANGLE}`, '--enable-gpu', '--ignore-gpu-blocklist', '--force_high_performance_gpu',
+    ...(process.platform === 'linux' ? ['--no-sandbox'] : [])],
 };
 for (const [name, flags] of Object.entries(flagsets)) {
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: flags });
