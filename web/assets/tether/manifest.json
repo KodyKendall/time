@@ -1,0 +1,831 @@
+{
+  "film": "tether",
+  "items": [
+    {
+      "id": "bg1",
+      "files": [
+        "gen/bg1_2026-10-03T15-26-01-578Z_0.png",
+        "gen/bg1_2026-10-03T15-26-01-578Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 1, wide. Repaint the reference as a finished background painting, keeping its composition: a grassy hill rising on the left to a rounded crest near the left third, sloping down to the right; the open sea beyond on the right with a low distant green headland; horizon a little above the middle. A bright, windy early-afternoon sky with drifting cumulus clouds, lighter near the horizon. Leave the upper-right sky open and uncluttered (a kite will be added there later) and leave the hill crest empty (a child will be added there later). Remove the girl, the kite and its string from the reference.",
+      "refs": [
+        "storyboard-tether/beat1.jpg"
+      ],
+      "usage": {
+        "input_tokens": 2292,
+        "input_tokens_details": {
+          "image_tokens": 1840,
+          "text_tokens": 452
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 5036
+      },
+      "cost_usd": 0.1048,
+      "created": "2026-10-03T15:26:01.586Z"
+    },
+    {
+      "id": "wren_pose1",
+      "files": [
+        "gen/wren_pose1_2026-10-03T15-28-03-212Z_0.png",
+        "gen/wren_pose1_2026-10-03T15-28-03-212Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: seen from three-quarter behind, running uphill toward the right, both arms raised up and forward to the upper right, hands together gripping a kite string (draw only a short piece of thin white string leaving her hands toward the upper right). Wind from behind her: scarf ends and ponytail streaming to the right. Joyful, mid-stride.",
+      "refs": [
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 1206,
+        "input_tokens_details": {
+          "image_tokens": 646,
+          "text_tokens": 560
+        },
+        "output_tokens": 3866,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 698
+        },
+        "total_tokens": 5072
+      },
+      "cost_usd": 0.1317,
+      "created": "2026-10-03T15:28:03.220Z"
+    },
+    {
+      "id": "bg2",
+      "files": [
+        "gen/bg2_2026-10-03T15-39-07-020Z_0.png",
+        "gen/bg2_2026-10-03T15-39-07-020Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 2, wide. Keep the reference composition: a high grassy clifftop in the lower-left corner ending in a sheer cliff edge (rocky cliff face visible) around the left third; a huge open sea filling the lower part to a horizon about 70% down the frame; a big open sky, a slightly deeper blue than the second reference, a few clouds. Match the painting style of the second reference exactly. Leave the clifftop empty (a child will be added) and the upper-middle and right sky open (a kite and a flock of birds will be added). Remove the girl, the kite and the birds.",
+      "refs": [
+        "storyboard-tether/beat2.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5362,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 450
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8106
+      },
+      "cost_usd": 0.1294,
+      "created": "2026-10-03T15:39:07.029Z"
+    },
+    {
+      "id": "bg3",
+      "files": [
+        "gen/bg3_2026-10-03T15-39-34-742Z_0.png",
+        "gen/bg3_2026-10-03T15-39-34-742Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 3, close-up. Keep the reference composition: one tall weathered wooden fence post standing in the centre, slightly left, running from the bottom edge to about a third of the way down, its top-right corner worn smooth; a horizontal wooden rail running off to the left behind it. Behind: a soft, slightly blurred green hillside in the lower third and a pale bright sky. Match the painting style of the second reference. Remove the string and the kite.",
+      "refs": [
+        "storyboard-tether/beat3.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5292,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 380
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8036
+      },
+      "cost_usd": 0.129,
+      "created": "2026-10-03T15:39:34.749Z"
+    },
+    {
+      "id": "bg4",
+      "files": [
+        "gen/bg4_2026-10-03T15-40-28-525Z_0.png",
+        "gen/bg4_2026-10-03T15-40-28-525Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 4, wide, low angle. A gentle grassy hilltop filling the bottom fifth of the frame, an enormous bright sky above, pale and almost overexposed near the centre as if after a flash of light, a few thin high clouds. Match the painting style of the second reference. Leave the grass in the lower left empty (a child will be added lying there) and the upper-right sky open. Remove the girl, the string and the kite.",
+      "refs": [
+        "storyboard-tether/beat4.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5290,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 378
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8034
+      },
+      "cost_usd": 0.129,
+      "created": "2026-10-03T15:40:28.533Z"
+    },
+    {
+      "id": "bg5",
+      "files": [
+        "gen/bg5_2026-10-03T15-40-57-818Z_0.png",
+        "gen/bg5_2026-10-03T15-40-57-818Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 5, wide. Above the clouds at sunset: a sea of soft billowing cloud tops filling the lower half, glowing peach, coral pink and gold, paler toward the sun; a warm orange-to-gold sky above; a low sun half sunk into the cloud sea right of centre. Match the painting style of the second reference. Leave the centre of the sky open (a kite and birds will be added). Remove the kite, the string and the birds.",
+      "refs": [
+        "storyboard-tether/beat5.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5294,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 382
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8038
+      },
+      "cost_usd": 0.129,
+      "created": "2026-10-03T15:40:57.825Z"
+    },
+    {
+      "id": "bg6",
+      "files": [
+        "gen/bg6_2026-10-03T15-41-26-917Z_0.png",
+        "gen/bg6_2026-10-03T15-41-26-917Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 6, wide, dusk. A deep purple-blue sky fading to dusty mauve and rose at the horizon, long wind-torn streaks of cloud; a dark rolling ground silhouette along the bottom sixth; a small bare thorn tree silhouette standing on the horizon right of centre; the last ember of the sun low at the far right. Match the painting style of the second reference. Leave the sky open (a falling kite will be added). Remove the kites and the string.",
+      "refs": [
+        "storyboard-tether/beat6.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5298,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 386
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8042
+      },
+      "cost_usd": 0.129,
+      "created": "2026-10-03T15:41:26.922Z"
+    },
+    {
+      "id": "bg7",
+      "files": [
+        "gen/bg7_2026-10-03T15-42-19-789Z_0.png",
+        "gen/bg7_2026-10-03T15-42-19-789Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 7, night, rain. Keep the reference composition: a large bare thorn tree silhouette, its trunk rising from the lower centre, branches spreading wide across the upper frame, covered in sharp thorns; a heavy dark blue night sky with falling rain; dark low hills; the far lower-left hillside empty and dark. Match the painting style of the second reference, translated to night. Remove the kite and its tail.",
+      "refs": [
+        "storyboard-tether/beat7.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5272,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 360
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8016
+      },
+      "cost_usd": 0.1289,
+      "created": "2026-10-03T15:42:19.799Z"
+    },
+    {
+      "id": "bg8",
+      "files": [
+        "gen/bg8_2026-10-03T15-42-50-460Z_0.png",
+        "gen/bg8_2026-10-03T15-42-50-460Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 8, close-up, night, warm lamplight on a wooden kitchen table. On the table lies a red diamond-shaped kite (four triangular red panels, thin dark wooden cross spars) being mended: a patch cut from a mustard-yellow knitted scarf is being sewn over a tear in its lower-left panel with big uneven child's stitches. A child's two small hands in mid-blue wool coat sleeves (the girl in the second reference), with a few small red scratches on the backs, hold a needle and thread. The rest of the cut yellow scarf lies on the table; a coil of white kite string with a lumpy knot in it. An old oil lantern glows at the left on the table. Only the hands and sleeves are visible, no face. Match the painting style of the third reference.",
+      "refs": [
+        "storyboard-tether/beat8.jpg",
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 8484,
+        "input_tokens_details": {
+          "image_tokens": 7984,
+          "text_tokens": 500
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 11228
+      },
+      "cost_usd": 0.1542,
+      "created": "2026-10-03T15:42:50.466Z"
+    },
+    {
+      "id": "bg9",
+      "files": [
+        "gen/bg9_2026-10-03T15-43-17-178Z_0.png",
+        "gen/bg9_2026-10-03T15-43-17-178Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 9, wide, morning. Keep the reference composition: a grassy hill rising on the left with its crest near the left fifth; the sea on the right with the horizon about 70% down; a clean, bright, high morning sky with a few light clouds, the clearest and most open sky of the film, warm light near the horizon. Match the painting style of the second reference. Leave the hill crest empty (a child will be added) and the upper-right sky open. Remove the girl, the kite and the birds.",
+      "refs": [
+        "storyboard-tether/beat9.jpg",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 5324,
+        "input_tokens_details": {
+          "image_tokens": 4912,
+          "text_tokens": 412
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 8068
+      },
+      "cost_usd": 0.1292,
+      "created": "2026-10-03T15:43:17.185Z"
+    },
+    {
+      "id": "wren_cliff",
+      "files": [
+        "gen/wren_cliff_2026-10-03T15-43-38-609Z_0.png",
+        "gen/wren_cliff_2026-10-03T15-43-38-609Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design, colours and painting style. Pose: seen from behind, standing braced with feet apart, leaning back slightly against a strong pull, both arms raised forward and up to the right holding a taut kite string (draw only a short piece of thin white string leaving her hands toward the upper right). The wind blows from behind her toward the right: scarf ends and ponytail stream to the RIGHT.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 1942,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 650
+        },
+        "output_tokens": 3872,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 704
+        },
+        "total_tokens": 5814
+      },
+      "cost_usd": 0.1375,
+      "created": "2026-10-03T15:43:38.616Z"
+    },
+    {
+      "id": "wren_lying",
+      "files": [
+        "gen/wren_lying_2026-10-03T15-43-58-929Z_0.png",
+        "gen/wren_lying_2026-10-03T15-43-58-929Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design, colours and painting style. Pose: lying flat on her back, seen from the side, head to the left and feet to the right, both arms raised straight up toward the sky holding a slack, limp piece of kite string; surprised, looking up. Scarf lying loose across her. Horizontal figure.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 1908,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 616
+        },
+        "output_tokens": 3787,
+        "output_tokens_details": {
+          "image_tokens": 3136,
+          "text_tokens": 651
+        },
+        "total_tokens": 5695
+      },
+      "cost_usd": 0.1346,
+      "created": "2026-10-03T15:43:58.934Z"
+    },
+    {
+      "id": "wren_lean",
+      "files": [
+        "gen/wren_lean_2026-10-03T15-44-20-062Z_0.png",
+        "gen/wren_lean_2026-10-03T15-44-20-062Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design, colours and painting style. Pose: seen from the side, three-quarter behind, standing on a slope leaning back with her whole weight against a strong pull, heels dug in, both arms reaching forward and up to the right gripping a taut kite string (draw only a short piece of thin white string leaving her hands toward the upper right). Calm, happy face in profile. The wind blows toward the right: scarf ends and ponytail stream to the RIGHT.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 1968,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 676
+        },
+        "output_tokens": 3930,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 762
+        },
+        "total_tokens": 5898
+      },
+      "cost_usd": 0.1395,
+      "created": "2026-10-03T15:44:20.066Z"
+    },
+    {
+      "id": "bg3b",
+      "files": [
+        "gen/bg3b_2026-10-03T16-59-43-819Z_0.png",
+        "gen/bg3b_2026-10-03T16-59-43-819Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Shot 3, close-up. Keep the first reference's composition exactly: one tall weathered wooden fence post in the centre, slightly left, from the bottom edge to about a third of the way down, its top-right corner worn smooth, a horizontal rail running off to the left behind it. But it now stands at the edge of the clifftop from the second reference: behind the post, a strip of green clifftop grass in the lower fifth, then the open blue sea out to the horizon about two-thirds of the way down, and the same bright blue sky with soft clouds. Match the painting style of the second reference. No string, no kite, no people, no birds.",
+      "refs": [
+        "web/assets/tether/plates/bg3.png",
+        "web/assets/tether/plates/bg2.png"
+      ],
+      "usage": {
+        "input_tokens": 6618,
+        "input_tokens_details": {
+          "image_tokens": 6144,
+          "text_tokens": 474
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 9362
+      },
+      "cost_usd": 0.1393,
+      "created": "2026-10-03T16:59:43.827Z"
+    },
+    {
+      "id": "swift_close",
+      "files": [
+        "gen/swift_close_2026-10-03T17-00-05-071Z_0.png",
+        "gen/swift_close_2026-10-03T17-00-05-071Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Four drawings of the same common swift in flight, seen from below at a slight angle, facing right, arranged in a 2 by 2 grid with plenty of empty space around each bird so they don't touch: (1) wings raised high in a V, (2) wings level and outstretched, gliding, (3) wings swept down, (4) wings half folded back. Long narrow sickle-shaped wings, short forked tail, small head. Dark sooty brown with a slightly paler throat, soft painted feather edges. Every drawing the same bird at the same size.",
+      "refs": [
+        "web/assets/tether/plates/bg2.png"
+      ],
+      "usage": {
+        "input_tokens": 1126,
+        "input_tokens_details": {
+          "image_tokens": 646,
+          "text_tokens": 480
+        },
+        "output_tokens": 3817,
+        "output_tokens_details": {
+          "image_tokens": 3136,
+          "text_tokens": 681
+        },
+        "total_tokens": 4943
+      },
+      "cost_usd": 0.1297,
+      "created": "2026-10-03T17:00:05.076Z"
+    },
+    {
+      "id": "wren_fall",
+      "files": [
+        "gen/wren_fall_2026-10-03T17-00-26-210Z_0.png",
+        "gen/wren_fall_2026-10-03T17-00-26-210Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design, colours and painting style. Pose: seen from the side, facing right, at the instant the kite string snaps: she is falling backward, pulled off her feet, body tilting back about 45 degrees, one boot leaving the ground, both arms flung up and forward still clutching a short limp piece of string, startled face, scarf and ponytail flying forward.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 1936,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 644
+        },
+        "output_tokens": 3897,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 729
+        },
+        "total_tokens": 5833
+      },
+      "cost_usd": 0.1383,
+      "created": "2026-10-03T17:00:26.215Z"
+    },
+    {
+      "id": "wren_reach",
+      "files": [
+        "gen/wren_reach_2026-10-03T17-00-46-853Z_0.png",
+        "gen/wren_reach_2026-10-03T17-00-46-853Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design, colours and painting style. Pose: on the ground, seen from the side, head to the left and legs to the right as in the second reference, but pushing herself up on her left elbow, her right arm stretched up and out toward the upper right as if reaching after something flying away, mouth open calling out, distressed. Scarf loose. Horizontal figure.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/wren_lying.png"
+      ],
+      "usage": {
+        "input_tokens": 1932,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 640
+        },
+        "output_tokens": 3802,
+        "output_tokens_details": {
+          "image_tokens": 3136,
+          "text_tokens": 666
+        },
+        "total_tokens": 5734
+      },
+      "cost_usd": 0.1352,
+      "created": "2026-10-03T17:00:46.862Z"
+    },
+    {
+      "id": "wren_lantern",
+      "files": [
+        "gen/wren_lantern_2026-10-03T17-01-07-814Z_0.png",
+        "gen/wren_lantern_2026-10-03T17-01-07-814Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design and painting style, but at night in the rain: cool dark blue night colours on her, lit warmly from the lantern she holds. Pose: seen from the side, walking to the right with determination, holding an old oil lantern out in front of her at arm's length, its flame glowing, her coat and hair wet, scarf hanging. Full body.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg7.png"
+      ],
+      "usage": {
+        "input_tokens": 1928,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 636
+        },
+        "output_tokens": 3867,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 699
+        },
+        "total_tokens": 5795
+      },
+      "cost_usd": 0.1373,
+      "created": "2026-10-03T17:01:07.817Z"
+    },
+    {
+      "id": "wren_tree",
+      "files": [
+        "gen/wren_tree_2026-10-03T17-01-28-490Z_0.png",
+        "gen/wren_tree_2026-10-03T17-01-28-490Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Same girl as the first reference, exactly the same design and painting style, but at night in the rain: cool dark blue night colours on her, lit warmly from below by the lantern she holds low in her left hand. Pose: seen from behind and slightly to the side, standing on tiptoe, her right arm stretched straight up as high as she can reach, fingers open, reaching for something above her (not drawn). Full body.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/bg7.png"
+      ],
+      "usage": {
+        "input_tokens": 1940,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 648
+        },
+        "output_tokens": 3935,
+        "output_tokens_details": {
+          "image_tokens": 3168,
+          "text_tokens": 767
+        },
+        "total_tokens": 5875
+      },
+      "cost_usd": 0.1395,
+      "created": "2026-10-03T17:01:28.497Z"
+    },
+    {
+      "id": "bg8_nohand",
+      "files": [
+        "gen/bg8_nohand_2026-10-03T17-01-59-735Z_0.png",
+        "gen/bg8_nohand_2026-10-03T17-01-59-735Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Exactly the same image as the reference, the same composition, colours, lighting and every object in the same place, with one change: remove the child's RIGHT hand and right sleeve (the hand on the right holding the needle and thread) completely, and paint in the table, the kite and the yellow patch that were behind it. Keep the left hand and left sleeve exactly as they are. Keep the needle resting on the patch with its thread.",
+      "refs": [
+        "web/assets/tether/plates/bg8.png"
+      ],
+      "usage": {
+        "input_tokens": 3422,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 350
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 6166
+      },
+      "cost_usd": 0.1141,
+      "created": "2026-10-03T17:01:59.741Z"
+    },
+    {
+      "id": "hand_needle",
+      "files": [
+        "gen/hand_needle_2026-10-03T17-02-34-458Z_0.png",
+        "gen/hand_needle_2026-10-03T17-02-34-458Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1024x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Only the child's right hand and the end of its mid-blue wool coat sleeve from the reference image, isolated: the same hand, the same angle, size proportion, lighting and painting style, pinching a sewing needle with a short length of thread between thumb and finger, a few small red scratches on the back of the hand. Nothing else: no kite, no table.",
+      "refs": [
+        "web/assets/tether/plates/bg8.png"
+      ],
+      "usage": {
+        "input_tokens": 1032,
+        "input_tokens_details": {
+          "image_tokens": 646,
+          "text_tokens": 386
+        },
+        "output_tokens": 2761,
+        "output_tokens_details": {
+          "image_tokens": 2112,
+          "text_tokens": 649
+        },
+        "total_tokens": 3793
+      },
+      "cost_usd": 0.0954,
+      "created": "2026-10-03T17:02:34.466Z"
+    },
+    {
+      "id": "swift_parts",
+      "files": [
+        "gen/swift_parts_2026-10-03T17-14-53-474Z_0.png",
+        "gen/swift_parts_2026-10-03T17-14-53-474Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Animation rig parts for the same common swift as the first reference (same colours, same painted style), laid out left to right in three separate columns with wide empty space between them so nothing touches: (1) LEFT: the swift's BODY ONLY, seen exactly from the side, facing right: head with a small dark eye and pale throat, streamlined body, short forked tail on the left, NO WINGS at all. (2) MIDDLE: ONE WING ALONE, the near wing, fully stretched out flat and seen from above, lying horizontally: its root (where it joins the shoulder) at the LEFT end, the long narrow sickle-shaped wing curving back to a sharp tip at the RIGHT end, dark sooty brown with soft painted feather edges. (3) RIGHT: the same wing again, slightly darker (the far wing). Same scale for all three.",
+      "refs": [
+        "web/assets/tether/plates/swift_close.png",
+        "web/assets/tether/plates/bg2.png"
+      ],
+      "usage": {
+        "input_tokens": 1940,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 648
+        },
+        "output_tokens": 3912,
+        "output_tokens_details": {
+          "image_tokens": 3136,
+          "text_tokens": 776
+        },
+        "total_tokens": 5852
+      },
+      "cost_usd": 0.1388,
+      "created": "2026-10-03T17:14:53.482Z"
+    },
+    {
+      "id": "wren_rig",
+      "files": [
+        "gen/wren_rig_2026-10-03T17-19-49-279Z_0.png",
+        "gen/wren_rig_2026-10-03T17-19-49-279Z_1.png"
+      ],
+      "model": "gpt-image-1.5",
+      "quality": "medium",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Animation rig parts for the same girl as the references, exactly the same design, colours and painting style, laid out separately with wide empty space between every part so that no two parts touch or overlap: (1) LEFT, the largest: her BODY seen from the side, facing right, standing braced with legs apart and leaning back slightly, coat, tights, boots, head and face in profile, the yellow scarf wrapped around her neck only (no loose ends), hair tied back but WITHOUT the ponytail, and WITHOUT ARMS: the coat shoulder is smooth and nothing is attached to it. (2) Her two ARMS together as one piece, both reaching straight forward and slightly up, hands together gripping as if holding a string, coat sleeves, the shoulder end rounded where it would join the body. (3) The two loose ends of the yellow SCARF together as one piece, streaming out horizontally in the wind, the attached end on the RIGHT, flowing to the LEFT. (4) The PONYTAIL alone, streaming out horizontally, the attached end on the RIGHT, flowing to the LEFT. All four parts at the same scale.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png",
+        "web/assets/tether/plates/wren_lean.png"
+      ],
+      "usage": {
+        "input_tokens": 2228,
+        "input_tokens_details": {
+          "image_tokens": 1292,
+          "text_tokens": 936
+        },
+        "output_tokens": 3973,
+        "output_tokens_details": {
+          "image_tokens": 3136,
+          "text_tokens": 837
+        },
+        "total_tokens": 6201
+      },
+      "cost_usd": 0.1422,
+      "created": "2026-10-03T17:19:49.283Z"
+    },
+    {
+      "id": "keytest_wren_rig",
+      "files": [
+        "gen/keytest_wren_rig_2026-10-03T17-29-04-213Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": true,
+      "prompt": "Animation rig parts for the same girl as the reference, exactly the same design, colours and painting style, laid out separately with wide empty space between every part so no two parts touch: (1) LEFT, the largest: her BODY seen from the side facing right, standing, head in profile, scarf wrapped around her neck only, WITHOUT ARMS. (2) Her two ARMS together as one piece reaching forward, hands together gripping. (3) The two loose ends of the yellow SCARF as one piece streaming horizontally.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png"
+      ],
+      "usage": {
+        "input_tokens": 1880,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 344
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 2038
+      },
+      "cost_usd": 0.0191,
+      "created": "2026-10-03T17:29:04.217Z"
+    },
+    {
+      "id": "wren_tree_rig",
+      "files": [
+        "gen/wren_tree_rig_2026-10-03T17-31-23-157Z_0.png",
+        "gen/wren_tree_rig_2026-10-03T17-31-23-157Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Animation rig parts for the same girl as the first reference, at night in the rain, lit warmly from below by her lantern, exactly the same design, colours and painting style, laid out separately with wide empty space between the parts so they don't touch: (1) LEFT: her BODY standing, seen from behind and slightly to the side, head tilted up looking up, holding the lit lantern low in her LEFT hand, WITHOUT her RIGHT ARM (the right shoulder of the coat is smooth, nothing attached). (2) RIGHT: her RIGHT ARM alone, straight, pointing up, the shoulder end of the coat sleeve at the BOTTOM, the open hand at the TOP with fingers ready to grab.",
+      "refs": [
+        "web/assets/tether/plates/wren_tree.png",
+        "web/assets/tether/plates/wren_pose1.png"
+      ],
+      "usage": {
+        "input_tokens": 6898,
+        "input_tokens_details": {
+          "image_tokens": 6144,
+          "text_tokens": 754
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 7213
+      },
+      "cost_usd": 0.063,
+      "created": "2026-10-03T17:31:23.161Z"
+    },
+    {
+      "id": "sew_rig",
+      "files": [
+        "gen/sew_rig_2026-10-03T17-31-38-613Z_0.png",
+        "gen/sew_rig_2026-10-03T17-31-38-613Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Animation rig parts from the reference: the child's RIGHT arm, in the same warm lamplight and painting style, laid out separately with wide empty space between them so they don't touch: (1) LEFT: the FOREARM alone in the mid-blue wool coat sleeve, from the elbow to the wrist, lying horizontally, elbow end on the LEFT, the cuff at the RIGHT, NO hand. (2) RIGHT: the RIGHT HAND alone, no sleeve, pinching a thin silver sewing needle between thumb and first finger, the wrist on the LEFT, fingers to the right, a few small red scratches on the back of the hand.",
+      "refs": [
+        "web/assets/tether/plates/bg8_full.png",
+        "web/assets/tether/plates/hand_needle.png"
+      ],
+      "usage": {
+        "input_tokens": 5664,
+        "input_tokens_details": {
+          "image_tokens": 5120,
+          "text_tokens": 544
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 5979
+      },
+      "cost_usd": 0.0538,
+      "created": "2026-10-03T17:31:38.620Z"
+    }
+  ]
+}

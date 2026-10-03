@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Film Studio</title>
+<style>
+  :root{--bg:#121212;--panel:#1c1c1c;--line:#333;--ink:#eee;--muted:#999;--accent:#e2564a;--cut:#f2c230}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  #stage{display:flex;justify-content:center;align-items:center;padding:12px 12px 0;height:calc(100vh - 150px)}
+  #stage canvas{max-width:100%;max-height:100%;width:auto!important;height:auto!important;box-shadow:0 4px 30px #000;background:#000}
+  #panel{position:fixed;left:0;right:0;bottom:0;height:150px;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px}
+  #track{position:relative;height:44px;margin:0 0 8px;cursor:pointer;user-select:none}
+  #track .shot{position:absolute;top:0;height:28px;border-right:1px solid var(--bg);background:#2a2a2a;color:var(--muted);font-size:11px;padding:4px 6px;overflow:hidden;white-space:nowrap}
+  #track .shot.on{background:#3a2a28;color:var(--ink)}
+  #track .cut{position:absolute;top:0;height:28px;background:var(--cut);opacity:.35}
+  #track .ticks{position:absolute;top:30px;left:0;right:0;height:14px;color:var(--muted);font-size:10px}
+  #track .ticks span{position:absolute;transform:translateX(-50%)}
+  #head{position:absolute;top:-4px;width:2px;height:36px;background:var(--accent);pointer-events:none}
+  #loopband{position:absolute;top:0;height:28px;border:1px solid var(--accent);background:rgba(226,86,74,.12);pointer-events:none;display:none}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button,select{background:#2a2a2a;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font:inherit;cursor:pointer}
+  button:hover{border-color:#555} button.on{background:var(--accent);border-color:var(--accent)}
+  #time{font:600 15px ui-monospace,SFMono-Regular,Menlo,monospace;min-width:150px}
+  #label{color:var(--muted);min-width:200px}
+  .sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+  #fps{margin-left:auto;color:var(--muted);font-family:ui-monospace,Menlo,monospace}
+  label.chk{display:flex;gap:4px;align-items:center;color:var(--muted);cursor:pointer}
+  #help{color:var(--muted);font-size:11px;margin-top:6px}
+  #pins{position:absolute;top:-14px;left:0;right:0;height:12px;pointer-events:none}
+  .pin{position:absolute;top:0;width:10px;height:12px;margin-left:-5px;border-radius:5px 5px 5px 0;transform:rotate(-45deg);background:var(--accent);pointer-events:auto;cursor:pointer;box-shadow:0 0 0 1px #000}
+  .pin.done{background:#4caf7a}
+  #notebox{position:fixed;left:50%;bottom:162px;transform:translateX(-50%);width:min(640px,92vw);background:var(--panel);border:1px solid var(--accent);border-radius:10px;padding:10px 12px;display:none;box-shadow:0 8px 30px #000}
+  #notebox .ctx{color:var(--muted);font-size:12px;margin-bottom:6px}
+  #notebox textarea{width:100%;min-height:60px;background:#111;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;font:14px/1.4 inherit;resize:vertical}
+  #notebox .row{justify-content:flex-end;margin-top:6px}
+  #drawer{position:fixed;top:0;right:0;bottom:150px;width:min(380px,90vw);background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:12px;display:none}
+  #drawer h3{margin:0 0 8px;font-size:14px}
+  .note{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:0 0 8px;cursor:pointer}
+  .note:hover{border-color:#555}
+  .note .meta{display:flex;gap:8px;color:var(--muted);font-size:11px;margin-bottom:3px}
+  .note .meta b{color:var(--ink);font-family:ui-monospace,Menlo,monospace}
+  .note.done{opacity:.7} .note .st{margin-left:auto;color:var(--accent)} .note.done .st{color:#4caf7a}
+  .note .res{margin-top:5px;padding-top:5px;border-top:1px dashed var(--line);color:#9fd6b5;font-size:12px}
+  .note .reply{margin-top:5px;padding-top:5px;border-top:1px dashed var(--line);color:#f2c230;font-size:12px}
+  .note .del{float:right;color:var(--muted);border:0;background:none;padding:0 2px}
+  #toast{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:#2a2a2a;border:1px solid var(--line);border-radius:999px;padding:6px 14px;display:none}
+  #gallery{position:fixed;inset:0 0 150px 0;background:rgba(14,14,14,.97);overflow:auto;padding:16px 20px;display:none;z-index:5}
+  #gallery h2{margin:0 0 4px;font-size:16px} #gallery .sub{color:var(--muted);margin:0 0 12px}
+  #gallery .tabs{display:flex;gap:6px;margin:0 0 12px}
+  #gallery .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .gcard{background:#1c1c1c;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .gcard.used{border-color:#4caf7a}
+  .gimg{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;cursor:zoom-in;
+    background-color:#bbb;background-image:linear-gradient(45deg,#999 25%,transparent 25%),linear-gradient(-45deg,#999 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#999 75%),linear-gradient(-45deg,transparent 75%,#999 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0}
+  .gimg img{max-width:100%;max-height:100%;display:block}
+  .gmeta{padding:7px 9px;font-size:11.5px;color:var(--muted)} .gmeta b{color:var(--ink);font-size:12.5px}
+  .gmeta .p{margin-top:4px;max-height:3.9em;overflow:hidden;cursor:pointer} .gmeta .p.open{max-height:none}
+  .tagu{color:#4caf7a;font-weight:600}
+  #zoom{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:6;cursor:zoom-out}
+  #zoom img{max-width:94vw;max-height:94vh}
+  button.hold{user-select:none;-webkit-user-select:none}
+  #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;pointer-events:none}
+</style>
+<script>
+  // p5.brush sizes its fill masks from the page's pixel density; on a 2x (Retina) screen they no
+  // longer line up with the 1x paint layers and fills come out with whole panels missing.
+  // Paint at 1x everywhere; the browser scales the canvas for display.
+  Object.defineProperty(window, 'devicePixelRatio', { get: () => 1 });
+</script>
+<script src="vendor/p5.min.js"></script>
+</head>
+<body>
+<div id="stage"></div>
+<div id="notebox"><div class="ctx" id="notectx"></div><textarea id="notetext" placeholder="What should change here?"></textarea>
+  <div class="row"><button id="notecancel">Cancel (Esc)</button><button id="notesave" class="on">Save note (Enter)</button></div></div>
+<div id="drawer"><h3>Notes</h3><div id="notelist"></div></div>
+<div id="toast"></div>
+<div id="gallery"><h2>Generated images</h2><p class="sub" id="gsub"></p>
+  <div class="tabs"><button id="gtUsed" class="on">In the film</button><button id="gtAll">Every generation</button></div>
+  <div class="grid" id="ggrid"></div></div>
+<div id="zoom"><img id="zoomimg" alt=""></div>
+<div id="loading">Loading the film… (painting layers)</div>
+<div id="panel">
+  <div id="track"><div id="pins"></div><div id="loopband"></div><div id="head"></div></div>
+  <div class="row">
+    <button id="play" title="space">▶ Play</button>
+    <button id="prev" title="[">⏮ Prev</button>
+    <button id="next" title="]">Next ⏭</button>
+    <button id="back" title="←">− frame</button>
+    <button id="fwd" title="→">+ frame</button>
+    <span id="time">0:00.00</span>
+    <span id="label"></span>
+    <span class="sep"></span>
+    <button id="loop" title="L: loop the shot or cut under the playhead">⟲ Loop</button>
+    <select id="speed" title="playback speed"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+    <button id="ff2" class="hold" title="hold: fast-forward 2× (or hold F)">⏩ 2×</button>
+    <button id="ff4" class="hold" title="hold: fast-forward 4× (or hold Shift+F)">⏩ 4×</button>
+    <label class="chk"><input type="checkbox" id="music" checked> music</label>
+    <span class="sep"></span>
+    <button id="note" title="N: note at this moment">📝 Note</button>
+    <button id="notes" title="show all notes">Notes <span id="ncount"></span></button>
+    <button id="images" title="every generated image for this film">🖼 Images</button>
+    <span class="sep"></span>
+    <span style="color:var(--muted)">layers:</span>
+    <label class="chk"><input type="checkbox" class="layer" value="plate" checked> plate</label>
+    <label class="chk"><input type="checkbox" class="layer" value="wren" checked> character</label>
+    <label class="chk"><input type="checkbox" class="layer" value="code" checked> code</label>
+    <label class="chk"><input type="checkbox" class="layer" value="fx" checked> fx</label>
+    <span class="sep"></span>
+    <select id="res" title="preview resolution (reloads)"><option>640</option><option>960</option><option>1280</option><option>1920</option></select>
+    <span id="fps"></span>
+    <span id="stamp" style="color:var(--muted);font-family:ui-monospace,Menlo,monospace" title="when this page last loaded the film; it reloads by itself on every change"></span>
+  </div>
+  <div id="help">Hold F (or ⏩) to fast-forward 2×, Shift+F 4× · N pin a note here (Enter saves, Esc cancels) · Reloads by itself when the film's files change, at the same spot · Space play/pause · ←/→ one frame · [ / ] previous/next shot or cut · L loop · click or drag the timeline to scrub. Frames are drawn live by the same engine as the final render (motion blur off).</div>
+</div>
+<script type="module">
+  import './src/main.js';
+  const q = new URLSearchParams(location.search);
+  const $ = (id) => document.getElementById(id);
+  const fmt = (t) => `${Math.floor(t / 60)}:${(t % 60).toFixed(2).padStart(5, '0')}`;
+  $('res').value = q.get('w') || '1920';
+  $('res').onchange = () => { q.set('w', $('res').value); location.search = q; };
+
+  await window.TIME.ready;
+  $('stamp').textContent = 'updated ' + new Date().toLocaleTimeString();
+  const film = window.TIME.film, D = film.duration, fps = film.fps || 30;
+  $('stage').appendChild(document.querySelector('canvas'));
+  $('loading').remove();
+
+  // ---- timeline: shots, cut windows, ticks
+  const track = $('track');
+  const pct = (t) => (100 * t) / D + '%';
+  // shots overlap inside cut windows; show each from its own boundary to the next
+  const cuts = film.transitions.map((tr) => ({ start: tr.start, end: tr.end, mid: (tr.start + tr.end) / 2, label: `${tr.kind} ${tr.from}→${tr.to}` }));
+  const bounds = [0, ...cuts.map((c) => c.mid), D];
+  const shots = film.shots.map((s, i) => ({ id: s.id, label: s.label || s.id, start: bounds[i] ?? s.start, end: bounds[i + 1] ?? s.end }));
+  for (const s of shots) {
+    const el = document.createElement('div');
+    el.className = 'shot'; el.style.left = pct(s.start); el.style.width = pct(s.end - s.start); el.textContent = s.label; el.title = `${s.label}  ${fmt(s.start)}–${fmt(s.end)}`;
+    s.el = el; track.appendChild(el);
+  }
+  for (const c of cuts) {
+    const el = document.createElement('div');
+    el.className = 'cut'; el.style.left = pct(c.start); el.style.width = `max(3px, ${pct(c.end - c.start)})`; el.title = `${c.label}  ${fmt(c.start)}–${fmt(c.end)}`;
+    track.appendChild(el);
+  }
+  const ticks = document.createElement('div'); ticks.className = 'ticks';
+  for (let s = 0; s <= D; s += 10) { const sp = document.createElement('span'); sp.style.left = pct(s); sp.textContent = fmt(s).slice(0, -3); ticks.appendChild(sp); }
+  track.appendChild(ticks);
+
+  // ---- music (master clock while playing)
+  const audio = q.get('audio') ? new Audio(q.get('audio')) : null;
+  if (!audio) { $('music').checked = false; $('music').disabled = true; }
+
+  // ---- state
+  const saved = (() => { try { return JSON.parse(sessionStorage.getItem('studio:' + q.get('film')) || 'null'); } catch { return null; } })();
+  let t = +(q.get('t') || saved?.t || 0), playing = false, loop = null, speed = 1, dirty = true, last = performance.now(), frames = 0, fpsT = performance.now();
+  const loopRange = () => {
+    const c = cuts.find((c) => t >= c.start - 0.6 && t <= c.end + 0.6);
+    if (c) return [Math.max(0, c.start - 1.5), Math.min(D, c.end + 1.5)];
+    const s = shots.find((s) => t >= s.start && t < s.end) || shots[shots.length - 1];
+    return [s.start, s.end];
+  };
+  if (audio) audio.preservesPitch = true;
+  const useAudio = () => audio && $('music').checked;
+  function seek(nt) {
+    t = Math.min(D - 1 / fps, Math.max(0, nt)); dirty = true;
+    if (audio) audio.currentTime = t;
+  }
+  function setPlaying(p) {
+    playing = p; $('play').textContent = p ? '❚❚ Pause' : '▶ Play'; last = performance.now();
+    if (audio) { if (p && useAudio()) { audio.playbackRate = speed; audio.currentTime = t; audio.play(); } else audio.pause(); }
+  }
+
+  // ---- layers (the scene reads window.FILM_LAYERS)
+  const applyLayers = () => { window.FILM_LAYERS = [...document.querySelectorAll('.layer')].filter((c) => c.checked).map((c) => c.value); dirty = true; };
+  document.querySelectorAll('.layer').forEach((c) => (c.onchange = applyLayers));
+  applyLayers();
+
+  // ---- controls
+  const markers = () => [...new Set([0, ...shots.map((s) => s.start), ...cuts.map((c) => c.start)])].sort((a, b) => a - b);
+  $('play').onclick = () => setPlaying(!playing);
+  $('prev').onclick = () => { const m = markers().filter((x) => x < t - 0.05); seek(m.length ? m[m.length - 1] : 0); };
+  $('next').onclick = () => { const m = markers().find((x) => x > t + 0.05); if (m !== undefined) seek(m); };
+  $('back').onclick = () => { setPlaying(false); seek(t - 1 / fps); };
+  $('fwd').onclick = () => { setPlaying(false); seek(t + 1 / fps); };
+  $('loop').onclick = () => {
+    loop = loop ? null : loopRange();
+    $('loop').classList.toggle('on', !!loop);
+    const b = $('loopband');
+    b.style.display = loop ? 'block' : 'none';
+    if (loop) { b.style.left = pct(loop[0]); b.style.width = pct(loop[1] - loop[0]); if (t < loop[0] || t > loop[1]) seek(loop[0]); }
+  };
+  $('speed').onchange = () => { speed = +$('speed').value; setPlaying(playing); };
+  // hold to fast-forward: plays at 2x/4x while held, then back to the previous speed and state
+  let held = null;
+  const holdOn = (rate) => { if (held) return; held = { speed, playing }; speed = rate; $('speed').value = String(rate); setPlaying(true); };
+  const holdOff = () => { if (!held) return; speed = held.speed; $('speed').value = String(speed); const wasPlaying = held.playing; held = null; setPlaying(wasPlaying); };
+  for (const [id, rate] of [['ff2', 2], ['ff4', 4]]) {
+    const b = $(id);
+    b.onpointerdown = (e) => { e.preventDefault(); b.setPointerCapture(e.pointerId); holdOn(rate); };
+    b.onpointerup = b.onpointercancel = holdOff;
+  }
+  addEventListener('keyup', (e) => { if (e.key === 'f' || e.key === 'F') holdOff(); });
+  $('music').onchange = () => setPlaying(playing);
+  let drag = false;
+  const scrub = (e) => { const r = track.getBoundingClientRect(); seek(((e.clientX - r.left) / r.width) * D); };
+  track.onpointerdown = (e) => { drag = true; track.setPointerCapture(e.pointerId); scrub(e); };
+  track.onpointermove = (e) => { if (drag) scrub(e); };
+  track.onpointerup = () => (drag = false);
+  // ---- notes: pins on the timeline, stored in studio-notes/<film>.json by the studio server
+  const filmName = q.get('film') || 'film';
+  let notes = [];
+  const contextAt = (tt) => {
+    const c = cuts.find((c) => tt >= c.start && tt <= c.end), s = shots.find((s) => tt >= s.start && tt < s.end);
+    return { shot: s ? s.label : '', cut: c ? c.label : '' };
+  };
+  const toast = (msg) => { const el = $('toast'); el.textContent = msg; el.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(() => (el.style.display = 'none'), 1800); };
+  async function loadNotes(method = 'GET', body = null, extra = '') {
+    try {
+      const r = await fetch(`/__notes?film=${filmName}${extra}`, { method, ...(body ? { body: JSON.stringify(body) } : {}) });
+      notes = await r.json();
+    } catch { notes = []; }
+    renderNotes();
+  }
+  function renderNotes() {
+    const pins = $('pins'); pins.innerHTML = '';
+    const open = notes.filter((n) => n.status !== 'resolved').length;
+    $('ncount').textContent = notes.length ? `(${open} open)` : '';
+    for (const n of notes) {
+      const el = document.createElement('div');
+      el.className = 'pin' + (n.status === 'resolved' ? ' done' : '');
+      el.style.left = pct(n.t); el.title = `${fmt(n.t)}  ${n.text}${n.resolution ? '\n✓ ' + n.resolution : ''}${n.reply ? '\n↳ ' + n.reply : ''}`;
+      el.onpointerdown = (e) => { e.stopPropagation(); setPlaying(false); seek(n.t); };
+      pins.appendChild(el);
+    }
+    $('notelist').innerHTML = '';
+    for (const n of [...notes].sort((a, b) => a.t - b.t)) {
+      const el = document.createElement('div');
+      el.className = 'note' + (n.status === 'resolved' ? ' done' : '');
+      const esc = (x) => String(x).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+      el.innerHTML = `<button class="del" title="delete">✕</button><div class="meta"><b>${fmt(n.t)}</b><span>${esc(n.cut || n.shot)}</span><span class="st">${n.status === 'resolved' ? '✓ resolved' : 'open'}</span></div>${esc(n.text)}${n.resolution ? `<div class="res">✓ ${esc(n.resolution)}</div>` : ''}${n.reply ? `<div class="reply">↳ ${esc(n.reply)}</div>` : ''}`;
+      el.onclick = () => { setPlaying(false); seek(n.t); };
+      el.querySelector('.del').onclick = (e) => { e.stopPropagation(); if (confirm('Delete this note?')) loadNotes('DELETE', null, `&id=${n.id}`); };
+      $('notelist').appendChild(el);
+    }
+    if (!notes.length) $('notelist').innerHTML = '<div style="color:var(--muted)">No notes yet. Press N anywhere in the film.</div>';
+  }
+  let noteT = 0;
+  function openNote() {
+    setPlaying(false); noteT = t;
+    const c = contextAt(t);
+    $('notectx').textContent = `${fmt(t)} · ${c.cut ? 'cut ' + c.cut : c.shot}`;
+    $('notebox').style.display = 'block'; $('notetext').value = ''; $('notetext').focus();
+  }
+  const closeNote = () => { $('notebox').style.display = 'none'; $('notetext').blur(); };
+  async function saveNote() {
+    const text = $('notetext').value.trim();
+    if (!text) return closeNote();
+    const all = ['plate', 'wren', 'code', 'fx'], on = window.FILM_LAYERS || all;
+    await loadNotes('POST', { t: noteT, ...contextAt(noteT), text, ...(on.length < all.length ? { layers: on } : {}) });
+    closeNote(); toast(`Note saved at ${fmt(noteT)}`);
+  }
+  $('note').onclick = openNote;
+  $('notes').onclick = () => { const d = $('drawer'); d.style.display = d.style.display === 'block' ? 'none' : 'block'; };
+  $('notesave').onclick = saveNote;
+  $('notecancel').onclick = closeNote;
+  $('notetext').onkeydown = (e) => {
+    e.stopPropagation();
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); saveNote(); }
+    else if (e.key === 'Escape') closeNote();
+  };
+  loadNotes();
+
+  // ---- gallery: everything the image model made for this film, and what's in the film
+  let gTab = 'used', gData = null;
+  async function openGallery() {
+    gData = await (await fetch(`/__gallery?film=${filmName}`)).json();
+    renderGallery(); $('gallery').style.display = 'block';
+  }
+  function renderGallery() {
+    const g = $('ggrid'); g.innerHTML = '';
+    const total = gData.items.reduce((a, it) => a + (it.cost_usd || 0), 0);
+    $('gsub').textContent = `${gData.plates.length} images in the film · ${gData.items.length} generation calls · $${total.toFixed(2)} spent · click an image to enlarge, a prompt to expand`;
+    $('gtUsed').classList.toggle('on', gTab === 'used'); $('gtAll').classList.toggle('on', gTab === 'all');
+    const esc = (x) => String(x).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const card = (src, title, meta, prompt, used) => {
+      const el = document.createElement('div'); el.className = 'gcard' + (used ? ' used' : '');
+      el.innerHTML = `<div class="gimg"><img loading="lazy" src="${src}" alt=""></div><div class="gmeta"><b>${esc(title)}</b>${used ? ' · <span class="tagu">in the film</span>' : ''}<br>${esc(meta)}${prompt ? `<div class="p">${esc(prompt)}</div>` : ''}</div>`;
+      el.querySelector('.gimg').onclick = () => { $('zoomimg').src = src; $('zoom').style.display = 'flex'; };
+      const p = el.querySelector('.p'); if (p) p.onclick = () => p.classList.toggle('open');
+      g.appendChild(el);
+    };
+    if (gTab === 'used') {
+      for (const name of gData.plates) card(gData.base + 'plates/' + name, name.replace(/\.png$/, ''), 'plates/' + name, '', true);
+    } else {
+      for (const it of [...gData.items].reverse()) {
+        const files = it.keyed && it.keyed.length ? it.keyed : it.files;
+        files.forEach((f, i) => card(gData.base + f, `${it.id} · option ${i + 1}`, `${it.model} · ${it.quality} · $${(it.cost_usd / it.files.length).toFixed(3)} · ${new Date(it.created).toLocaleString()}`, it.prompt, false));
+      }
+    }
+  }
+  $('images').onclick = () => ($('gallery').style.display === 'block' ? ($('gallery').style.display = 'none') : openGallery());
+  $('gtUsed').onclick = () => { gTab = 'used'; renderGallery(); };
+  $('gtAll').onclick = () => { gTab = 'all'; renderGallery(); };
+  $('zoom').onclick = () => ($('zoom').style.display = 'none');
+
+  addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'n' || e.key === 'N') { e.preventDefault(); openNote(); return; }
+    if (e.key === 'f' || e.key === 'F') { e.preventDefault(); if (!e.repeat) holdOn(e.shiftKey ? 4 : 2); return; }
+    if (e.key === 'Escape' && $('gallery').style.display === 'block') { $('gallery').style.display = 'none'; return; }
+    if (e.key === ' ') { e.preventDefault(); $('play').click(); }
+    else if (e.key === 'ArrowLeft') $('back').click();
+    else if (e.key === 'ArrowRight') $('fwd').click();
+    else if (e.key === '[') $('prev').click();
+    else if (e.key === ']') $('next').click();
+    else if (e.key === 'l' || e.key === 'L') $('loop').click();
+  });
+
+  // ---- the loop: advance time, draw the frame, update the UI
+  let busy = false;
+  async function tick() {
+    const now = performance.now();
+    if (playing) {
+      if (useAudio() && !audio.paused) t = audio.currentTime;
+      else t += ((now - last) / 1000) * speed;
+      if (loop && t >= loop[1]) { t = loop[0]; if (audio) audio.currentTime = t; }
+      if (t >= D) { t = D - 1 / fps; setPlaying(false); }
+      dirty = true;
+    }
+    last = now;
+    if (dirty && !busy) {
+      busy = true; dirty = false;
+      await window.TIME.frame(t, { toCanvas: true, samples: 1 });
+      busy = false;
+      frames++;
+    }
+    $('head').style.left = pct(t);
+    $('time').textContent = `${fmt(t)}  f${Math.round(t * fps)}`;
+    const s = shots.find((s) => t >= s.start && t < s.end), c = cuts.find((c) => t >= c.start && t <= c.end);
+    shots.forEach((x) => x.el.classList.toggle('on', x === s));
+    $('label').textContent = c ? `cut: ${c.label}` : s ? s.label : '';
+    if (now - fpsT > 1000) { $('fps').textContent = `${frames} fps`; frames = 0; fpsT = now; }
+    requestAnimationFrame(tick);
+  }
+  // live reload: remember where we were, then reload when a file is saved
+  const save = () => { try { sessionStorage.setItem('studio:' + q.get('film'), JSON.stringify({ t, loop, playing, speed, layers: window.FILM_LAYERS })); } catch {} };
+  new EventSource('/__reload').onmessage = (e) => {
+    if (e.data === 'notes') return loadNotes();
+    if ($('notebox').style.display === 'block') return;   // don't lose a note being typed
+    save(); location.reload();
+  };
+  if (saved) {
+    speed = saved.speed || 1; $('speed').value = String(speed);
+    if (saved.layers) { document.querySelectorAll('.layer').forEach((c) => (c.checked = saved.layers.includes(c.value))); applyLayers(); }
+    if (saved.loop) { t = saved.t; $('loop').click(); }
+  }
+  seek(t);
+  if (saved?.playing) setPlaying(true);
+  sessionStorage.removeItem('studio:' + q.get('film'));
+  requestAnimationFrame(tick);
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tether Storyboard v2</title>
+<style>
+  :root{
+    --ink:#1c1a16; --muted:#5c564c; --line:#e2ddd2; --bg:#fff; --card:#fff;
+    --accent:#c8372d; --pine:#1f4d3a; --panel:#f3f4f1; --gold:#e8a33d; --moralbg:#fff8e8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#efeae0; --muted:#a8a194; --line:#38342d; --bg:#16140f; --card:#1f1c16;
+      --accent:#ff6a5c; --pine:#7cc4a2; --panel:#24211b; --gold:#e8a33d; --moralbg:#2a2418;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#efeae0; --muted:#a8a194; --line:#38342d; --bg:#16140f; --card:#1f1c16;
+    --accent:#ff6a5c; --pine:#7cc4a2; --panel:#24211b; --gold:#e8a33d; --moralbg:#2a2418;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.5}
+  header,main,footer,.moral,.extras{max-width:1060px;margin:0 auto}
+  header{border-bottom:3px solid var(--ink);padding:32px 16px 24px}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:44px;margin:0 0 6px;letter-spacing:-.5px}
+  header h1 span{color:var(--accent);font-size:.6em;font-weight:400}
+  .sub{color:var(--muted);font-size:15.5px;max-width:70ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta div{border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:999px;background:var(--card)}
+  .moral{margin-top:20px;padding:16px 20px;border-left:5px solid var(--gold);background:var(--moralbg);font-size:15.5px}
+  .moral q{font-family:Georgia,serif;font-size:21px;display:block;margin:4px 0 8px;quotes:none}
+  .extras{padding:24px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--card)}
+  .card h3{font-family:Georgia,serif;margin:0 0 8px;font-size:18px}
+  .card p,.card li{font-size:14px;margin:4px 0}
+  .card ul{padding-left:18px;margin:6px 0}
+  .arc{grid-column:1/-1}
+  .arc svg{width:100%;height:auto;display:block}
+  main{padding:8px 16px 24px}
+  .act{font-family:Georgia,serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+    margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .beat{display:grid;grid-template-columns:440px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .frame img{display:block;width:100%;height:auto;aspect-ratio:16/9}
+  .tcode{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+    font-size:13px;border-top:1px solid var(--line);background:var(--card)}
+  .tcode b{background:var(--ink);color:var(--bg);padding:2px 8px;border-radius:6px;font-size:12px}
+  .body h2{font-family:Georgia,serif;font-size:23px;margin:0 0 2px}
+  .body h2 small{color:var(--accent);font-family:inherit;font-size:13px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+  .body p{margin:8px 0;font-size:15px}
+  .rows{display:grid;grid-template-columns:90px 1fr;font-size:13.5px;margin-top:10px}
+  .rows dt{color:var(--pine);font-weight:700;padding:3px 0}
+  .rows dd{margin:0;padding:3px 0 3px 8px;color:var(--ink);opacity:.88}
+  footer{padding:20px 16px 60px;color:var(--muted);font-size:13px}
+  @media(max-width:760px){.beat,.extras{grid-template-columns:1fr}header h1{font-size:32px}}
+  @media print{.beat{break-inside:avoid}}
+  .prod{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center;margin-top:12px;padding:10px;border:1px dashed var(--line);border-radius:8px;font-size:13px}
+  .prod img{width:112px;border-radius:4px;opacity:.85}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.8px;padding:1px 7px;border-radius:999px;margin:2px 4px 2px 0}
+  .ai{background:#efedfb;color:#5b4bc4} .eng{background:#e6f2f7;color:#1f6a8a}
+  .film{max-width:1060px;margin:24px auto 0;padding:0 16px}
+  .film video{width:100%;border-radius:10px;background:#000;display:block}
+  .film p{color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+
+
+<header>
+  <h1>Tether <span>storyboard v2 · painted plates + first animation</span></h1>
+  <p class="sub"><b>Logline:</b> A red kite envies the wild swifts and strains against the string that
+  keeps it from following them. When the string finally snaps, it gets its freedom, and learns
+  why kites need a string.</p>
+  <div class="meta">
+    <div><b>Runtime</b> 2:00 · 9 beats</div>
+    <div><b>Format</b> 16:9, no dialogue, painted style</div>
+    <div><b>Cast</b> Kite, Wren (age 8), a flock of swifts</div>
+    <div><b>Music</b> original score, one motif</div>
+    <div><b>Status</b> v1 film (designed cuts, real flock) + v0 score</div><div><b>Image spend</b> $1.71 of $3</div>
+  </div>
+  <div class="moral">
+    <b>Moral / point</b>
+    <q>“The string isn’t what holds you down. It’s what holds you up.”</q>
+    The things that tie us to someone (a home, a person, a promise) can feel like limits. But a kite
+    with no string doesn’t fly free. It falls, because the pull of the string is what lets the
+    wind lift it. We often resent the very connection that lets us rise.
+  </div>
+</header>
+
+<section class="film">
+  <video src="out/tether_v1_music.mp4" controls preload="metadata" poster="storyboard-tether/v2/beat1.jpg"></video>
+  <p><b>v1 film</b> (motion pass): every cut designed around the kite (match dissolve, swift wipe, snap cut, tilt through cloud, time-lapse, zoom into the tree, lantern match, flare to dawn) and a real flocking, flapping flock of swifts. 1280×720, 24 fps, with the v0 score. Compare with <a href="out/tether_v0_music.mp4">v0</a>. The stills below are still v0 frames; the small image under each beat is the original code-painted sketch.</p>
+</section>
+<section class="extras">
+  <div class="card arc">
+    <h3>Story arc</h3>
+    <svg viewBox="0 0 1000 210" role="img" aria-label="Emotional arc: rises with false freedom at 1:05, crashes at 1:20, rises to a higher peak at the end">
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="40" y1="180" x2="980" y2="180"/>
+        <line x1="40" y1="20" x2="40" y2="180"/>
+        <line x1="352" y1="20" x2="352" y2="180" stroke-dasharray="4 4"/>
+        <line x1="745" y1="20" x2="745" y2="180" stroke-dasharray="4 4"/>
+      </g>
+      <path d="M40 120 C90 95 140 100 190 110 S280 135 320 120 S370 70 400 55 S470 30 530 45 S580 165 620 168 S700 150 745 120 S860 40 900 25 S960 30 980 32"
+            fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+      <g fill="var(--accent)">
+        <circle cx="352" cy="88" r="5"/><circle cx="470" cy="34" r="5"/><circle cx="620" cy="168" r="5"/><circle cx="900" cy="25" r="5"/>
+      </g>
+      <g font-size="15" fill="var(--ink)" font-family="Georgia,serif">
+        <text x="360" y="104">string snaps</text>
+        <text x="420" y="22">false freedom</text>
+        <text x="632" y="164">all is lost</text>
+        <text x="808" y="58">true flight</text>
+      </g>
+      <g font-size="12" fill="var(--muted)" letter-spacing="1.5">
+        <text x="150" y="200">ACT I · THE PULL</text>
+        <text x="470" y="200">ACT II · LOOSE</text>
+        <text x="800" y="200">ACT III · TAUT</text>
+        <text x="46" y="16">EMOTION / HEIGHT</text>
+      </g>
+    </svg>
+    <p style="color:var(--muted)">The kite’s altitude <i>is</i> the emotional graph. False freedom is high but brief.
+    The ending climbs higher than the false freedom did, and it lasts.</p>
+  </div>
+  <div class="card">
+    <h3>Characters</h3>
+    <ul>
+      <li><b>Kite</b>: red diamond kite, no face. Its <b>tail ribbon</b> shows how it feels: it curls when the kite wants something, whips when it’s angry, and goes limp when it’s scared or hopeless.</li>
+      <li><b>Wren</b>: eight years old, yellow scarf. Never lets go first. Her scarf is a setup/payoff.</li>
+      <li><b>The swifts</b>: wild, untethered, the thing the kite wants to be. Can reuse the murmuration flock system.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Music</h3>
+    <audio controls preload="metadata" src="audio/build/tether.wav" style="width:100%;margin:4px 0 8px"></audio>
+    <p style="font-size:13px;color:var(--muted);margin:0 0 6px">v0 score, 2:00, rendered from <code>audio/scores/tether.mjs</code> (sampled orchestra + wind, rain and impact effects).</p>
+    <ul>
+      <li><b>The Tug</b>: a two-note motif (low → high, a fifth). On the string it is cello and piano, together.</li>
+      <li>In free flight the high note plays alone on flute, with no low note to answer it. It sounds thrilling at first and then hollow.</li>
+      <li>Finale: both notes return in full strings, and the swifts get a woodwind countermelody.</li>
+      <li>One true silence at 1:20, when the kite hits the tree.</li>
+    </ul>
+  </div>
+</section>
+
+<main>
+  <div class="act">Act I · The Pull</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat1.jpg" alt="Beat 1 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 1</b><span>0:00 – 0:12</span></div>
+    </div>
+    <div class="body"><h2>1. First flight <small>the bond</small></h2>
+      <p>A windy hill at the edge of the sea. Wren runs, the kite catches the wind and jumps upward. She laughs and lets out more string. The two of them are clearly a pair: every gust she feels in her hands, it feels in the sky.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Low behind Wren, then tilt up and follow the string to the kite.</dd><dt>Sound</dt><dd>Wind, gulls. <b>The Tug</b> motif plays once, low and high together.</dd><dt>Ends on</dt><dd>A wide shot of girl, string and kite making one line.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat1.jpg" alt="Earlier code-painted sketch of beat 1"><div><span class="tag ai">AI</span> Plate 1 + Wren pose 1<br><span class="tag eng">Code</span> Kite bobs and sways; tail ripples; string follows her hands; slow push-in.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat2.jpg" alt="Beat 2 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 2</b><span>0:12 – 0:27</span></div>
+    </div>
+    <div class="body"><h2>2. The end of the string <small>the want</small></h2>
+      <p>The kite climbs until the string runs out and jerks taut. Just then a flock of swifts pours past it, swirling and diving and heading out over the open sea. The kite leans after them, but the string holds it back.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Kite POV: the swifts sweep around the lens and leave.</dd><dt>Sound</dt><dd>A swirl of woodwinds for the flock. The motif is cut off mid-phrase by the snap of the string going tight.</dd><dt>Ends on</dt><dd>The tail ribbon curling out toward the horizon, wanting to follow.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat2.jpg" alt="Earlier code-painted sketch of beat 2"><div><span class="tag ai">AI</span> Plate 2 + Wren (cliff pose)<br><span class="tag eng">Code</span> Kite climbs and jerks taut at 0:15; 60 swifts stream past toward the horizon; the tail turns to follow them.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat3.jpg" alt="Beat 3 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 3</b><span>0:27 – 0:40</span></div>
+    </div>
+    <div class="body"><h2>3. Tugging <small>rising tension</small></h2>
+      <p>The kite starts fighting. It dives left, swings right, yanks hard. Wren thinks it’s a game and laughs, digging in her heels. The string drags back and forth over the top of an old fence post. We see what she doesn’t: <b>the string is fraying.</b></p>
+      <dl class="rows"><dt>Camera</dt><dd>Cut between the kite thrashing (wide) and the post (extreme close-up), cutting faster each time.</dd><dt>Sound</dt><dd>The motif plays faster and off-balance. Each scrape of the string is a rasp from the string section.</dd><dt>Ends on</dt><dd>One last strand left, still taut.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat3.jpg" alt="Earlier code-painted sketch of beat 3"><div><span class="tag ai">AI</span> Plate 3<br><span class="tag eng">Code</span> String saws back and forth across the post's corner, frays (strands multiply) and thins to one strand; kite thrashes; push-in on the corner.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat4.jpg" alt="Beat 4 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 4</b><span>0:40 – 0:52</span></div>
+    </div>
+    <div class="body"><h2>4. Snap <small>turning point</small></h2>
+      <p>A big gust. <i>Ping.</i> Wren falls flat on her back in the grass and is left holding a limp, empty string. The kite shoots upward like a cork popping out of water.</p>
+      <dl class="rows"><dt>Camera</dt><dd>One overexposed white frame on the snap, then a hard cut to the kite’s POV rushing up.</dd><dt>Sound</dt><dd>Two beats of complete silence after the <i>ping</i>, then a big upbeat swell.</dd><dt>Ends on</dt><dd>Wren’s face, more confused than upset. She looks up.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat4.jpg" alt="Earlier code-painted sketch of beat 4"><div><span class="tag ai">AI</span> Plate 4 + Wren (lying pose)<br><span class="tag eng">Code</span> White flash; the kite flies off trailing the broken end; her half of the string falls slack onto the grass.</div></div>
+    </div>
+  </section>
+
+  <div class="act">Act II · Loose</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat5.jpg" alt="Beat 5 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 5</b><span>0:52 – 1:08</span></div>
+    </div>
+    <div class="body"><h2>5. Free <small>false victory</small></h2>
+      <p>Pure joy. The kite breaks through the clouds into a golden sunset sea, and the swifts take it into the flock. It loops, rolls and dives with them. This is the most beautiful shot in the film, and it should feel <i>earned</i>. Underneath it, the broken string hangs slack and swaying.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Big sweeping crane moves with the flock. Plenty of lens flare.</dd><dt>Sound</dt><dd>The high note of the motif on solo flute, soaring, and never answered by the low one.</dd><dt>Ends on</dt><dd>The swifts peel away toward the horizon, much faster than the kite can go. It’s alone.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat5.jpg" alt="Earlier code-painted sketch of beat 5"><div><span class="tag ai">AI</span> Plate 5<br><span class="tag eng">Code</span> Figure-eight loops; the flock orbits the kite, then peels away at ~1:03; broken string swings beneath.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat6.jpg" alt="Beat 6 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 6</b><span>1:08 – 1:20</span></div>
+    </div>
+    <div class="body"><h2>6. Nothing to push against <small>the fall</small></h2>
+      <p>The wind shifts. A tethered kite would lean against the string and climb. This one has nothing to lean against, so it flips over. It tries to right itself and flips again, then spins down through the clouds into a darkening sky.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Locked off and wide. The kite gets smaller as it falls, and the camera doesn’t go after it.</dd><dt>Sound</dt><dd>The flute keeps trying to start its high note and keeps getting cut off. The wind gets louder.</dd><dt>Ends on</dt><dd>A rough <i>crunch</i> as it lands in branches.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat6.jpg" alt="Earlier code-painted sketch of beat 6"><div><span class="tag ai">AI</span> Plate 6<br><span class="tag eng">Code</span> Tumbles down the dusk toward the thorn tree, spinning faster as it falls, shrinking into the distance.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat7.jpg" alt="Beat 7 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 7</b><span>1:20 – 1:32</span></div>
+    </div>
+    <div class="body"><h2>7. The thorn tree <small>all is lost</small></h2>
+      <p>Night and rain. The kite hangs torn in a thorn tree with its tail knotted in the branches. The swifts are gone, the sky is empty, and it can’t move. For the first time the kite looks <i>small</i>.</p>
+      <dl class="rows"><dt>Camera</dt><dd>One long still shot, about 8 seconds. Rain is the only thing moving.</dd><dt>Sound</dt><dd><b>The film’s one true silence</b> (just rain), then a single low cello note: the missing half of the motif, coming from far away.</dd><dt>Ends on</dt><dd>A warm dot of light appears on the hill below.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat7.jpg" alt="Earlier code-painted sketch of beat 7"><div><span class="tag ai">AI</span> Plate 7<br><span class="tag eng">Code</span> Rain falls; the torn kite sways in the branches (dimmed for night); the lantern fades in at ~1:27.</div></div>
+    </div>
+  </section>
+
+  <div class="act">Act III · Taut</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat8.jpg" alt="Beat 8 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 8</b><span>1:32 – 1:46</span></div>
+    </div>
+    <div class="body"><h2>8. The mend <small>reconnection</small></h2>
+      <p>Wren climbs the thorn tree with a lantern and gets scratched doing it. She carries the kite home under her coat. At the kitchen table she patches the tear with <b>her own yellow scarf</b> (the scarf from beat 1) and ties the broken string back together. The knot is lumpy and obvious. She doesn’t hide it.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Close-ups of hands: thread, scissors, the knot being pulled tight. Warm lamplight.</dd><dt>Sound</dt><dd>Solo piano picks up the low note, quietly, and waits for the high one.</dd><dt>Ends on</dt><dd>The knot in extreme close-up.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat8.jpg" alt="Earlier code-painted sketch of beat 8"><div><span class="tag ai">AI</span> Plate 8: the whole shot is AI (kite, patch, hands)<br><span class="tag eng">Code</span> Slow push-in on the patch; the lantern breathes.</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard-tether/v2/beat9.jpg" alt="Beat 9 frame" loading="lazy">
+      <div class="tcode"><b>BEAT 9</b><span>1:46 – 2:00</span></div>
+    </div>
+    <div class="body"><h2>9. Leaning in <small>climax &amp; resolution</small></h2>
+      <p>Morning on the hill. Wren launches the patched kite. The wind hits, and this time the kite <b>leans into the string</b> instead of fighting it, and the pull sends it up. Higher than in beat 2. Higher than above the clouds. The swifts come back and circle it. It doesn’t follow them when they leave. It doesn’t need to.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Track along the taut string from Wren’s hands, past the knot glinting in the sun, all the way up to the kite.</dd><dt>Sound</dt><dd><b>The Tug</b>, finally complete: low and high together in full strings, with the swifts’ woodwinds weaving around it.</dd><dt>Final shot</dt><dd>Very wide: one bright line from girl to kite with a yellow speck at the top. Cut to black. Title: <b>TETHER</b>.</dd></dl>
+      <div class="prod"><img src="storyboard-tether/beat9.jpg" alt="Earlier code-painted sketch of beat 9"><div><span class="tag ai">AI</span> Plate 9 + Wren (lean pose)<br><span class="tag eng">Code</span> The patched kite climbs on a taut string; the knot glints; the swifts return and circle it; fade to the title.</div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Frames are painted with the film engine (p5.brush watercolour and gouache): <code>node tools/cli.mjs still --film tether --t 0.5 … --t 8.5</code>, one beat per second of <code>web/src/tether.js</code>.</p>
+  <b>Before animating, decide:</b> (1) Does Wren need a beat on her own, sad in Act II, or does keeping the camera on the kite make the search a better surprise? Right now she’s offscreen from 0:52 to 1:32.
+  (2) Is the yellow scarf patch enough of a payoff, or should the final shot also show the scratches on her hands?
+  (3) 2:00 is tight. If something has to go, trim beat 3 first.
+</footer>
+</body>
+</html>

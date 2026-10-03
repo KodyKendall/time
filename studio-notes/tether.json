@@ -1,0 +1,181 @@
+[
+  {
+    "id": "musmjphv",
+    "t": 26.445,
+    "shot": "2 The want",
+    "cut": "",
+    "text": "Birds still don't look very good here, they look so kind of weird Silhouette looks weird, it doesn't really look like a bird And they're all uniform and the exact same And also, these look like the birds that are like up high in the sky silhouettes. But then now they're like up closer, so it looks weird. So, this animation is awful. So, the animation should be longer And also, the scene changes really abrupt because it goes to like from this like scene with like the cliff and the sea, and then all of a sudden the kite is like off around a post, and there's like no sea, and there's like just the hills I think that that image is kind of poorly chosen",
+    "status": "resolved",
+    "created": "2026-10-03T16:46:44.179Z",
+    "resolution": "The close-up birds are now painted swifts (new art: 4 wing positions from below, pale throats, mirrored to fly left), slow wingbeats with glides, curving paths, ~3 s wipe. And the post now stands on the same clifftop with the sea behind it, so 2->3 stays in one place."
+  },
+  {
+    "id": "musmk4ll",
+    "t": 40.33,
+    "shot": "4 Snap",
+    "cut": "",
+    "text": "This transition is also super abrupt It goes straight from the post to then breaking the kite and then her being on the ground There's like no transitionary picture or anything, it's just kind of a weird, abrupt thing",
+    "status": "resolved",
+    "created": "2026-10-03T16:47:03.753Z",
+    "resolution": "Now an actual sequence: punch-in on the post, the last strand parts, flash, and Wren is yanked backward off her feet (new pose) before she lands on her back."
+  },
+  {
+    "id": "musmkksu",
+    "t": 41.899,
+    "shot": "4 Snap",
+    "cut": "",
+    "text": "And then also the kite doesn't really go off in the right velocity, it just kind of slowly drifts upwards. Whereas if it had tugged away, it almost would have had an immediate snapping up to the right with more velocity And then, also, maybe the camera should follow it upwards or something a little bit",
+    "status": "resolved",
+    "created": "2026-10-03T16:47:24.750Z",
+    "resolution": "The kite is now flung up and to the right the instant the string parts and is out of frame in under 2 s, trailing the broken end, and the camera tilts up after it."
+  },
+  {
+    "id": "musmkvyr",
+    "t": 46.972,
+    "shot": "4 Snap",
+    "cut": "",
+    "text": "The scene is just way too slow It doesn't seem like it's like actually the velocity would have been from when the guy snapped away",
+    "status": "resolved",
+    "created": "2026-10-03T16:47:39.219Z",
+    "resolution": "Kite exit ~5x faster, she now falls, lands, and sits up reaching within the first 2.5 s, and the long tilt into the clouds starts at 0:46."
+  },
+  {
+    "id": "musmlamo",
+    "t": 50.69,
+    "shot": "4 Snap",
+    "cut": "",
+    "text": "Also, she's just kind of sitting there on the ground, like not really moving or doing anything, so it just looks weird. It's like she almost died or something, haha. Where she should almost be like propping herself back up and like reaching out towards the guy and being like, No",
+    "status": "resolved",
+    "created": "2026-10-03T16:47:58.224Z",
+    "resolution": "New pose: after landing she pushes up on one hand and reaches after the kite, calling out (from ~0:42), with a little movement in the reach."
+  },
+  {
+    "id": "musmllhy",
+    "t": 51.74,
+    "shot": "4 Snap",
+    "cut": "custom b3\u2192b4",
+    "text": "This animation is really nice, this kind of transitionary scene. I think the ones where there's a longer transition are way better, whereas the ones that don't have a longer transition are not as good",
+    "status": "resolved",
+    "created": "2026-10-03T16:48:12.310Z",
+    "resolution": "Noted as a rule: long transitions read best. The 4->5 tilt is now 6.8 s (was 2.4) and the 2->3 dissolve 1 s; I'll favour longer cuts from now on."
+  },
+  {
+    "id": "musmm4vp",
+    "t": 56.156,
+    "shot": "5 Free",
+    "cut": "",
+    "text": "The birds on the seam seem a little bit better or like more acceptable Although they all do look very similar But it's like almost like the birds seem farther away, which is like Muse more acceptable But their wingspan is also insanely long and doesn't really look like they're flapping their wings, they're just kind of like pulsating",
+    "status": "resolved",
+    "created": "2026-10-03T16:48:37.429Z",
+    "resolution": "Wings are a third shorter, the wingbeat is gentler (less span change, so less pulsing), and birds vary more in size (0.5x-1.5x) and tone."
+  },
+  {
+    "id": "musmmgnc",
+    "t": 57.118,
+    "shot": "5 Free",
+    "cut": "",
+    "text": "Actually, I guess they kind of are flapping their wings, but they're like flapping them super fast, and I don't know, it just doesn't look like a bird Like it looks kind of like a bird, but it just like almost like the wingspan is too long and like just doesn't yeah, I don't know",
+    "status": "resolved",
+    "created": "2026-10-03T16:48:52.680Z",
+    "resolution": "Wingbeats slowed from 5.5-7.5 to 3-4.5 per second, with longer glides between bursts."
+  },
+  {
+    "id": "musmmwz5",
+    "t": 71.44,
+    "shot": "6 The fall",
+    "cut": "",
+    "text": "Hopefully the string animation looks kind of silly Just, I don't know, the kite looks nice. Everything is good, but the string animation just doesn't seem to match. And there's like two strings that are kind of confusing These don't look like real strings",
+    "status": "resolved",
+    "created": "2026-10-03T16:49:13.841Z",
+    "resolution": "Removed the broken string hanging under the free kite (it read as a second string). The tail is now a fixed-length ribbon that trails the kite's real path, so it streams behind loops and the tumble like a real tail."
+  },
+  {
+    "id": "musmnuux",
+    "t": 89.45,
+    "shot": "7 The thorn tree",
+    "cut": "",
+    "text": "Like how this light kind of appears, but then it's like it is kind of subtle. I almost wish the light could be like getting closer, and you could even see the girl approach the tree and like get the kite out. General, this next transition is also really bad because it just shows her at home, like with her hands, mending it And also, this scene is like a very still cut, just kind of like a scene of her hands And it's just kind of like not very animated. It just looks like a picture almost. This is like scene A, I'm talking about",
+    "status": "resolved",
+    "created": "2026-10-03T16:49:57.753Z",
+    "resolution": "The light on the far hill is now Wren, walking in with the lantern (new pose, lit by it, wet from the rain), getting bigger as she nears. At the tree she reaches up (new pose) and the kite drops out of the branches into her hand. The cut to the table matches on her lantern. In the mend her right hand now sews: needle into the patch, pull the thread taut, back again (the shot was split into the table and her hand)."
+  },
+  {
+    "id": "musmny0r",
+    "t": 89.45,
+    "shot": "7 The thorn tree",
+    "cut": "",
+    "text": "Scene eight",
+    "status": "resolved",
+    "created": "2026-10-03T16:50:01.851Z",
+    "resolution": "See the note above: the mend shot now has her hand sewing."
+  },
+  {
+    "id": "musndj9v",
+    "t": 56.63,
+    "shot": "5 Free",
+    "cut": "",
+    "text": "Birds just don't seem to be behaving like birds They're just going back and forth and back and forth Also, it's still using the old silhouette ones, not the new bird-looking ones I don't know, the birds still just look weird",
+    "status": "resolved",
+    "created": "2026-10-03T17:09:55.795Z",
+    "resolution": "Every flock now uses the painted swift (mirrored to face its direction, tilting with climbs and dives, fainter with distance, darkened against the sunset). Beat 5 no longer orbits: the flock streams behind a leader along one long figure-eight that runs past both edges of the frame, so they swoop across, out and back, and leave at ~1:03. Beat 9: one ring around the kite, all chasing the same way."
+  },
+  {
+    "id": "musnef1d",
+    "t": 87.594,
+    "shot": "7 The thorn tree",
+    "cut": "",
+    "text": "On the scene, the girl is just moving way too fast Does not look realistic at all Maybe I should like kind of slowly cut and fade. I don't know I mean I don't know, just Muse it look good",
+    "status": "resolved",
+    "created": "2026-10-03T17:10:36.961Z",
+    "resolution": "She now walks at a believable pace: appears on the far hill at 1:21.5 and takes about 7 s to reach the tree (was 3.6 s), with a slower stride, and the change from walking to reaching up is a slower cross-fade (0.8 s)."
+  },
+  {
+    "id": "musno2l4",
+    "t": 68.611,
+    "shot": "6 The fall",
+    "cut": "fade b4\u2192b5",
+    "text": "the animation cut/transition is off here, just seems weird.. he almost should start to turn and stall a bit before, then there should be more of a smooth transition to the purpleish sky somehow.. like a better longer transition, or something better than what it currently is",
+    "status": "resolved",
+    "created": "2026-10-03T17:18:07.384Z",
+    "resolution": "The kite now stalls before it falls: from ~1:06.5 the loops die, it rises a little, hangs, wobbles and starts to turn over, and only begins to drop at 1:09. The time-lapse into the purple sky is now 4.5 s (1:05.5-1:10, was 2.4 s), with the stall happening inside it."
+  },
+  {
+    "id": "musnrlzc",
+    "t": 84.415,
+    "shot": "7 The thorn tree",
+    "cut": "",
+    "text": "wren is approaching way too quickly still. this scene looks funny. also when she jumps up and grabs the kite, she's way too small and the kite string doesn't even reach her hand when she jumps, so it looks funny.",
+    "status": "resolved",
+    "created": "2026-10-03T17:20:52.488Z",
+    "resolution": "Slower approach (see above), and she's now ~70% bigger at the tree, standing right under the kite, so her raised hand is where it lands. The kite drops into her hand and is drawn in front of her, so she's visibly holding it."
+  },
+  {
+    "id": "muso6vv3",
+    "t": 21.816,
+    "shot": "2 The want",
+    "cut": "",
+    "text": "the birds should be behind the kite not in front of it, makes it look a bit odd because distance wise they would be behind the kite",
+    "status": "resolved",
+    "created": "2026-10-03T17:32:45.135Z",
+    "resolution": "2026-10-03 Codex: draw the distant beat-2 flock before the kite and tail so the kite occludes birds crossing behind it."
+  },
+  {
+    "id": "muso8mnh",
+    "t": 81.132,
+    "shot": "7 The thorn tree",
+    "cut": "zoomIn b5\u2192b6",
+    "text": "i think for dramatic effect, this should be extended (we can go past 2 minutes if needed), so that it shows the kite kind of stuck in this sad, desolate space",
+    "status": "open",
+    "created": "2026-10-03T17:34:06.509Z"
+  },
+  {
+    "id": "musoaurb",
+    "t": 90.933,
+    "shot": "7 The thorn tree",
+    "cut": "",
+    "text": "the way he hand swings here is very bad, does not look anatomically accurate at all, she doesn't bend her arm at at all lol",
+    "status": "resolved",
+    "created": "2026-10-03T17:35:50.328Z",
+    "resolution": "2026-10-03 Codex: split the existing painted sleeve into overlapping upper-arm and forearm layers. A two-bone solve keeps both lengths fixed and bends the elbow while reaching, tugging and lowering the kite. Four rendered poses checked; review the movement in the studio at 89-93 seconds."
+  }
+]

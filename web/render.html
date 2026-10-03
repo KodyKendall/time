@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <title>TIME — renderer</title>
 <style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block;max-width:100vw;height:auto}</style>
+<script>
+  // p5.brush sizes its fill masks from the page's pixel density; on a 2x (Retina) screen they no
+  // longer line up with the 1x paint layers and fills come out with whole panels missing.
+  // Paint at 1x everywhere; the browser scales the canvas for display.
+  Object.defineProperty(window, 'devicePixelRatio', { get: () => 1 });
+</script>
 <script src="vendor/p5.min.js"></script>
 </head>
 <body>

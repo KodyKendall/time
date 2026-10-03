@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milo the Fox — character build (live)</title>
+<style>
+  :root{--ink:#1c1a16;--muted:#5c564c;--line:#e2ddd2;--accent:#c4552a;--gold:#e8a33d}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+  header{background:#141210;color:#f3ede0;padding:30px 24px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header h1{font-family:Georgia,serif;font-size:34px;margin:0}
+  header h1 span{color:var(--gold)}
+  header p{color:#b9b2a2;max-width:70ch;font-size:14.5px}
+  .status{display:inline-block;margin-top:10px;padding:5px 14px;border-radius:999px;
+    background:#2a251d;color:var(--gold);font-size:13px}
+  section{padding:26px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:Georgia,serif;font-size:24px;margin:0 0 4px}
+  h2 .n{color:var(--accent);margin-right:8px}
+  p.dim{color:var(--muted);font-size:14px}
+  .ph{border:2px dashed var(--line);border-radius:10px;padding:34px;text-align:center;
+    color:var(--muted);font-size:14px;margin-top:12px}
+  figure{margin:12px 0 0}
+  figure img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+  figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+  .brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;font-size:14px;margin-top:10px}
+  .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  table{border-collapse:collapse;font-size:13.5px;margin-top:10px;width:100%}
+  th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+  th{background:#f3f4f1}
+  #log{list-style:none;padding:0;font-size:13.5px}
+  #log li{padding:7px 0;border-bottom:1px dotted var(--line)}
+  #log time{color:var(--muted);font-family:monospace;font-size:12px;margin-right:10px}
+  footer{padding:22px 0 60px;color:var(--muted);font-size:13px}
+  @media(max-width:720px){.brief-grid{grid-template-columns:1fr}header h1{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Milo the Fox <span>— character build</span></h1>
+  <p>Repeatable pipeline: brief → model sheet → rigged parts → integration.
+  This page fills in as each stage lands. Refresh to update.</p>
+  <div class="status" id="status">DONE · Milo v1 rigged, all 8 beats swapped — refresh to see everything</div>
+</div></header>
+<div class="wrap">
+
+<section id="s-brief">
+  <h2><span class="n">1</span>Brief</h2>
+  <p class="dim">Full brief: <i>docs/characters/milo.md</i>. Anxious, mischievous, tender.
+  Tail = 40% of silhouette. Must read at 120px and 600px.</p>
+  <div class="brief-grid">
+    <div><span class="sw" style="background:#c9722f"></span>rust base #c9722f</div>
+    <div><span class="sw" style="background:#8a4a1e"></span>dark saddle #8a4a1e</div>
+    <div><span class="sw" style="background:#f3e6c8"></span>cream patches #f3e6c8</div>
+    <div><span class="sw" style="background:#14100c"></span>nose / eye #14100c</div>
+  </div>
+</section>
+
+<section id="s-sheet">
+  <h2><span class="n">2</span>Model sheet</h2>
+  <figure><img src="milo/sheet_2.50.png" alt="Milo model sheet: rig parts and assembled fox">
+  <figcaption>Nine painted parts (torso, head, 2 ears, 2 tail segments, 2 legs, catchlight) + assembled Milo, right.</figcaption></figure>
+</section>
+
+<section id="s-rig">
+  <h2><span class="n">3</span>Rig &amp; poses</h2>
+  <figure><img src="milo/sheet_7.50.png" alt="Milo pose tests: stand, proud, look up, sit, lie, sad">
+  <figcaption>Same parts, six poses — all joint angles, zero repainting. Fixed this round: proud tail off the head, sitting paw to ground, tucked lying legs.</figcaption></figure>
+</section>
+
+<section id="s-compare">
+  <h2><span class="n">4</span>Before / after</h2>
+  <figure><img src="milo/before_beat1.png" alt="Beat 1 with the old blob fox">
+  <figcaption>Before — beat 1 with the blob fox.</figcaption></figure>
+  <figure><img src="milo/after_beat1.png" alt="Beat 1 with the rigged Milo looking up at the moonbeam">
+  <figcaption>After — the same beat with rigged Milo (lie + look-up), posed in one line of code.</figcaption></figure>
+</section>
+
+<section id="s-log">
+  <h2><span class="n">·</span>Build log</h2>
+  <ul id="log">
+    <li><time>09:30</time>Brief written — <i>docs/characters/milo.md</i> (+ reusable <i>_template.md</i>).</li>
+    <li><time>09:30</time>No image-gen available from here (Gemini CLI has no auth), so draftsmanship is hand-built in code: traced-style multi-part rig.</li>
+    <li><time>09:45</time>Nine rig parts painted (<i>characters/milo/parts.js</i>) + joint rig with 9 pose presets (<i>rig.js</i>).</li>
+    <li><time>09:50</time>Model sheet + pose tests rendered; two pose fixes applied (proud tail, lie/sit legs).</li>
+    <li><time>10:05</time>All 8 beats swapped to the rig (poses: lie-lookup, proud ×2, sad, soft, pull, stand, happy).</li>
+    <li><time>10:10</time>Happy tail fixed twice (tip kept landing on the head); beat 8 verified. Storyboard page updated to new Milo.</li>
+  </ul>
+</section>
+
+<footer>Refresh this page as stages land. Sources: <i>web/src/characters/milo/</i>, film <i>web/src/milosheet.js</i>.</footer>
+</div>
+</body>
+</html>

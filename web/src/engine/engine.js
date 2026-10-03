@@ -2,6 +2,7 @@ import { Compositor, DW, DH } from './compositor.js';
 import { Post } from './post.js';
 import { Painter, brush } from './paint.js';
 import { textLayer } from './text.js';
+import { textureFromCanvas } from './gl.js';
 import { M, clamp, hex } from './math.js';
 
 export class Engine {
@@ -78,6 +79,13 @@ export class Engine {
       },
       text: (lines, opts) => {
         const L = textLayer(gl, S, lines, opts);
+        P._layers.push(L);
+        return L;
+      },
+      // A decoded image (e.g. a generated background plate) as a layer w x h design units.
+      image: (img, { w = 1920, h = 1080 } = {}) => {
+        const tex = textureFromCanvas(gl, img, { mip: true });
+        const L = { tex, w, h, flipY: false, dispose: () => gl.deleteTexture(tex) };
         P._layers.push(L);
         return L;
       },

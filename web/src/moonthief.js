@@ -1,18 +1,18 @@
-// THE MOON THIEF — painted storyboard film.
-//
-// 8 beats x 15 s = 120 s. Each beat is one painted panel; the storyboard renders one
-// still per beat with the same p5.brush painter + WebGL compositor as the main films:
-//   node tools/cli.mjs still --film moonthief --w 1280 --t 7.5 --t 22.5 ... --name mt_beat
+// THE MOON THIEF — final film, 8 beats x 15 s = 120 s.
+// Painted with p5.brush, posed with the Milo rig, composited in WebGL.
+// Stills: node tools/cli.mjs still --film moonthief --w 1280 --t 7.5 ...
+// Film:   node tools/render_parallel.mjs --film moonthief --w 1920 --to 120 --audio ... --out ...
 import { Film } from './engine/film.js';
 import { M, TAU, rng, lerp, clamp, hex, mixHex, smoothstep, paintBall, makeStars, starParticles } from './scenes/lib/kit.js';
+import { ease, invLerp } from './engine/math.js';
 import { C } from './scenes/lib/palette.js';
+import { paintMiloParts } from './characters/milo/parts.js';
+import { drawMilo, POSES } from './characters/milo/rig.js';
 
 const W = 1920, H = 1080;
 
 // ---------------------------------------------------------------- helpers (design units)
 
-// Night-sky gradient in convex horizontal strips + solid ground. (p5.brush watercolour
-// fills triangle-fan their polygon, so everything here stays convex.)
 function skyWash(c, top, horizon, groundY, ground, n = 26) {
   for (let i = 0; i < n; i++) {
     const y0 = (groundY * i) / n, y1 = (groundY * (i + 1)) / n + 1;
@@ -22,7 +22,6 @@ function skyWash(c, top, horizon, groundY, ground, n = 26) {
   c.flush();
 }
 
-// Loose dry-brush streaks so flat washes read as paint.
 function streaks(c, n, y0, y1, tones, seed) {
   const r = rng(seed);
   for (let i = 0; i < n; i++) {
@@ -52,18 +51,15 @@ function forest(c, baseY, color, s0, s1, seed, gap = 150) {
   c.flush();
 }
 
-// Solid watercolour shape: opaque wash underlay (so dark grounds can't muddy it)
-// plus a light textured pass for the painted feel.
-function solid(c, pts, color, { texture = 0.18, seed = 0 } = {}) {
+function solid(c, pts, color, texture = 0.18) {
   c.washPoly(pts, color, 255);
   c.fillPoly(pts, color, { opacity: 110, bleed: 0.01, texture, border: 0.15 });
 }
 
-// Jam jar, y = bottom. An open jar (cork=false) spills light upward.
 function jar(c, x, y, w, h, { light = true, cork = true, seed = 1 } = {}) {
   c.washPoly([[x - w / 2, y - h], [x + w / 2, y - h], [x + w / 2, y], [x - w / 2, y]], '#9fc4d4', 88);
   if (light) {
-    solid(c, c.blob(x, y - h * 0.36, w * 0.36, h * 0.30, { n: 32, wobble: 0.15, seed }), '#ffd98a', { texture: 0.15 });
+    solid(c, c.blob(x, y - h * 0.36, w * 0.36, h * 0.30, { n: 32, wobble: 0.15, seed }), '#ffd98a', 0.15);
   }
   if (cork) {
     c.washPoly([[x - w * 0.32, y - h - h * 0.13], [x + w * 0.32, y - h - h * 0.13],
@@ -77,22 +73,8 @@ function jar(c, x, y, w, h, { light = true, cork = true, seed = 1 } = {}) {
   c.flush();
 }
 
-// Milo the fox cub, side view facing right, y = ground.
-function fox(c, x, y, s) {
-  const rust = '#c9722f', dark = '#8a4a1e', cream = C.cream;
-  solid(c, c.blob(x, y - 34 * s, 62 * s, 40 * s, { n: 40, wobble: 0.10, seed: 7 }), rust);
-  solid(c, c.blob(x - 74 * s, y - 26 * s, 46 * s, 30 * s, { n: 36, wobble: 0.14, rot: 0.5, seed: 9 }), rust);
-  solid(c, c.blob(x - 102 * s, y - 22 * s, 20 * s, 16 * s, { n: 28, wobble: 0.2, seed: 11 }), cream);
-  const ex = x + 58 * s, ey = y - 52 * s;
-  solid(c, c.blob(ex, ey, 30 * s, 28 * s, { n: 32, wobble: 0.08, seed: 13 }), rust);
-  c.washPoly([[ex - 18 * s, ey - 16 * s], [ex - 2 * s, ey - 20 * s], [ex - 12 * s, ey - 46 * s]], dark, 255);
-  c.washPoly([[ex + 6 * s, ey - 20 * s], [ex + 20 * s, ey - 14 * s], [ex + 16 * s, ey - 42 * s]], dark, 255);
-  c.washPoly([[ex + 18 * s, ey + 4 * s], [ex + 36 * s, ey + 10 * s], [ex + 18 * s, ey + 15 * s]], cream, 255);
-  c.washPoly(c.blob(ex + 8 * s, ey - 6 * s, 4.5 * s, 5.5 * s, { n: 16, wobble: 0.05, seed: 15 }), '#14100c', 255);
-  c.flush();
-}
+// Milo is a draw-time rig (characters/milo/); beats pose him in draw().
 
-// Owl, front view, y = perch/ground.
 function owl(c, x, y, s) {
   const brown = '#5a4a3a';
   solid(c, c.blob(x, y - 60 * s, 52 * s, 62 * s, { n: 40, wobble: 0.08, seed: 21 }), brown);
@@ -100,15 +82,14 @@ function owl(c, x, y, s) {
   c.washPoly([[x - 44 * s, y - 106 * s], [x - 20 * s, y - 110 * s], [x - 34 * s, y - 138 * s]], brown, 255);
   c.washPoly([[x + 44 * s, y - 106 * s], [x + 20 * s, y - 110 * s], [x + 34 * s, y - 138 * s]], brown, 255);
   for (const dx of [-20 * s, 20 * s]) {
-    solid(c, c.blob(x + dx, y - 86 * s, 15 * s, 16 * s, { n: 24, wobble: 0.05, seed: 25 + dx }), '#f6efce', { texture: 0.1 });
+    solid(c, c.blob(x + dx, y - 86 * s, 15 * s, 16 * s, { n: 24, wobble: 0.05, seed: 25 + dx }), '#f6efce', 0.1);
     c.washPoly(c.blob(x + dx, y - 86 * s, 6 * s, 7 * s, { n: 16, wobble: 0.05, seed: 31 + dx }), '#14100c', 255);
   }
   c.washPoly([[x - 7 * s, y - 68 * s], [x + 7 * s, y - 68 * s], [x, y - 54 * s]], C.gold, 255);
   c.flush();
 }
 
-// Tapered shaft of moonlight (convex quad).
-function beam(c, x1, y1, x2, y2, w1, w2, color, opacity, seed = 3) {
+function beam(c, x1, y1, x2, y2, w1, w2, color, opacity) {
   const dx = x2 - x1, dy = y2 - y1, d = Math.hypot(dx, dy) || 1;
   const nx = -dy / d, ny = dx / d;
   c.fillPoly([[x1 + nx * w1 / 2, y1 + ny * w1 / 2], [x1 - nx * w1 / 2, y1 - ny * w1 / 2],
@@ -120,16 +101,9 @@ function burrow(c, x, y, w, lit) {
   c.fillPoly(c.blob(x, y + w * 0.18, w, w * 0.42, { n: 48, wobble: 0.06, seed: 41 }), '#2c2318',
     { opacity: 255, bleed: 0.01, texture: 0.5, border: 0.3 });
   const hole = c.blob(x, y - w * 0.06, w * 0.30, w * 0.20, { n: 32, wobble: 0.08, seed: 43 });
-  if (lit) solid(c, hole, '#ffdf9a', { texture: 0.12 });
+  if (lit) solid(c, hole, '#ffdf9a', 0.12);
   else c.washPoly(hole, '#05070c', 255);
   c.flush();
-}
-
-function caption(P, n, title) {
-  return P.text([`BEAT ${n} · ${title}`], {
-    font: '600 34px Georgia', color: '#f3e7cf', letterSpacing: 4,
-    shadow: { color: 'rgba(0,0,0,0.8)', blur: 6 },
-  });
 }
 
 const S1 = makeStars('mt1', 200, { y1: 640 });
@@ -138,10 +112,27 @@ const S3 = makeStars('mt3', 90, { y1: 620 });
 const S7 = makeStars('mt7', 260, { y1: 760 });
 const S8 = makeStars('mt8', 240, { y1: 700 });
 
+// Beat 7 rising-light seeds (3 jars x 24 motes) and beat 8 fireflies.
+const RISE = [];
+{
+  const r = rng('mt7rise');
+  for (let j = 0; j < 3; j++) {
+    const arr = [];
+    for (let i = 0; i < 24; i++) arr.push(r(0, 1));
+    RISE.push(arr);
+  }
+}
+const FLIES = [];
+{
+  const r = rng('mt8fly');
+  for (let i = 0; i < 12; i++) FLIES.push({ x: r(200, 1720), y: r(500, 900), ph: r(0, 6.28), f: r(0.3, 0.7) });
+}
+
 // ---------------------------------------------------------------- beat 1: afraid of the dark
 const beat1 = {
   id: 'mt-beat1',
   bg: C.night,
+  view: (lt) => M.place(960 - 10 + 20 * (lt / 15), 540, 1.0 + 0.07 * (lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#0a1120', '#1b2a44', 800, '#0d140f');
@@ -151,23 +142,29 @@ const beat1 = {
       forest(c, 880, '#090e16', 1.1, 1.5, 'b1near', 260);
       burrow(c, 560, 880, 190, false);
       beam(c, 1520, 300, 560, 830, 60, 200, '#f6efce', 40);
-      fox(c, 430, 940, 1.15);
     });
-    return { bg, cap: caption(P, 1, 'AFRAID OF THE DARK') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
+    drawMilo(R, A.milo, {
+      ...POSES.lie, head: lerp(-0.45, -0.62, ease.inOutSine(lt / 15)),
+      tail1: 0.55 + 0.04 * Math.sin(lt * 0.9), tail2: 0.7 + 0.05 * Math.sin(lt * 0.9 + 1),
+      look: [2, -4], x: 430, y: 905 + 2 * Math.sin(lt * 1.6), s: 0.5,
+    });
     R.particles(starParticles(S1, lt, { alpha: 0.85 }), { kind: 'glow', blend: 'add' });
     R.glow(1520, 210, 130, '#f6efce', 0.35, { ext: 2.8 });
-    R.glow(560, 800, 90, '#f6efce', 0.22, { ext: 2.4 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    R.glow(560, 800, 90, '#f6efce', 0.22 + 0.06 * Math.sin(lt * 1.3), { ext: 2.4 });
   },
 };
 
-// ---------------------------------------------------------------- beat 2: the stealing
+// ---------------------------------------------------------------- beat 2: the stealing (catches at lt = 3, 7, 11)
+const CATCH = [3, 7, 11];
+const JAR2 = [[660, 830], [1010, 825], [1300, 830]];
 const beat2 = {
   id: 'mt-beat2',
   bg: '#0d1626',
+  view: (lt) => M.place(960 - 20 * (lt / 15), 540, 1.0 + 0.05 * (lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#0c1424', '#20334f', 830, '#0e150f');
@@ -180,17 +177,24 @@ const beat2 = {
       jar(c, 660, 900, 120, 170, { seed: 61 });
       jar(c, 1010, 910, 140, 195, { seed: 62 });
       jar(c, 1300, 895, 105, 150, { seed: 63 });
-      fox(c, 1530, 950, 1.0);
     });
-    return { bg, cap: caption(P, 2, 'THE STEALING') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
+    const hop = CATCH.reduce((s, c) => s + Math.exp(-(((lt - c - 0.3) ** 2) / 0.3)), 0);
+    drawMilo(R, A.milo, {
+      ...POSES.proud, tail1: -0.25 + 0.08 * Math.sin(lt * 2.2),
+      head: -0.12 + 0.05 * Math.sin(lt * 1.1 + 2),
+      x: 1530, y: 857 - 14 * hop, s: 0.45,
+    });
     R.particles(starParticles(S2, lt, { alpha: 0.8 }), { kind: 'glow', blend: 'add' });
     R.glow(960, 250, 220, '#f8f0d2', 0.3, { ext: 2.8 });
-    for (const [jx, jy] of [[660, 830], [1010, 825], [1300, 830]])
-      R.glow(jx, jy, 70, '#ffd98a', 0.35, { ext: 2.2 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    JAR2.forEach(([jx, jy], i) => {
+      const caught = smoothstep(CATCH[i] - 0.5, CATCH[i] + 0.3, lt);
+      const pulse = Math.exp(-(((lt - CATCH[i]) ** 2) / 1.5));
+      R.glow(jx, jy, 70, '#ffd98a', 0.1 + 0.3 * caught + 0.5 * pulse, { ext: 2.2 });
+    });
   },
 };
 
@@ -198,6 +202,7 @@ const beat2 = {
 const beat3 = {
   id: 'mt-beat3',
   bg: '#0a0e18',
+  view: (lt) => M.place(960 + 14 * (lt / 15), 540 + 8 * (lt / 15), 1.0 + 0.06 * (lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#070b14', '#131c30', 820, '#0c1008');
@@ -206,107 +211,132 @@ const beat3 = {
       burrow(c, 960, 900, 300, true);
       c.fillPoly(c.blob(960, 800, 220, 150, { n: 48, wobble: 0.12, seed: 71 }), '#ffcf7a',
         { opacity: 120, bleed: 0.1, texture: 0.6, border: 0.5 });
-      fox(c, 1330, 980, 1.25);
     });
-    return { bg, cap: caption(P, 3, 'A PRIVATE SUN') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
-    R.particles(starParticles(S3, lt, { alpha: 0.35 }), { kind: 'glow', blend: 'add' });
-    R.glow(960, 830, 260, '#ffcf7a', 0.45, { ext: 2.6 });
-    R.glow(960, 830, 120, '#ffe9ad', 0.35, { ext: 2.0 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    const dip = 1 - 0.25 * smoothstep(13, 15, lt);
+    drawMilo(R, A.milo, {
+      ...POSES.proud, tail1: -0.25 + 0.06 * Math.sin(lt * 1.4),
+      x: 1330, y: 867 + 2 * Math.sin(lt * 1.6), s: 0.55,
+    });
+    R.particles(starParticles(S3, lt, { alpha: lerp(0.5, 0.12, lt / 15) }), { kind: 'glow', blend: 'add' });
+    R.glow(960, 830, 260, '#ffcf7a', (0.45 + 0.08 * Math.sin(lt * 1.5)) * dip, { ext: 2.6 });
+    R.glow(960, 830, 120, '#ffe9ad', 0.35 * dip, { ext: 2.0 });
   },
 };
 
-// ---------------------------------------------------------------- beat 4: the dark he made
+// ---------------------------------------------------------------- beat 4: the dark he made (locked camera)
 const beat4 = {
   id: 'mt-beat4',
   bg: C.void,
+  view: () => M.id(),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#04060c', '#0a0f1a', 840, '#05070a');
       streaks(c, 60, 0, 820, ['#0a0f1a', '#04060c'], 'b4a');
-      // pale drained moon
       paintBall(c, 1560, 200, 80, '#8a8267', { lightAngle: -2.6, texture: 0.5 });
       forest(c, 860, '#03050a', 1.0, 1.4, 'b4a', 210);
-      // ring of dying jars
       jar(c, 700, 940, 100, 140, { light: false, seed: 81 });
       jar(c, 960, 960, 120, 165, { light: true, seed: 82 });
       jar(c, 1220, 940, 100, 140, { light: false, seed: 83 });
       owl(c, 350, 990, 1.3);
-      fox(c, 1520, 990, 1.0);
     });
-    return { bg, cap: caption(P, 4, 'THE DARK HE MADE') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
+    const decay = 1 - 0.55 * smoothstep(2, 14, lt);
     const flicker = 0.5 + 0.5 * Math.sin(lt * 7.0) * Math.sin(lt * 3.1);
-    R.glow(960, 880, 80, '#ffd98a', 0.18 + 0.12 * flicker, { ext: 2.2 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    drawMilo(R, A.milo, {
+      ...POSES.sad, head: lerp(0.3, 0.42, lt / 15),
+      earB: -0.5 + 0.25 * Math.exp(-(((lt - 8) ** 2) / 0.4)),
+      x: 1520, y: 958 + 1.5 * Math.sin(lt * 1.2), s: 0.45,
+    });
+    R.glow(960, 880, 80, '#ffd98a', (0.18 + 0.12 * flicker) * decay, { ext: 2.2 });
   },
 };
 
-// ---------------------------------------------------------------- beat 5: realization (close-up)
+// ---------------------------------------------------------------- beat 5: realization (close-up, Milo faces the jar)
 const beat5 = {
   id: 'mt-beat5',
   bg: '#0a0d14',
+  view: (lt) => M.place(960, 540, 1.0 + 0.1 * (lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#080b12', '#141b2c', 1080, '#0a0c10', 30);
       streaks(c, 110, 0, 1080, ['#141b2c', '#080b12', '#1d2740'], 'b5a');
       jar(c, 640, 1020, 430, 640, { seed: 101 });
-      fox(c, 1480, 1030, 3.1);
     });
-    return { bg, cap: caption(P, 5, 'REALIZATION') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
-    R.glow(640, 780, 200, '#ffd98a', 0.3, { ext: 2.4 });
-    R.glow(640, 780, 90, '#ffe9ad', 0.28, { ext: 2.0 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    const u = ease.inOutSine(lt / 15);
+    drawMilo(R, A.milo, {
+      ...POSES.soft, flip: true, head: lerp(0.15, -0.1, u),
+      look: [lerp(3, -2, u), lerp(1, -2, u)],
+      x: 1500, y: 828 + 2 * Math.sin(lt * 1.4), s: 1.35,
+    });
+    const hope = 0.1 * smoothstep(12, 15, lt);
+    R.glow(640, 780, 200, '#ffd98a', 0.3 + 0.05 * Math.sin(lt * 1.8) + hope, { ext: 2.4 });
+    R.glow(640, 780, 90, '#ffe9ad', 0.28 + hope, { ext: 2.0 });
   },
 };
 
-// ---------------------------------------------------------------- beat 6: the climb
+// ---------------------------------------------------------------- beat 6: the climb (tracking shot)
 const beat6 = {
   id: 'mt-beat6',
   bg: '#101722',
+  view: (lt) => M.place(960 + 40 * (lt / 15), 540, 1.02, 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#1a2436', '#5a6a80', 1080, '#222a30', 30);
       streaks(c, 80, 0, 700, ['#5a6a80', '#2c3a52', '#1a2436'], 'b6a');
-      // diagonal hill in convex strips: rises to the right
       const Hs = (x) => 1120 - (x / W) * 560;
       for (let x = -8; x < W + 8; x += 8)
         c.washPoly([[x, Hs(x)], [x + 8, Hs(x + 8)], [x + 8, H + 4], [x, H + 4]], '#131a15', 255);
       c.flush();
       forest(c, 1090, '#0a0e0a', 0.9, 1.2, 'b6far', 260);
       const wx = 1180, wy = Hs(1180);
-      // wagon silhouette with its glowing load
       c.washPoly([[wx - 100, wy - 78], [wx + 100, wy - 78], [wx + 100, wy - 24], [wx - 100, wy - 24]], '#14100c', 255);
       c.washPoly(c.blob(wx - 60, wy - 8, 36, 36, { n: 24, wobble: 0.03, seed: 91 }), '#14100c', 255);
       c.washPoly(c.blob(wx + 60, wy - 8, 36, 36, { n: 24, wobble: 0.03, seed: 92 }), '#14100c', 255);
       jar(c, wx - 42, wy - 78, 62, 88, { seed: 94 });
       jar(c, wx + 34, wy - 78, 72, 100, { seed: 95 });
-      fox(c, wx - 330, wy + 120, 1.15);
-      c.strokePath([[wx - 250, wy + 60], [wx - 170, wy + 10], [wx - 100, wy - 40]], 'wire', '#3a3228', 1.2);
       owl(c, wx + 260, wy - 60, 0.95);
     });
-    return { bg, cap: caption(P, 6, 'THE CLIMB') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
     const wx = 1180, wy = 1120 - (wx / W) * 560;
-    R.glow(wx, wy - 120, 110, '#ffd98a', 0.35, { ext: 2.4 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    const mx = 850 + 100 * (lt / 15), my = 793 + 5 * Math.sin(lt * 2 * Math.PI * 2.4 / 2);
+    const step = Math.sin(lt * 2 * Math.PI * 1.2);
+    drawMilo(R, A.milo, {
+      ...POSES.pull, legF: -0.5 + 0.4 * step, legB: 0.55 + 0.4 * Math.sin(lt * 2 * Math.PI * 1.2 + Math.PI),
+      x: mx, y: my, s: 0.5,
+    });
+    // rope from Milo's neck to the wagon hitch, drawn per-frame so it tracks him
+    const [nx, ny] = M.apply(M.place(mx, my, 0.5, 0.18, 170, 110), 285, 75);
+    const rope = [];
+    for (let i = 0; i <= 14; i++) {
+      const f = i / 14;
+      rope.push([lerp(nx, wx - 100, f), lerp(ny, wy - 40, f) + Math.sin(f * Math.PI) * 16,
+        6, 0, 0.45, 0.38, 0.3, 0.9]);
+    }
+    R.particles(rope, { kind: 'soft' });
+    R.glow(wx, wy - 120, 110, '#ffd98a', 0.35 + 0.1 * Math.sin(lt * 2 * Math.PI * 2.4 / 2 + 1), { ext: 2.4 });
   },
 };
 
-// ---------------------------------------------------------------- beat 7: letting go
+// ---------------------------------------------------------------- beat 7: letting go (crane up)
+const JAR7 = [620, 960, 1300];
 const beat7 = {
   id: 'mt-beat7',
   bg: '#0b1424',
+  view: (lt) => M.place(960, 540 - 50 * (lt / 15), 1.0 + 0.08 * (lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#0a1220', '#1c3050', 860, '#0c120c');
@@ -319,23 +349,39 @@ const beat7 = {
       jar(c, 620, 960, 120, 170, { cork: false, seed: 111 });
       jar(c, 960, 970, 140, 195, { cork: false, seed: 112 });
       jar(c, 1300, 960, 120, 170, { cork: false, seed: 113 });
-      fox(c, 1650, 1000, 1.0);
     });
-    return { bg, cap: caption(P, 7, 'LETTING GO') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
-    R.particles(starParticles(S7, lt, { alpha: 0.95 }), { kind: 'glow', blend: 'add' });
-    R.glow(960, 215, 170, '#f8f0d2', 0.35, { ext: 2.8 });
-    for (const jx of [620, 960, 1300]) R.glow(jx, 800, 80, '#ffe9ad', 0.35, { ext: 2.2 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+    drawMilo(R, A.milo, {
+      ...POSES.stand, head: lerp(0, -0.25, smoothstep(6, 12, lt)),
+      tail1: -0.2 + 0.1 * Math.sin(lt * (2 + lt * 0.15)),
+      x: 1650, y: 907, s: 0.45,
+    });
+    // light streaming jar -> moon, thickening as the beat runs
+    const gate = smoothstep(1, 4, lt);
+    const rise = [];
+    JAR7.forEach((jx, j) => {
+      for (let i = 0; i < 24; i++) {
+        const cyc = (lt * 0.35 + RISE[j][i]) % 1;
+        const e = 1 - (1 - cyc) * (1 - cyc);
+        rise.push([jx + (960 - jx) * cyc * 0.55 + 30 * Math.sin(cyc * 5 + RISE[j][i] * 9),
+          lerp(800, 330, e), 6 + 8 * cyc, 0, 1.0, 0.93, 0.75, (1 - cyc) * 0.7 * gate]);
+      }
+    });
+    R.particles(rise, { kind: 'glow', blend: 'add' });
+    R.particles(starParticles(S7, lt, { alpha: lerp(0.6, 1.0, lt / 15) }), { kind: 'glow', blend: 'add' });
+    R.glow(960, 215, 170, '#f8f0d2', lerp(0.35, 0.6, smoothstep(2, 13, lt)), { ext: 2.8 });
+    JAR7.forEach((jx, j) => R.glow(jx, 800, 80, '#ffe9ad', 0.35 + 0.1 * Math.sin(lt * 3 + j * 2), { ext: 2.2 }));
   },
 };
 
-// ---------------------------------------------------------------- beat 8: shared glow
+// ---------------------------------------------------------------- beat 8: shared glow (slow pull-back)
 const beat8 = {
   id: 'mt-beat8',
   bg: C.night,
+  view: (lt) => M.place(960, 540, lerp(1.06, 1.0, lt / 15), 0, 960, 540),
   paint(P) {
     const bg = P.layer('bg', { w: W, h: H }, (c) => {
       skyWash(c, '#0c1526', '#27405c', 820, '#0d150f');
@@ -343,33 +389,57 @@ const beat8 = {
       paintBall(c, 960, 235, 145, '#f8f0d2', { lightAngle: -2.4, texture: 0.35 });
       beam(c, 960, 370, 960, 830, 200, 420, '#f8f0d2', 30);
       forest(c, 840, '#0a1220', 1.2, 1.7, 'b8far', 170);
-      fox(c, 790, 980, 1.2);
       owl(c, 1150, 990, 1.25);
     });
-    return { bg, cap: caption(P, 8, 'SHARED GLOW') };
+    return { bg, milo: paintMiloParts(P) };
   },
   draw(R, lt, A) {
     R.layer(A.bg);
+    drawMilo(R, A.milo, {
+      ...POSES.happy, tail1: -0.1 + 0.08 * Math.sin(lt * 2.4),
+      head: -0.1 + 0.04 * Math.sin(lt * 1.1),
+      x: 790, y: 905, s: 0.5,
+    });
+    const gate = smoothstep(1, 4, lt);
+    R.particles(FLIES.map((f) => [f.x + 40 * Math.sin(lt * f.f + f.ph), f.y + 25 * Math.cos(lt * f.f * 0.8 + f.ph),
+      7, 0, 1.0, 0.85, 0.5, (0.35 + 0.35 * Math.sin(lt * 2 + f.ph * 2)) * gate]), { kind: 'glow', blend: 'add' });
     R.particles(starParticles(S8, lt, { alpha: 0.9 }), { kind: 'glow', blend: 'add' });
-    R.glow(960, 235, 200, '#f8f0d2', 0.35, { ext: 2.8 });
+    R.glow(960, 235, 200, '#f8f0d2', 0.35 + 0.05 * Math.sin(lt * 1.2), { ext: 2.8 });
     R.glow(960, 850, 150, '#f8f0d2', 0.25, { ext: 2.6 });
-    R.layer(A.cap, M.translate(60, 36), { opacity: 0.9 });
+  },
+};
+
+// End title over the last seconds.
+const titleCard = {
+  id: 'mt-title',
+  start: 115, end: 120,
+  paint(P) {
+    return {
+      title: P.text(['THE MOON THIEF'], { font: '600 84px Georgia', color: '#f6efce', letterSpacing: 10, align: 'center' }),
+      sub: P.text(['light shared is light kept'], { font: 'italic 34px Georgia', color: '#cbbf9f', letterSpacing: 2, align: 'center' }),
+    };
+  },
+  draw(R, lt, A) {
+    const a = smoothstep(0, 1.2, lt) * (1 - smoothstep(4.2, 5, lt));
+    if (a <= 0.01) return;
+    R.layer(A.title, M.translate(960 - A.title.w / 2, 600), { opacity: a });
+    R.layer(A.sub, M.translate(960 - A.sub.w / 2, 700), { opacity: a });
   },
 };
 
 export async function buildFilm() {
-  return new Film({
-    fps: 30,
-    duration: 120,
-    shots: [
-      { id: 'b1', scene: beat1, start: 0, end: 15 },
-      { id: 'b2', scene: beat2, start: 15, end: 30 },
-      { id: 'b3', scene: beat3, start: 30, end: 45 },
-      { id: 'b4', scene: beat4, start: 45, end: 60 },
-      { id: 'b5', scene: beat5, start: 60, end: 75 },
-      { id: 'b6', scene: beat6, start: 75, end: 90 },
-      { id: 'b7', scene: beat7, start: 90, end: 105 },
-      { id: 'b8', scene: beat8, start: 105, end: 120 },
-    ],
-  });
+  const shots = [
+    { id: 'b1', scene: beat1, start: 0, end: 15 },
+    { id: 'b2', scene: beat2, start: 15, end: 30 },
+    { id: 'b3', scene: beat3, start: 30, end: 45 },
+    { id: 'b4', scene: beat4, start: 45, end: 60 },
+    { id: 'b5', scene: beat5, start: 60, end: 75 },
+    { id: 'b6', scene: beat6, start: 75, end: 90 },
+    { id: 'b7', scene: beat7, start: 90, end: 105 },
+    { id: 'b8', scene: beat8, start: 105, end: 120 },
+  ];
+  const transitions = shots.slice(0, -1).map((s, i) => ({
+    kind: 'fade', from: s.id, to: shots[i + 1].id, start: s.end - 0.4, end: s.end + 0.4,
+  }));
+  return new Film({ fps: 30, duration: 120, shots, transitions, overlays: [titleCard] });
 }
