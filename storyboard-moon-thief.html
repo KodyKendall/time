@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Moon Thief — Storyboard (2-min film)</title>
+<style>
+  :root{
+    --ink:#1c1a16; --muted:#5c564c; --line:#e2ddd2;
+    --accent:#c4552a; --pine:#1f4d3a; --panel:#f3f4f1; --gold:#e8a33d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.5}
+  header{border-bottom:3px solid var(--ink);padding:32px 24px 24px;max-width:1120px;margin:0 auto}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:40px;margin:0 0 6px;letter-spacing:-.5px}
+  header h1 span{color:var(--accent)}
+  .sub{color:var(--muted);font-size:15px;max-width:72ch}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta div{border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:999px;background:#fff}
+  .meta b{font-weight:700}
+  .moral{max-width:1120px;margin:20px auto 0;padding:16px 20px;border-left:5px solid var(--gold);
+    background:#fff8e8;font-size:15px}
+  main{max-width:1120px;margin:0 auto;padding:24px}
+  .beat{display:grid;grid-template-columns:420px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .beat:last-child{border-bottom:none}
+  .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;align-self:start}
+  .frame img{display:block;width:100%;height:auto}
+  .tcode{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+    font-size:13px;border-top:1px solid var(--line);background:#fff}
+  .tcode b{background:var(--ink);color:#fff;padding:2px 8px;border-radius:6px;font-size:12px}
+  .body h2{font-family:Georgia,serif;font-size:22px;margin:0 0 2px}
+  .body h2 small{color:var(--accent);font-family:inherit;font-size:14px;margin-left:8px}
+  .body p{margin:8px 0;font-size:15px}
+  .rows{display:grid;grid-template-columns:90px 1fr;font-size:13.5px;margin-top:10px}
+  .rows dt{color:var(--pine);font-weight:700;padding:3px 0}
+  .rows dd{margin:0;padding:3px 0 3px 8px;color:#333}
+  footer{max-width:1120px;margin:0 auto;padding:20px 24px 60px;color:var(--muted);font-size:13px}
+  @media(max-width:820px){.beat{grid-template-columns:1fr}header h1{font-size:30px}}
+  @media print{.beat{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <h1>The Moon Thief <span>— storyboard</span></h1>
+  <p class="sub"><b>Logline:</b> A fox cub afraid of the dark steals the moonlight jar by jar,
+  until the dark he made teaches him what light is for. An original 2-minute animated short —
+  <b>storyboard only, no animation yet</b>. Each panel below is painted with this repo's own
+  pipeline (p5.brush painter + WebGL compositor, <i>web/src/moonthief.js</i>), one still per beat.</p>
+  <div class="meta">
+    <div><b>Runtime:</b> 2:00 (8 beats &times; ~15s)</div>
+    <div><b>Format:</b> 16:9, no dialogue</div>
+    <div><b>Cast:</b> Milo (fox cub), Owl, Moon</div>
+    <div><b>Music:</b> original lullaby theme</div>
+  </div>
+</header>
+<div class="moral"><b>Moral / point:</b> Light hoarded goes dim; light shared lights your own way home too.
+Milo doesn't conquer his fear of the dark — he learns to tend the light <i>with</i> others.</div>
+<main>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_7.50.png" alt="Painted panel: fox cub in dark burrow under moonlight">
+      <div class="tcode"><b>BEAT 1</b><span>0:00 – 0:15</span></div>
+    </div>
+    <div class="body"><h2>1. Afraid of the dark <small>want</small></h2>
+      <p>Milo the fox cub cowers in his burrow while the forest sleeps. A single shaft of moonlight reaches him — safe, warm, his.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Slow push-in from wide forest to burrow mouth.</dd><dt>Sound</dt><dd>Night crickets, soft lullaby theme on plucked strings.</dd><dt>Ends on</dt><dd>Milo staring at the moon: <i>what if I could keep it?</i></dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_22.50.png" alt="Painted panel: fox catching moonbeams in jars">
+      <div class="tcode"><b>BEAT 2</b><span>0:15 – 0:30</span></div>
+    </div>
+    <div class="body"><h2>2. The stealing <small>plan in action</small></h2>
+      <p>Night after night Milo traps moonbeams in jam jars. Playful montage: chasing beams, tripping, corking each glowing jar. It works.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Quick cuts, jars clinking into frame one by one.</dd><dt>Sound</dt><dd>Theme turns mischievous; glass <i>clink</i> motif each catch.</dd><dt>Ends on</dt><dd>A wagon stacked high with trembling light.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_37.50.png" alt="Painted panel: glowing burrow while forest dims">
+      <div class="tcode"><b>BEAT 3</b><span>0:30 – 0:45</span></div>
+    </div>
+    <div class="body"><h2>3. A private sun <small>false victory</small></h2>
+      <p>The burrow blazes like day. Milo parades in his glow — while behind him, over the hill, the forest visibly dims one star at a time.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Split feel: warm close-ups inside, cold widening shot outside.</dd><dt>Sound</dt><dd>Lullaby in a major key, slightly too loud; crickets thinning out.</dd><dt>Ends on</dt><dd>Owl blinking in sudden dark.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_52.50.png" alt="Painted panel: dark forest with dying jars, owl and fox">
+      <div class="tcode"><b>BEAT 4</b><span>0:45 – 1:00</span></div>
+    </div>
+    <div class="body"><h2>4. The dark he made <small>low point</small></h2>
+      <p>Owl crashes, fireflies gutter out, the river path vanishes. Milo's own brightest jar flickers — even hoarded light dies alone.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Locked wide shot; darkness creeps in from the edges.</dd><dt>Sound</dt><dd>Music drops to a single wavering note; an owl's lost call.</dd><dt>Ends on</dt><dd>Milo alone in a ring of dying jars.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_67.50.png" alt="Painted panel: fox staring at a glowing jar, close-up">
+      <div class="tcode"><b>BEAT 5</b><span>1:00 – 1:15</span></div>
+    </div>
+    <div class="body"><h2>5. Realization <small>turn inward</small></h2>
+      <p>Close on Milo's face in the last flicker. He understands: the jar isn't warm anymore — because there is nobody in the light <i>with</i> him.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Held close-up; reflection of the dying glow in his eyes.</dd><dt>Sound</dt><dd>Silence, then the lullaby theme in its simplest form.</dd><dt>Ends on</dt><dd>Milo picks up the wagon rope — heading uphill.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_82.50.png" alt="Painted panel: fox hauling glowing wagon uphill with owl">
+      <div class="tcode"><b>BEAT 6</b><span>1:15 – 1:30</span></div>
+    </div>
+    <div class="body"><h2>6. The climb <small>effort</small></h2>
+      <p>Milo hauls the wagon to the hilltop, slipping, refusing to leave a single jar. Owl limps alongside and pushes from behind.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Low tracking shot; effortful, paws and wheels.</dd><dt>Sound</dt><dd>Heartbeat drum joins the theme; wind rises.</dd><dt>Ends on</dt><dd>Silhouette on the ridge against a pale sky.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_97.50.png" alt="Painted panel: open jars releasing light back to the moon">
+      <div class="tcode"><b>BEAT 7</b><span>1:30 – 1:45</span></div>
+    </div>
+    <div class="body"><h2>7. Letting go <small>climax</small></h2>
+      <p>One by one he uncorks the jars. Beams spiral upward like released birds and pour back into the moon. Stars stutter, then ignite.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Crane up with the rising light; match-cut: jar mouth to moon disc.</dd><dt>Sound</dt><dd>Full theme swells; glass pops; a held breath released.</dd><dt>Ends on</dt><dd>Moon full and blazing; Milo laughing, lit from above.</dd></dl>
+    </div>
+  </section>
+  <section class="beat">
+    <div class="frame">
+      <img src="storyboard/mt_beat_112.50.png" alt="Painted panel: fox and owl together under the full moon">
+      <div class="tcode"><b>BEAT 8</b><span>1:45 – 2:00</span></div>
+    </div>
+    <div class="body"><h2>8. Shared glow <small>resolution + moral</small></h2>
+      <p>Moonlight covers everyone. Milo keeps one empty jar — as a lantern he refills each night <i>with</i> Owl, walking others home.</p>
+      <dl class="rows"><dt>Camera</dt><dd>Wide tableau, then slow pull-back to the sleeping forest.</dd><dt>Sound</dt><dd>Lullaby resolves; final line of the theme, now a duet.</dd><dt>Ends on</dt><dd>Title card: <i>The Moon Thief</i> — light shared is light kept.</dd></dl>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>Storyboard v2 — panels painted with the repo's p5.brush + compositor pipeline
+  (<i>web/src/moonthief.js</i>, rendered via <i>tools/cli.mjs still --film moonthief</i>).
+  Open questions: Milo's exact age? Does Owl speak or only hoot? Ending title wording. Total: 8 beats ≈ 120 seconds.</p>
+</footer>
+</body>
+</html>

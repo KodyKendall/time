@@ -128,6 +128,8 @@ new p5((p) => {
     const mod = await import(`./${filmName}.js`);
     const film = await mod.buildFilm();
     engine = new Engine(p, W, H, film);
+    // ?blur=N caps motion-blur samples. Full quality is 12; previews want 1-2.
+    if (q.get('blur')) engine.maxShutterSamples = Math.max(1, +q.get('blur'));
     engine.autoRelease = q.get('release') !== '0';
     engine.strict = q.get('strict') === '1';
     window.TIME.film = film;

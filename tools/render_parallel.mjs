@@ -41,9 +41,30 @@ for (let i = 0; i < cuts.length - 1; i++) {
   const n = Math.max(1, Math.ceil((b - a) / (maxChunk * fps)));
   for (let k = 0; k < n; k++) frames.push([a + Math.round(((b - a) * k) / n), a + Math.round(((b - a) * (k + 1)) / n)]);
 }
-const sig = JSON.stringify({ W, fps, crf, preset, film });
+// Fingerprint every source the film is built from. Without it the resume signature says
+// nothing about CONTENT: edit a scene, re-render at the same width, and any chunk whose frame
+// range still lines up is skipped and the OLD footage is spliced into the new film. Frame N is
+// t = N/fps whatever the duration, so the ranges line up easily.
+function srcHash(dir) {
+  let h = 0x811c9dc5;
+  const walk = (d) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const full = path.join(d, e.name);
+      if (e.isDirectory()) walk(full);
+      else if (/\.(js|mjs)$/.test(e.name)) {
+        const buf = fs.readFileSync(full);
+        for (let i = 0; i < buf.length; i++) { h ^= buf[i]; h = Math.imul(h, 16777619); }
+      }
+    }
+  };
+  walk(dir);
+  return (h >>> 0).toString(16);
+}
+const sig = JSON.stringify({ W, fps, crf, preset, film, blur: args.blur || '', src: srcHash(path.join(ROOT, 'web/src')) });
 const chunks = frames.map(([a, b], i) => {
-  const file = path.join(tmp, `chunk_${W}_${String(a).padStart(5, '0')}_${String(b).padStart(5, '0')}.mp4`);
+  // the film is part of the name: two films at the same width share frame ranges, and without
+  // it one film's chunks overwrite the other's files while its .done stamps survive
+  const file = path.join(tmp, `chunk_${film}_${W}_${String(a).padStart(5, '0')}_${String(b).padStart(5, '0')}.mp4`);
   return { i, a, b, file, done: file.replace(/\.mp4$/, '.done'), log: file.replace(/\.mp4$/, '.log') };
 });
 const isDone = (c) => fs.existsSync(c.file) && fs.existsSync(c.done) && fs.readFileSync(c.done, 'utf8') === sig;
@@ -58,6 +79,7 @@ const totalFrames = todo.reduce((s, c) => s + c.b - c.a, 0);
 async function runChunk(c) {
   const cliArgs = ['tools/cli.mjs', 'render', '--film', film, '--w', String(W), '--fps', String(fps),
     '--from', String(c.a / fps), '--to', String(c.b / fps), '--out', c.file,
+    ...(args.blur ? ['--blur', args.blur] : []),
     '--crf', crf, '--preset', preset, '--strict', '1', '--release', '1'];
   for (let attempt = 1; attempt <= 2; attempt++) {
     const code = await new Promise((resolve) => {
