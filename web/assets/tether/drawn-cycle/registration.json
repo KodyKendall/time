@@ -1,0 +1,314 @@
+[
+  {
+    "frame": 0,
+    "source_component": 11,
+    "offset": [
+      20,
+      53
+    ],
+    "grip": [
+      185,
+      124.34653465346534
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 1,
+    "source_component": 10,
+    "offset": [
+      24,
+      53
+    ],
+    "grip": [
+      190,
+      100.12931034482759
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 2,
+    "source_component": 9,
+    "offset": [
+      27,
+      48
+    ],
+    "grip": [
+      193,
+      95.09433962264151
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 3,
+    "source_component": 7,
+    "offset": [
+      21,
+      49
+    ],
+    "grip": [
+      198,
+      88.232
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 4,
+    "source_component": 5,
+    "offset": [
+      18,
+      49
+    ],
+    "grip": [
+      199,
+      86.65853658536585
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 5,
+    "source_component": 6,
+    "offset": [
+      21,
+      48
+    ],
+    "grip": [
+      198,
+      86.59349593495935
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 6,
+    "source_component": 4,
+    "offset": [
+      31,
+      51
+    ],
+    "grip": [
+      203,
+      76.232
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 7,
+    "source_component": 8,
+    "offset": [
+      36,
+      51
+    ],
+    "grip": [
+      204,
+      75.33082706766918
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 8,
+    "source_component": 3,
+    "offset": [
+      32,
+      55
+    ],
+    "grip": [
+      211,
+      74.5702479338843
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 9,
+    "source_component": 2,
+    "offset": [
+      33,
+      55
+    ],
+    "grip": [
+      213,
+      74.51968503937007
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 10,
+    "source_component": 1,
+    "offset": [
+      32,
+      51
+    ],
+    "grip": [
+      215,
+      73.83823529411765
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 11,
+    "source_component": 0,
+    "offset": [
+      28,
+      35
+    ],
+    "grip": [
+      234,
+      63.50757575757576
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 12,
+    "source_component": 12,
+    "offset": [
+      34,
+      60
+    ],
+    "grip": [
+      191,
+      91.09322033898304
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 13,
+    "source_component": 13,
+    "offset": [
+      36,
+      61
+    ],
+    "grip": [
+      194,
+      93.04724409448819
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 14,
+    "source_component": 22,
+    "offset": [
+      42,
+      64
+    ],
+    "grip": [
+      197,
+      98.16949152542372
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 15,
+    "source_component": 17,
+    "offset": [
+      43,
+      60
+    ],
+    "grip": [
+      194,
+      96.9074074074074
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 16,
+    "source_component": 15,
+    "offset": [
+      40,
+      60
+    ],
+    "grip": [
+      195,
+      97.21666666666667
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 17,
+    "source_component": 14,
+    "offset": [
+      38,
+      60
+    ],
+    "grip": [
+      194,
+      95.17391304347827
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 18,
+    "source_component": 16,
+    "offset": [
+      18,
+      76
+    ],
+    "grip": [
+      191,
+      115.37373737373737
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 19,
+    "source_component": 19,
+    "offset": [
+      14,
+      76
+    ],
+    "grip": [
+      189,
+      115.37931034482759
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 20,
+    "source_component": 21,
+    "offset": [
+      18,
+      76
+    ],
+    "grip": [
+      192,
+      115.1559633027523
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 21,
+    "source_component": 20,
+    "offset": [
+      13,
+      76
+    ],
+    "grip": [
+      191,
+      115.15238095238095
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 22,
+    "source_component": 18,
+    "offset": [
+      18,
+      76
+    ],
+    "grip": [
+      191,
+      115.23684210526316
+    ],
+    "feet_baseline": 280
+  },
+  {
+    "frame": 23,
+    "source_component": 23,
+    "offset": [
+      16,
+      76
+    ],
+    "grip": [
+      191,
+      115.0695652173913
+    ],
+    "feet_baseline": 280
+  }
+]

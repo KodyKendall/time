@@ -826,6 +826,66 @@
       },
       "cost_usd": 0.0538,
       "created": "2026-10-03T17:31:38.620Z"
+    },
+    {
+      "id": "wren_articulated_sheet",
+      "files": [
+        "gen/wren_articulated_sheet_low.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "chroma_keyed": true,
+      "prompt": "Image 1 is a reference for the established character Wren and painted style. Create a NEW clean animation-parts sheet matching that same girl: eight years old, brown ponytail, blue wool coat, brown tights and dark brown boots, mustard scarf. Gentle storybook gouache, daylight, flat 2D side view FACING RIGHT. Keep identity, proportions and colors.\nLayout: EXACTLY a 3 by 3 regular grid on a 1536x1024 canvas, with one completely disconnected painted part centered inside each cell and generous magenta margin. No labels, no grid lines, no shadows, no scenery. Never join parts. Background uniform pure #FF00FF; absolutely no magenta in the artwork.\nTOP ROW, LEFT TO RIGHT: (1) torso only: knee-length blue coat with shoulder caps, pocket and mustard scarf collar, NO head, NO arms, NO legs, upright; (2) head only: same girl's head in right-facing profile, dark brown ponytail attached, small neck stump at bottom, looking slightly upward; (3) upper arm only: blue coat sleeve, shoulder round cap at TOP and elbow round cap at BOTTOM, oriented straight down, no forearm or hand.\nMIDDLE ROW: (4) forearm only: blue sleeve, elbow rounded cap at LEFT and cuff at RIGHT, oriented horizontally, NO hand; (5) right hand only: wrist on LEFT and closed gentle fist on RIGHT, side view gripping an invisible thin kite cord, NO cord drawn, NO sleeve; (6) thigh only: brown tights upper leg, rounded hip cap at TOP and rounded knee cap at BOTTOM, oriented vertically, no coat, no calf, no foot.\nBOTTOM ROW: (7) lower leg only: brown tights calf, rounded knee cap at TOP and ankle at BOTTOM, vertical, NO boot; (8) boot only: dark brown small child's boot, ankle opening at TOP LEFT and toe pointing RIGHT, entire flat sole visible; (9) loose mustard scarf tails only, root on LEFT and two ends trailing RIGHT, no neck collar.\nThese are reusable puppet parts, not nine poses of a complete character. Smooth rounded ends with generous painted overlap at shoulder, elbow, hip and knee. All parts fully within their individual grid cells. Keep simple soft brushwork, no black outlines, consistent light from upper left.",
+      "refs": [
+        "web/assets/tether/plates/wren_rig_sheet.png"
+      ],
+      "estimated_cost_usd": 0.1,
+      "cost_note": "Conservative budget reservation; bundled imagegen CLI does not expose response usage. Actual billed cost unverified.",
+      "created": "2026-10-03T23:09:04.582849+00:00",
+      "generator": "imagegen skill bundled CLI"
+    },
+    {
+      "id": "wren_articulated_torso",
+      "files": [
+        "gen/wren_articulated_torso_low.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1024",
+      "n": 1,
+      "transparent": false,
+      "chroma_keyed": true,
+      "prompt": "Image 1 is the edit target: a torso cutout for Wren's reusable animation rig. Keep the same blue wool coat, scarf collar, pocket, brushwork and proportions. Remove the entire dangling sleeve on the LEFT of the image: replace it with a clean continuous blue coat side seam, so this is a sleeveless coat torso ONLY, with small shoulder caps, NO arms, NO head, NO legs. Do not change the coat hem or pocket. Center the entire torso upright, fully visible, on perfectly flat uniform pure #FF00FF magenta. No shadows, no labels, no other objects. This is the body painting onto which independently animated sleeves will be attached.",
+      "refs": [
+        "web/assets/tether/rig-v2/piece_0.png"
+      ],
+      "estimated_cost_usd": 0.1,
+      "cost_note": "Conservative budget reservation; bundled imagegen CLI does not expose response usage. Actual billed cost unverified.",
+      "created": "2026-10-03T23:09:04.583077+00:00",
+      "generator": "imagegen skill bundled CLI"
+    },
+    {
+      "id": "wren_complete_drawing_cycle",
+      "files": [
+        "gen/wren_complete_drawing_cycle_low.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "chroma_keyed": true,
+      "prompt": "Image 1 is a reference for Wren's appearance, NOT a picture to duplicate. Make a NEW hand-drawn animation sprite sheet of exactly 24 COMPLETE full-body drawings of this same child, in chronological order. All drawings are side view facing RIGHT, dark brown ponytail, blue knee-length coat, brown tights and boots, mustard scarf. Keep reference identity, brushwork and palette.\nCanvas 1536x1024, EXACTLY SIX equally spaced columns and FOUR equally spaced rows. Each cell is 256x256. One COMPLETE child per cell, fully inside the cell. Uniform flat pure #FF00FF background, no text, no grid lines, no props, no shadows. Child about 205px tall, soles always at the same local y=235. Two boots planted at consistent local x=105 and x=145. Right hand grips an invisible kite cord to the upper-right; NO actual cord drawn. Leave 15px magenta margin on every cell edge. These are whole-character frame drawings, NOT separated puppet parts.\nAction: a smooth TWO-SECOND pull-and-recover loop, 12 drawings per second. Draw new contours for each pose including coat folds, knees, bent elbows, facial gaze, hair and scarf follow-through. Subtle weight, anatomically natural. The feet stay planted; knees bend slightly, not a deep squat. NO walking. The arm extends forward from the chest, then draws inward as she leans back to pull. Gentle anticipation before the quick pull, then slower recovery. Small head reaction after the torso. Keep all frames the SAME character, SAME size and SAME side view. No camera changes.\nRead left-to-right, row-by-row:\nFrame 1 relaxed gripping pose; 2 eyes look up; 3 head tips up slightly; 4 notices tension; 5 hips soften and travel forward; 6 reaches hand a little farther; 7 anticipation peak, torso slightly forward; 8 begins pull, hips shift back; 9 elbows bend; 10 torso leans back slightly; 11 knees bend to catch load; 12 strongest braced pull; 13 tiny overshoot with head following; 14 scarf trails the shoulders; 15 holds load; 16 begins release; 17 hips rise slowly; 18 elbows extend; 19 coat settles; 20 head returns; 21 scarf eases back; 22 body mostly relaxed; 23 almost the initial pose; 24 same pose as frame 1 for a seamless loop.\nUse restrained readable changes between adjacent drawings, with consistent face and costume. This is a production animation contact sheet, not illustrations of different girls. Every cell must contain exactly one complete drawing including the feet.",
+      "refs": [
+        "web/assets/tether/plates/wren_pose1.png"
+      ],
+      "estimated_cost_usd": 0.1,
+      "cost_note": "Conservative reservation; imagegen CLI does not expose usage. Actual billed cost unverified.",
+      "created": "2026-10-03T23:26:44.429592+00:00",
+      "generator": "imagegen skill bundled CLI"
     }
   ]
 }

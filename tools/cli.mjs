@@ -94,7 +94,7 @@ page.on('console', (m) => {
 page.on('pageerror', (e) => console.log('[pageerror]', e.message));
 page.on('requestfailed', (r) => console.log('[requestfailed]', r.url(), r.failure()?.errorText));
 page.on('response', (r) => { if (r.status() >= 400) console.log('[http]', r.status(), r.url()); });
-const qs = new URLSearchParams({ w: String(W), film, ...(args.release ? { release: args.release } : {}), ...(args.only ? { only: args.only } : {}), ...(args.strict ? { strict: args.strict } : {}), ...(args.twopt ? { twopt: args.twopt } : {}), ...(args.blur ? { blur: args.blur } : {}) });
+const qs = new URLSearchParams({ w: String(W), film, ...(args.release ? { release: args.release } : {}), ...(args.only ? { only: args.only } : {}), ...(args.strict ? { strict: args.strict } : {}), ...(args.twopt ? { twopt: args.twopt } : {}), ...(args.blur ? { blur: args.blur } : {}), ...(args.rigmotion ? { rigmotion: args.rigmotion } : {}) });
 await page.goto(`http://127.0.0.1:${PORT}/render.html?${qs}`);
 await page.waitForFunction('!!window.TIME', { timeout: 60000 });
 await page.evaluate('TIME.ready.then(() => true, (e) => { throw new Error("TIME init failed: " + (window.TIME.error || e)); })');

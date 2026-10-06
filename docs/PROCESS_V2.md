@@ -1,5 +1,7 @@
 # Animation process v2: story first, painted plates, code for motion
 
+> Latest user review (2026-10-03): preserve the AI-generated artwork with **very, very slight animation**. Earlier recommendations below are historical and are superseded where they conflict with [the current animation direction](ANIMATION_DIRECTION.md).
+
 How we make a short film now, and how we got here. Written after the first film made this way,
 **TETHER** (2:00, 2026-10-03). The next film should be able to follow the checklist at the bottom
 without rereading the history.

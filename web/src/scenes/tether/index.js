@@ -9,6 +9,8 @@
 // Cameras live on the shots (shot.view) so the film's transitions can drive them.
 import { M, TAU, clamp, lerp, smoothstep, ease, hex, rng, viewMatrix } from '../../engine/math.js';
 import { C, X, kite as paintKite } from './sketch.js';
+import { createWrenRig } from '../../characters/wren/rig.js';
+import { firstFlight } from '../../characters/wren/motion.js';
 
 // ---------------------------------------------------------------- timing
 // Beat k runs T[k]..T[k+1] (the storyboard's timecodes).
@@ -189,32 +191,16 @@ function drawSprite(R, A, name, x, y, s, { sway = 0, rot = 0, op = 1, tint = nul
   return M.apply(m, sp.hands[0], sp.hands[1] - top);
 }
 
+const WREN_RIG = createWrenRig(SPRITES);
+
 // ---------------------------------------------------------------- Wren, rigged
 // The body pivots at her feet (lean, bounce, breathing); the arms hinge at the shoulder and aim
 // where the string goes, plus a tug; the scarf hangs from the back of the collar and flutters.
 // Each beat gives her its own behaviour through `pose`. Returns her hands (for the string).
 function drawWren(R, A, x, y, s, aim, { lean = 0, bob = 0, breathe = 0, tug = 0, scarf = 0, t = 0, op = 1 } = {}) {
   R = REAL_R || R;
-  const SB = SPRITES.wrenBody, SA = SPRITES.wrenArms, SS = SPRITES.wrenScarf;
   if (!A.wrenBody || !A.wrenArms) return drawSprite(R, A, 'wren1', x, y, s * 0.235 / 0.22);
-  // body: feet planted, leaning, bobbing, breathing (a hair of vertical scale)
-  const B = M.chain(M.translate(x, y + bob), M.rotate(lean), M.scale(s, s * (1 + breathe)), M.translate(-SB.feet[0], -SB.feet[1]));
-  const shoulder = M.apply(B, SB.shoulder[0], SB.shoulder[1]), neck = M.apply(B, SB.neck[0], SB.neck[1]);
-  // arms: aimed at the string's direction, within what a shoulder can do, plus the tug
-  const natural = Math.atan2(SA.hands[1] - SA.root[1], SA.hands[0] - SA.root[0]);
-  const want = clamp(Math.atan2(aim[1] - shoulder[1], aim[0] - shoulder[0]), -1.25, 0.35);
-  const Am = M.chain(M.translate(shoulder[0], shoulder[1]), M.rotate(want - natural + tug), M.scale(s), M.translate(-SA.root[0], -SA.root[1]));
-  const show_ = show('wren');
-  if (show_ && A.wrenScarf) {
-    // scarf: hangs back from the collar, lifted and rippled by the wind
-    const Sm = M.chain(M.translate(neck[0], neck[1]), M.rotate(0.35 - 0.45 * scarf + 0.08 * Math.sin(t * 2.1) + 0.04 * Math.sin(t * 5.3)), M.scale(-s, s), M.translate(-SS.root[0], -SS.root[1]));
-    R.layer(A.wrenScarf, Sm, { opacity: op, warp: { type: 'noise', amp: 6 + 10 * scarf, freq: 0.02, time: t * (0.6 + 0.8 * scarf) } });
-  }
-  if (show_) {
-    R.layer(A.wrenBody, B, { opacity: op });
-    R.layer(A.wrenArms, Am, { opacity: op });
-  }
-  return M.apply(Am, SA.hands[0], SA.hands[1]);
+  return WREN_RIG.draw(R, A, { x, y, s, aim, lean, bob, breathe, tug, scarf, t, op, visible: show('wren') });
 }
 
 // ---------------------------------------------------------------- the kite's path
@@ -498,8 +484,7 @@ const BEATS = [
       const k = KITE12(t);
       // playful: a light bounce in her step, arms following the kite as it bobs
       const hands = drawWren(R, A, 360, 663, 0.22, [k.x, k.y], {
-        lean: -0.03 + 0.02 * Math.sin(l * 0.9), bob: -4 * Math.abs(Math.sin(l * 3.1)), breathe: 0.006 * Math.sin(l * 1.7),
-        tug: 0.06 * Math.sin(l * 1.3 + 0.5), scarf: 0.6 + 0.2 * Math.sin(l * 0.7), t: l });
+        ...firstFlight(l), t: l });
       drawString(R, hands, bridle(k.x, k.y, k.s, k.rot), 0.12 + 0.04 * Math.sin(l * 0.9));
       drawKite(R, A, { ...k, ph: t * 2.2, tailAng: 1.9, tailAmp: 14 });   // lazy curls
     },

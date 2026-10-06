@@ -1,0 +1,530 @@
+{
+  "film": "greenkeeper",
+  "items": [
+    {
+      "id": "bg3",
+      "files": [
+        "gen/bg3_2026-10-04T02-53-46-949Z_0.png",
+        "gen/bg3_2026-10-04T02-53-46-949Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "High three-quarter overhead view looking down across an empty public park lawn. The grass is cut into perfectly straight alternating light and dark mown stripes running diagonally across the frame, the bands even and crisp, the surface reading as soft relief rather than paint. Low early-morning sun rakes across from the left so the stripes catch the light on their edges. Thin ground mist pooled along the top edge near a line of bare trees. Nobody is in the frame. No mower, no bench, no people. Calm, still, empty.",
+      "refs": [],
+      "usage": {
+        "input_tokens": 484,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 484
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 799
+      },
+      "cost_usd": 0.0125,
+      "created": "2026-10-04T02:53:46.954Z"
+    },
+    {
+      "id": "bg11",
+      "files": [
+        "gen/bg11_2026-10-04T02-54-25-708Z_0.png",
+        "gen/bg11_2026-10-04T02-54-25-708Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "The same park from the same high three-quarter angle, but years later. The lawn has not been cut: the grass has grown long and shaggy, waist high, in uneven tufts, and every mown stripe is gone. Two plain glass office buildings now stand close behind the tree line, one cropped hard at the left edge and one at the right edge, their flat facades catching flat cool light. Late evening, cool blue-green, no sun in the grass. Two small distant anonymous figures lie down in the long grass near the centre of the frame, seen from above and far away, faces not visible, one with an arm behind their head. Quiet, still, melancholy.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3618,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 546
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3933
+      },
+      "cost_usd": 0.0374,
+      "created": "2026-10-04T02:54:25.713Z"
+    },
+    {
+      "id": "bg1",
+      "files": [
+        "gen/bg1_2026-10-04T02-57-48-279Z_0.png",
+        "gen/bg1_2026-10-04T02-57-48-279Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "The same public park seen from a low, wide, distant viewpoint at dawn, mist lying in the field, bare trees and low iron railings across the middle distance, pale gold first light just above the horizon. The lawn is freshly cut into straight mown stripes running away from the camera. Far away at the right edge of the frame, a very small distant figure with a push mower is almost lost in the mist. Vast, quiet, empty, mostly sky and grass.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3532,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 460
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3847
+      },
+      "cost_usd": 0.037,
+      "created": "2026-10-04T02:57:48.284Z"
+    },
+    {
+      "id": "bg9",
+      "files": [
+        "gen/bg9_2026-10-04T02-58-47-088Z_0.png",
+        "gen/bg9_2026-10-04T02-58-47-088Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "The same park from the same low wide viewpoint, but the lawn has not been cut for a long time: the grass is long, uneven and shaggy, and all the mown stripes are gone. Mist still lies in the field, bare trees and the same low iron railing across the middle distance, but two plain glass office buildings now rise above the tree line, distant, flat and pale. The light is later in the morning than dawn, flatter and cooler. The frame is completely empty. Nobody is there at all.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg1.png"
+      ],
+      "usage": {
+        "input_tokens": 3552,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 480
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3867
+      },
+      "cost_usd": 0.0371,
+      "created": "2026-10-04T02:58:47.092Z"
+    },
+    {
+      "id": "bg4",
+      "files": [
+        "gen/bg4_2026-10-04T02-59-59-620Z_0.png",
+        "gen/bg4_2026-10-04T02-59-59-620Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "A quiet corner of the park away from the mown lawn: a bank of long unkempt tussocky grass, cool and shaded, out of the sun. In the middle of it a single small flat pale stone lies flush with the ground, worn smooth and bleached, with a few dry stems resting on it. Long seed-headed grass stems lean across the frame in the foreground. Soft overcast light, no sun, no colour, still and empty. Nobody in the frame.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3538,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 466
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3853
+      },
+      "cost_usd": 0.037,
+      "created": "2026-10-04T02:59:59.625Z"
+    },
+    {
+      "id": "bg8",
+      "files": [
+        "gen/bg8_2026-10-04T03-00-50-300Z_0.png",
+        "gen/bg8_2026-10-04T03-00-50-300Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Two mown lawns side by side seen from a low three-quarter angle across the grass. On the left, rough machine-cut stripes that run wide, uneven and slightly crooked, the bands wandering and the edges ragged. On the right, hand-cut stripes that run narrow, dead straight and evenly spaced, crisp and correct. Late afternoon light, warm and low, raking across both patterns so the difference in direction and precision is unmistakable. Nobody in the frame, no machines, no tools.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3540,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 468
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3855
+      },
+      "cost_usd": 0.037,
+      "created": "2026-10-04T03:00:50.306Z"
+    },
+    {
+      "id": "bg6",
+      "files": [
+        "gen/bg6_2026-10-04T03-01-41-831Z_0.png",
+        "gen/bg6_2026-10-04T03-01-41-831Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "The mown edge of the park lawn beside a low iron railing and the iron gate. A plain rectangular white property board on two thin legs has been pushed into the grass at the edge of the frame, its face blank with no writing on it. The grass is still freshly cut in stripes right up to the board. Flat cool overcast daylight, no sun, no shadows. Nothing else in the frame, no people.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3510,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 438
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3825
+      },
+      "cost_usd": 0.0368,
+      "created": "2026-10-04T03:01:41.836Z"
+    },
+    {
+      "id": "bg2",
+      "files": [
+        "gen/bg2_2026-10-04T03-01-58-461Z_0.png",
+        "gen/bg2_2026-10-04T03-01-58-461Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "Low sun very close to the horizon directly ahead, glaring through haze across a freshly mown lawn, the stripes running straight away from the camera into the light. The grass is rim-lit and glowing yellow-green, and fine cut clippings hang in the air above it catching the light like dust. Trees and railings reduced to dark silhouettes at the edges. Nobody in the frame, no machines.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3498,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 426
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3813
+      },
+      "cost_usd": 0.0368,
+      "created": "2026-10-04T03:01:58.465Z"
+    },
+    {
+      "id": "bg7",
+      "files": [
+        "gen/bg7_2026-10-04T03-03-10-585Z_0.png",
+        "gen/bg7_2026-10-04T03-03-10-585Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "A public park lawn partly closed for building work. A long grey corrugated construction hoarding runs across the middle of the frame with a narrow gap cut in it, and metal scaffolding rises behind it. Through and in front of the gap the mown lawn continues, striped. Flat grey overcast light, no sun, everything a little dull and colourless. No machinery, no signage, no lettering, no people.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3510,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 438
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3825
+      },
+      "cost_usd": 0.0368,
+      "created": "2026-10-04T03:03:10.591Z"
+    },
+    {
+      "id": "bg5",
+      "files": [
+        "gen/bg5_2026-10-04T03-03-25-651Z_0.png",
+        "gen/bg5_2026-10-04T03-03-25-651Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 2,
+      "transparent": false,
+      "prompt": "A busy public park on a bright Sunday morning. The mown lawn is full of small distant figures far away in the middle distance: a few dog walkers, a pushchair, people sitting on the grass, all tiny, soft and slightly blurred so no face is readable. Trees along the edges, one empty bench. Full morning light, warm and bright, the happiest picture in the film. Nobody in the foreground.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3508,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 436
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 3823
+      },
+      "cost_usd": 0.0368,
+      "created": "2026-10-04T03:03:25.659Z"
+    },
+    {
+      "id": "gk_ref",
+      "files": [
+        "gen/gk_ref_2026-10-04T03-12-45-541Z_0.png",
+        "gen/gk_ref_2026-10-04T03-12-45-541Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Canonical reference pose. She stands at rest facing the camera in a straight three-quarter view, weight even on both feet, arms loose at her sides, hands open and relaxed and clearly visible. Full body from head to boot, nothing cropped. Neutral, composed, unhurried expression with her mouth closed. This is the definitive version of her appearance and every other pose of her must match it exactly.",
+      "refs": [
+        "web/assets/greenkeeper/plates/bg3.png"
+      ],
+      "usage": {
+        "input_tokens": 3900,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 828
+        },
+        "output_tokens": 2744,
+        "output_tokens_details": {
+          "image_tokens": 2744,
+          "text_tokens": 0
+        },
+        "total_tokens": 6644
+      },
+      "cost_usd": 0.1165,
+      "created": "2026-10-04T03:12:45.544Z"
+    },
+    {
+      "id": "gk_push",
+      "files": [
+        "gen/gk_push_2026-10-04T03-13-55-767Z_0.png",
+        "gen/gk_push_2026-10-04T03-13-55-767Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: seen from three-quarter behind and to the left, walking away from the camera toward the right, both hands on the handlebar of a heavy push lawnmower that she is pushing ahead of her. Her back is to us, head slightly turned down toward the machine. Steady walking stride. Full body.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3868,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 796
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4183
+      },
+      "cost_usd": 0.0386,
+      "created": "2026-10-04T03:13:55.770Z"
+    },
+    {
+      "id": "gk_smile",
+      "files": [
+        "gen/gk_smile_2026-10-04T03-14-11-344Z_0.png",
+        "gen/gk_smile_2026-10-04T03-14-11-344Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: standing beside her push lawnmower, seen from three-quarter front, one hand resting on the handlebar, the other hand lowered and open. She is the only time in the whole film that she smiles: a small, real, warm, slightly surprised closed-mouth smile, lips just parted, cheeks lifted, eyes crinkled. It must read as genuine pleasure at a small thing. Full body.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3906,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 834
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4221
+      },
+      "cost_usd": 0.0388,
+      "created": "2026-10-04T03:14:11.349Z"
+    },
+    {
+      "id": "gk_bank",
+      "files": [
+        "gen/gk_bank_2026-10-04T03-14-28-574Z_0.png",
+        "gen/gk_bank_2026-10-04T03-14-28-574Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: kneeling on both knees in long grass, seen from three-quarter behind and slightly above. She leans forward over a small flat pale stone set in the ground, both hands held together above it, opening a small round tin. Her head is bowed so we cannot see her face at all. Her whole body is relaxed and unhurried. Full body.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3888,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 816
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4203
+      },
+      "cost_usd": 0.0387,
+      "created": "2026-10-04T03:14:28.577Z"
+    },
+    {
+      "id": "gk_hand",
+      "files": [
+        "gen/gk_hand_2026-10-04T03-15-38-703Z_0.png",
+        "gen/gk_hand_2026-10-04T03-15-38-703Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: seen from directly behind, walking away from the camera, both hands on the handlebar of a push lawnmower with a grass box, pushing it straight ahead in a precise line. Straight back, shoulders square, unhurried. Her face is not visible. Full body, the mower fully in frame.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3868,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 796
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4183
+      },
+      "cost_usd": 0.0386,
+      "created": "2026-10-04T03:15:38.707Z"
+    },
+    {
+      "id": "gk_walk",
+      "files": [
+        "gen/gk_walk_2026-10-04T03-15-52-503Z_0.png",
+        "gen/gk_walk_2026-10-04T03-15-52-503Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: seen from directly behind, walking away from the camera and out of the frame, both arms hanging loose at her sides, empty hands, no mower. Straight back, level pace, head slightly down. Her face is not visible. Full body.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3842,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 770
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4157
+      },
+      "cost_usd": 0.0385,
+      "created": "2026-10-04T03:15:52.507Z"
+    },
+    {
+      "id": "gk_board",
+      "files": [
+        "gen/gk_board_2026-10-04T03-16-07-170Z_0.png",
+        "gen/gk_board_2026-10-04T03-16-07-170Z_1.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1024x1536",
+      "n": 2,
+      "transparent": true,
+      "prompt": "Pose: standing completely still, seen from three-quarter behind and to the right, both arms straight down at her sides, hands open, head bowed slightly as if reading something low in front of her. She has stopped. Her face is not visible. Full body.",
+      "refs": [
+        "web/assets/greenkeeper/plates/gk_ref.png"
+      ],
+      "usage": {
+        "input_tokens": 3846,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 774
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "image_tokens": 315,
+          "text_tokens": 0
+        },
+        "total_tokens": 4161
+      },
+      "cost_usd": 0.0385,
+      "created": "2026-10-04T03:16:07.174Z"
+    }
+  ]
+}

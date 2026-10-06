@@ -1,0 +1,944 @@
+{
+  "film": "wren-kite",
+  "items": [
+    {
+      "id": "wk1_carry",
+      "files": [
+        "gen/wk1_carry_2026-10-06T02-24-02-660Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Wide shot, soft dawn. A grassy coastal hill slopes down to the open sea on the right. An eight-year-old girl with a dark brown ponytail, mid-blue wool coat and long mustard-yellow scarf streaming in the wind carries a folded red diamond kite under her arm as she walks uphill. The kite has one long tail ribbon with small bows. Dewy grass, pale gold light, big open sky. Same girl and same red kite that will appear in every plate of this film. No text, no logos.",
+      "refs": [],
+      "usage": {
+        "input_tokens": 227,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 227
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 385
+      },
+      "cost_usd": 0.0062,
+      "created": "2026-10-06T02:24:02.664Z"
+    },
+    {
+      "id": "wk2_firstflight",
+      "files": [
+        "gen/wk2_firstflight_2026-10-06T02-24-31-601Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Wide shot, bright windy morning on the same grassy coastal hill above the sea. The same eight-year-old girl with dark brown ponytail, mid-blue coat and streaming mustard-yellow scarf runs mid-stride uphill, both arms raised holding the thin white kite string, leading up to the same red diamond kite flying high with its long tail ribbon rippling. Girl, string and kite make one joyful unbroken line. Big windy sky with drifting clouds. Same painterly look and same two characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png"
+      ],
+      "usage": {
+        "input_tokens": 1766,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 230
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1924
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:24:31.604Z"
+    },
+    {
+      "id": "wk3_swifts",
+      "files": [
+        "gen/wk3_swifts_2026-10-06T02-24-52-803Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "High wide shot at the cliff edge above the open sea. The same red diamond kite strains at the very end of its taut white string, leaning hard after a flock of dark swifts pouring past it toward the horizon over the water. The kite's long tail ribbon curls out toward the birds, wanting to follow. Far below on the clifftop, the same small girl in mid-blue coat with mustard-yellow scarf holds the string. Tense, yearning mood, afternoon light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk2.png"
+      ],
+      "usage": {
+        "input_tokens": 1772,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 236
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1930
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:24:52.807Z"
+    },
+    {
+      "id": "wk4_fray",
+      "files": [
+        "gen/wk4_fray_2026-10-06T02-25-13-247Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dramatic shot on the same clifftop with the sea behind it: the same red diamond kite thrashes sideways in a hard wind, its white string sawed back and forth across the sharp corner of an old wooden fence post, the string visibly fraying with loose fibers. The same eight-year-old girl in mid-blue coat and mustard-yellow scarf digs in her heels and laughs, thinking it is a game. Fast, tense energy, low light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk3.png"
+      ],
+      "usage": {
+        "input_tokens": 1768,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 232
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1926
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:25:13.251Z"
+    },
+    {
+      "id": "wk5_snap",
+      "files": [
+        "gen/wk5_snap_2026-10-06T02-25-32-291Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright explosive moment on the same grassy hill: the white string has just snapped at the fence post, and the same red diamond kite shoots upward into a glaring white sky trailing its broken string end. Below, the same eight-year-old girl in mid-blue coat lies flat on her back in the grass, hands empty, a limp string falling beside her, mouth open in surprise. Sudden, shocking, overexposed light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk4.png"
+      ],
+      "usage": {
+        "input_tokens": 1761,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 225
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1919
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:25:32.293Z"
+    },
+    {
+      "id": "wk6_free",
+      "files": [
+        "gen/wk6_free_2026-10-06T02-25-52-386Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "The most beautiful shot of the film: above a golden sunset sea of clouds, the same red diamond kite loops joyfully inside a swirling flock of dark swifts, lens flare, copper light. Its broken string end hangs slack and swaying beneath it. Pure freedom, soaring, earned. The swifts begin to peel away toward the distant horizon. Same painterly look and same red kite as the reference. No girl, no text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 1750,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 214
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1908
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:25:52.390Z"
+    },
+    {
+      "id": "wk7_fall",
+      "files": [
+        "gen/wk7_fall_2026-10-06T02-26-10-103Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "The same red diamond kite flipped upside down and tumbling down through a dark purple dusk sky, spinning, small against a huge empty darkening sky, tail ribbon limp and tangled. No birds anywhere. Locked-off, lonely, the kite shrinking into the distance. Same painterly look and same red kite as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk6.png"
+      ],
+      "usage": {
+        "input_tokens": 1729,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 193
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1887
+      },
+      "cost_usd": 0.0183,
+      "created": "2026-10-06T02:26:10.107Z"
+    },
+    {
+      "id": "wk8_thorntree",
+      "files": [
+        "gen/wk8_thorntree_2026-10-06T02-26-28-819Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Night and rain: the same torn red diamond kite hangs tangled in the black branches of a thorn tree, its long tail ribbon knotted tight around a branch, sodden and small. Rain streaks through darkness, one long still mournful shot, empty sky, no birds, no people. The kite has never looked smaller. Same painterly look and same red kite as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk7.png"
+      ],
+      "usage": {
+        "input_tokens": 1743,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 207
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1901
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:26:28.823Z"
+    },
+    {
+      "id": "wk9_lantern",
+      "files": [
+        "gen/wk9_lantern_2026-10-06T02-26-48-986Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dark rainy night on a hill: the same eight-year-old girl in mid-blue coat with rain-darkened mustard-yellow scarf walks slowly toward the viewer carrying a small glowing lantern, light swinging warm through the rain, determined. Behind her in the dark looms the black thorn tree. A single warm dot of hope in vast darkness. Same painterly look and same girl as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk8.png"
+      ],
+      "usage": {
+        "input_tokens": 1742,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 206
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1900
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:26:48.989Z"
+    },
+    {
+      "id": "wk10_mend",
+      "files": [
+        "gen/wk10_mend_2026-10-06T02-27-10-590Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Cozy kitchen table in warm lamplight at night: close-up of a small girl's hands gently patching the same torn red diamond kite, sewing a square of mustard-yellow knitted scarf fabric over the tear, a lumpy obvious hand-tied knot joining the broken white string beside it. Tender, quiet, safe after the storm. Same painterly look as the reference. No faces, no text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk9.png"
+      ],
+      "usage": {
+        "input_tokens": 1743,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 207
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1901
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:27:10.594Z"
+    },
+    {
+      "id": "wk11_lean",
+      "files": [
+        "gen/wk11_lean_2026-10-06T02-27-31-638Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright morning on the same grassy coastal hill above the sea: the same red diamond kite now carrying a small mustard-yellow scarf patch climbs high on a taut white string with a visible lumpy knot glinting in the sun, tail ribbon streaming straight and steady. Below, the same eight-year-old girl in mid-blue coat, her own yellow scarf visibly shortened, holds the string and looks up. Fresh, hopeful, higher than ever. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk10.png"
+      ],
+      "usage": {
+        "input_tokens": 1763,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 227
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1921
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:27:31.640Z"
+    },
+    {
+      "id": "wk12_wide",
+      "files": [
+        "gen/wk12_wide_2026-10-06T02-27-53-390Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Vast final wide shot: an enormous blue morning sky over the sea and the tiny coastal hill far below. The same small red diamond kite with a tiny yellow patch flies very high and steady at the top of one bright taut line running all the way down to a tiny girl in a blue coat on the hill. A flock of dark swifts circles the kite once and leaves toward the horizon; the kite stays. Peaceful, lasting, the highest flight of the film. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk11.png"
+      ],
+      "usage": {
+        "input_tokens": 1771,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 235
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1929
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:27:53.393Z"
+    },
+    {
+      "id": "wk7b_branches",
+      "files": [
+        "gen/wk7b_branches_2026-10-06T05-16-05-522Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dramatic close plunge at dusk: the same red diamond kite tumbling down out of a dark purple sky straight toward black thorn branches rushing up to meet it, branches reaching like hands, tail ribbon tangled and wild. Vertigo, speed, no birds, no people, the last instant before impact. Same painterly look and same red kite as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk7.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.018,
+      "created": "2026-10-06T05:16:05.522Z"
+    },
+    {
+      "id": "wk6b_parting",
+      "files": [
+        "gen/wk6b_parting_2026-10-06T05-16-05-638Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Above a golden sea of clouds at sunset: a long streaming flock of dark swifts pours away toward the distant horizon, leaving behind the same small red diamond kite hanging alone in glowing copper clouds, its broken string end swaying beneath it. The camera looks up through towering gold cloud banks. Beautiful, wistful, the party ending. Same painterly look and same red kite as the reference. No girl, no text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk6.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.018,
+      "created": "2026-10-06T05:16:05.638Z"
+    },
+    {
+      "id": "wk5_snap_take2",
+      "files": [
+        "gen/wk5_snap_take2_2026-10-06T05-16-05-712Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright explosive moment on the same grassy hill: the white string has just snapped at the fence post, and the same red diamond kite shoots upward into a glaring white sky trailing its broken string end. Below, the same eight-year-old girl in mid-blue coat lies flat on her back in the grass, hands empty, a limp string falling beside her, mouth open in surprise. Sudden, shocking, overexposed light. Same painterly look and same characters as the reference. No text, no logos. (SUPERSEDED: she smiled; retaken.)",
+      "refs": [
+        "web/assets/wren-kite/plates/wk4.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.019,
+      "created": "2026-10-06T05:16:05.712Z"
+    },
+    {
+      "id": "wk9_lantern_take2",
+      "files": [
+        "gen/wk9_lantern_take2_2026-10-06T05-16-06-350Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dark rainy night on a hill: the same eight-year-old girl with dark brown ponytail in mid-blue coat with rain-darkened mustard-yellow scarf walks slowly AWAY from the viewer toward a looming black thorn tree, seen from behind, holding a small glowing lantern up high toward the branches where a tiny torn red diamond kite hangs tangled. Her face is turned toward the tree, longing and determined. Rain streaks through the lantern light. A single warm dot of hope in vast darkness. Same painterly look and same characters as the reference. No text, no logos. (PICK: replaces take 1, she now faces the tree.)",
+      "refs": [
+        "web/assets/wren-kite/plates/wk8.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.019,
+      "created": "2026-10-06T05:16:06.350Z"
+    },
+    {
+      "id": "wk5_snap_take3",
+      "files": [
+        "gen/wk5_snap_take3_2026-10-06T05-17-20-576Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright overexposed moment on the same grassy hill by the sea: the same eight-year-old girl with dark brown ponytail in mid-blue coat lies flat on her back in the grass, knocked down, hands empty, a limp white string falling beside her, while the same red diamond kite shoots upward into a glaring white sky trailing its broken string end. Her face is stricken with shock and grief, eyes wide and wet with beginning tears, mouth open in a horrified gasp. She is crying and frightened. Absolutely NO smile, no laugh, no joy anywhere in her expression. Same painterly look and same characters as the reference. No text, no logos. (PICK: replaces takes 1-2.)",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.019,
+      "created": "2026-10-06T05:17:20.576Z"
+    },
+    {
+      "id": "wk5b_reach",
+      "files": [
+        "gen/wk5b_reach_2026-10-06T05-17-21-634Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Close emotional shot on the same grassy hill: the same eight-year-old girl with dark brown ponytail in mid-blue coat has pushed herself up on one elbow in the grass, tear streaks on her stricken face, her other arm stretched up reaching after the same tiny red diamond kite escaping high into a white glaring sky. She is crying, reaching, devastated. Shallow focus on her face and reaching hand. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png"
+      ],
+      "usage": {
+        "note": "reconstructed after parallel-call manifest race; cost from tool output"
+      },
+      "cost_usd": 0.018,
+      "created": "2026-10-06T05:17:21.634Z"
+    },
+    {
+      "id": "wk8b_light",
+      "files": [
+        "gen/wk8b_light_2026-10-06T05-16-07-342Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Night and rain, seen past the torn red diamond kite tangled in black thorn branches in the foreground: far below on the dark hill, a single small warm lantern-light glows through the rain, carried by the tiny silhouette of a girl in a blue coat climbing slowly upward. Fragile hope, vast darkness, the light soft and far away. Same painterly look as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk8.png"
+      ],
+      "usage": {
+        "input_tokens": 1742,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 206
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1900
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T05:16:07.344Z"
+    },
+    {
+      "id": "wk9b_hands",
+      "files": [
+        "gen/wk9b_hands_2026-10-06T05-17-23-006Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Close-up at night in warm lantern light under black thorn branches: the small cupped hands of the same eight-year-old girl in mid-blue coat reach up gently, about to catch the same torn red diamond kite dropping toward them, its tail ribbon hanging loose. A fresh bloody thorn scratch crosses the back of one hand. Above her unseen face glows with hope in the lantern light she holds. Tender, breath-held, the instant before the catch. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/gen/wk9_lantern_take2_2026-10-06T05-16-06-350Z_0.png"
+      ],
+      "usage": {
+        "input_tokens": 1766,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 230
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1924
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T05:17:23.009Z"
+    },
+    {
+      "id": "wk9c_carryhome",
+      "files": [
+        "gen/wk9c_carryhome_2026-10-06T05-39-23-387Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Rainy night on a dark hill path: the same eight-year-old girl with dark brown ponytail in mid-blue coat hurries homeward clutching the same torn red diamond kite tucked safe and dry under her coat against her chest, one small hand holding it close, her face tired but tender and determined. The thorn tree falls behind her in the dark; warm light from a distant window glows far ahead. Rain streaks through darkness. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/gen/wk9b_hands_2026-10-06T05-17-23-006Z_0.png"
+      ],
+      "usage": {
+        "input_tokens": 1766,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 230
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1924
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T05:39:23.390Z"
+    },
+    {
+      "id": "wk4b_snapclose",
+      "files": [
+        "gen/wk4b_snapclose_2026-10-06T05-58-55-403Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Extreme close-up at the sharp corner of an old wooden fence post: a taut white kite string SNAPPING apart, severed fibers bursting outward in slow motion, the two broken ends curling away from each other, bright white flash bleaching in from the edges of the frame. Violent, sudden, a held breath. Same painterly look as the reference. No people, no text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk4.png"
+      ],
+      "usage": {
+        "input_tokens": 1739,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 203
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1897
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T05:58:55.406Z"
+    },
+    {
+      "id": "wk4_fight_alt1",
+      "files": [
+        "gen/wk4_fight_alt1_2026-10-06T06-00-03-886Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same scene as the second reference (red diamond kite thrashing sideways in hard wind, white string fraying over an old fence post corner, sea behind, tense late-afternoon light): the same eight-year-old girl from the first reference digs in her heels and laughs — and she must match that girl exactly: round calm face, dark brown hair in a short ponytail, mid-blue knee-length wool coat, long mustard-yellow scarf streaming, brown boots. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk4.png"
+      ],
+      "usage": {
+        "input_tokens": 3297,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 225
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3455
+      },
+      "cost_usd": 0.0308,
+      "created": "2026-10-06T06:00:03.888Z"
+    },
+    {
+      "id": "wk4_fight_alt2",
+      "files": [
+        "gen/wk4_fight_alt2_2026-10-06T06-00-18-287Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Slightly wider version of the second reference: the old fence post with the fraying white string in the right foreground, the same red diamond kite pulling hard left, and the same eight-year-old girl from the first reference — round face, dark brown ponytail, mid-blue coat, streaming mustard-yellow scarf, brown boots — leaning back against the pull, laughing. Warm afternoon light, sea behind. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk4.png"
+      ],
+      "usage": {
+        "input_tokens": 3287,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 215
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3445
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:00:18.290Z"
+    },
+    {
+      "id": "wk5_snap_alt1",
+      "files": [
+        "gen/wk5_snap_alt1_2026-10-06T06-01-00-288Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same moment as the second reference (kite just snapped free, shooting into a bright glaring sky, girl flat on her back in the grass, limp string beside her) but the girl MUST match the first reference exactly: eight years old, round calm face, dark brown hair in a short ponytail, mid-blue knee-length wool coat, mustard-yellow scarf. Her face is stricken with shock, eyes wide and wet, mouth open in a gasp — crying and frightened, absolutely no smile. Warm light on her face. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 3310,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 238
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3468
+      },
+      "cost_usd": 0.0308,
+      "created": "2026-10-06T06:01:00.291Z"
+    },
+    {
+      "id": "wk5_snap_alt2",
+      "files": [
+        "gen/wk5_snap_alt2_2026-10-06T06-01-13-101Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same moment as the second reference, closer on the girl: the same eight-year-old girl from the first reference — round face, dark brown ponytail, mid-blue coat, mustard-yellow scarf — flat on her back in golden grass, one hand fallen open beside the limp string, staring up in shock and grief at the tiny red kite escaping into white glare, tears on her cheeks, mouth open crying out. No smile. Warm low light. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 3295,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 223
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3453
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:01:13.103Z"
+    },
+    {
+      "id": "wk5b_reach_take2",
+      "files": [
+        "gen/wk5b_reach_take2_2026-10-06T06-01-47-355Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "The same eight-year-old girl from the first reference — round face, dark brown ponytail, mid-blue coat, mustard-yellow scarf — lying ON HER BACK in golden grass, propped up on one elbow, her free arm stretched high reaching after the tiny red diamond kite escaping into a bright glaring sky. She is crying, tear streaks on a devastated face, mouth open. She lies on her back, NOT on her stomach. Warm light, shallow focus on her face and reaching hand. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 3305,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 233
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3463
+      },
+      "cost_usd": 0.0308,
+      "created": "2026-10-06T06:01:47.358Z"
+    },
+    {
+      "id": "wk5b_reach_take3",
+      "files": [
+        "gen/wk5b_reach_take3_2026-10-06T06-02-00-270Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Low camera, close on her face: the same eight-year-old girl from the first reference — round face, dark brown ponytail, mid-blue coat, mustard-yellow scarf — on HER BACK in the grass, head turned up, tears spilling, one arm reaching up out of frame toward a tiny red kite in white glare. Devastated, crying out. She is on her back, NOT her stomach. Golden grass, warm light. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 3294,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 222
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3452
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:02:00.273Z"
+    },
+    {
+      "id": "wk9c_carryhome_take2",
+      "files": [
+        "gen/wk9c_carryhome_take2_2026-10-06T06-02-29-654Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same rainy-night walk home as the second reference (girl hurrying downhill past the thorn tree toward a warm lit window, torn red kite tucked under her coat) but she MUST wear her long mustard-yellow knitted scarf streaming behind her — the scarf is still whole, the mend has not happened yet — exactly like the girl in the first reference: dark brown ponytail, mid-blue coat. Rain, darkness, one warm window. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/gen/wk9c_carryhome_2026-10-06T05-39-23-387Z_0.png"
+      ],
+      "usage": {
+        "input_tokens": 3292,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 220
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3450
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:02:29.657Z"
+    },
+    {
+      "id": "wk11_lean_take2",
+      "files": [
+        "gen/wk11_lean_take2_2026-10-06T06-02-44-648Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same bright morning climb as the second reference (patched red kite high on a taut string with a glinting knot, tail streaming straight, girl below holding the string, sea and cliffs) but the girl MUST match the first reference exactly: dark brown ponytail, mid-blue knee-length wool coat over dark tights and brown boots, SHORTENED mustard-yellow scarf — and NO skirt, no dress, no extra garments. Fresh hopeful morning light. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk11.png"
+      ],
+      "usage": {
+        "input_tokens": 3295,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 223
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3453
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:02:44.651Z"
+    },
+    {
+      "id": "wk5_snap_age1",
+      "files": [
+        "gen/wk5_snap_age1_2026-10-06T06-07-18-514Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same moment as the second reference (kite just snapped free into bright glare, girl flat on her back in the grass, limp string beside her, shocked and tearful, NO smile) but she MUST read as TEN years old: lanky ten-year-old proportions, longer face, no toddler chubbiness — exactly the same girl as the first reference, only clearly ten. Round face grown longer, dark brown ponytail, mid-blue coat, mustard-yellow scarf. Warm light on her face. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5.png"
+      ],
+      "usage": {
+        "input_tokens": 3305,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 233
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3463
+      },
+      "cost_usd": 0.0308,
+      "created": "2026-10-06T06:07:18.517Z"
+    },
+    {
+      "id": "wk5b_reach_age1",
+      "files": [
+        "gen/wk5b_reach_age1_2026-10-06T06-07-34-016Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Same pose as the second reference (girl ON HER BACK in the grass, propped on one elbow, free arm reaching high after the tiny kite, crying, tear streaks) but she MUST read as TEN years old: lanky ten-year-old proportions, longer face, no toddler chubbiness — exactly the same girl as the first reference, only clearly ten. Dark brown ponytail, mid-blue coat, mustard-yellow scarf. Warm light. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5b.png"
+      ],
+      "usage": {
+        "input_tokens": 3296,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 224
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3454
+      },
+      "cost_usd": 0.0308,
+      "created": "2026-10-06T06:07:34.021Z"
+    },
+    {
+      "id": "wk5b_reach_age2",
+      "files": [
+        "gen/wk5b_reach_age2_2026-10-06T06-07-45-708Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Close on her face, low camera: the same girl as the first reference, clearly TEN years old (lanky, long face, no baby fat), on HER BACK in golden grass, head turned up, tears spilling, one arm reaching up out of frame toward a tiny red kite in white glare, crying out. Dark brown ponytail, mid-blue coat, mustard scarf. Warm light. Same painterly look. No text, no logos.",
+      "refs": [
+        "web/assets/wren-kite/plates/wk1.png",
+        "web/assets/wren-kite/plates/wk5b.png"
+      ],
+      "usage": {
+        "input_tokens": 3285,
+        "input_tokens_details": {
+          "image_tokens": 3072,
+          "text_tokens": 213
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 3443
+      },
+      "cost_usd": 0.0307,
+      "created": "2026-10-06T06:07:45.711Z"
+    }
+  ]
+}

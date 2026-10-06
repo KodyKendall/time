@@ -15,3 +15,6 @@ audio/assets/
 
 # Local-only notes
 docs/AUTHORING.md
+
+# Local secrets (API keys etc.)
+.env

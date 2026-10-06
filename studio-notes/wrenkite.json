@@ -1,0 +1,92 @@
+[
+  {
+    "id": "muw6zdzk",
+    "t": 0.896,
+    "shot": "1 First memory",
+    "cut": "",
+    "text": "the piano notes like plays 3 times in a row..?",
+    "status": "resolved",
+    "created": "2026-10-06T04:42:06.608Z",
+    "resolution": "Fixed in the from-scratch lullaby rewrite (audio/scores/wrenkite_lullaby.mjs): the old tug motif stated 3x is gone; the opening is a single low D plus one lullaby phrase. Verified in wrenkite_lullaby_full.wav."
+  },
+  {
+    "id": "muw94uq7",
+    "t": 142.301,
+    "shot": "4 Fighting",
+    "cut": "",
+    "text": "it should hold this picture jut a bit longer, until that \"ping\" sound, also it should probably have another intermediary image to see the string break before showing her crying on the ground",
+    "status": "resolved",
+    "created": "2026-10-06T05:42:20.815Z",
+    "resolution": "Done: new wk4b string-break close-up now holds 142.4-148.2 through the spoken Ping (with the snap flash over the cut), then shocked Wren at 148.2, reaching at 157. The fight no longer releases early."
+  },
+  {
+    "id": "muw9nct5",
+    "t": 102.401,
+    "shot": "4 Fighting",
+    "cut": "",
+    "text": "i want a couple image alternatives in the story book - she doesn't look like shje does in the first 3 images",
+    "status": "resolved",
+    "created": "2026-10-06T05:56:44.057Z",
+    "resolution": "Done: wk4 replaced with alt2 (dual-ref locked to the wk1 girl); original + alt1 kept as storyboard alternates. Character bible now locks ten years old."
+  },
+  {
+    "id": "muw9nr6m",
+    "t": 149.318,
+    "shot": "5 Snap \u00b7 flung",
+    "cut": "",
+    "text": "the lighting doesn't match the prior 4 image - and she doesn't match her preior look in the prior images",
+    "status": "resolved",
+    "created": "2026-10-06T05:57:02.686Z",
+    "resolution": "Done: wk5 replaced with the age-locked take (ten, warm light, shocked, never smiling); prior takes kept as alternates."
+  },
+  {
+    "id": "muw9okrj",
+    "t": 162.754,
+    "shot": "5 Snap \u00b7 reaching",
+    "cut": "",
+    "text": "the lighting doesn't match the first 3 images - and she doesn't match her preior look in the prior images also she's now on her stomach instead of on her back still propped up on her elbow on her back, also doesn't match the character look from other images - generate a couple candidates",
+    "status": "resolved",
+    "created": "2026-10-06T05:57:41.023Z",
+    "resolution": "Done: wk5b re-posed ON HER BACK, propped on one elbow, age-locked at ten; take2 + face close-up kept as alternates."
+  },
+  {
+    "id": "muw9oy7s",
+    "t": 146.181,
+    "shot": "5 Snap \u00b7 flung",
+    "cut": "",
+    "text": "when it snaps there should be an intermediary image of the string breaking off the fence post (image should look close to 4)",
+    "status": "resolved",
+    "created": "2026-10-06T05:57:58.456Z",
+    "resolution": "Done: wk4b string-break close-up (chained off wk4 for the same look) plays 142.4-148.2 between the fight and her crying."
+  },
+  {
+    "id": "muw9pafk",
+    "t": 323.457,
+    "shot": "10 Carry home",
+    "cut": "",
+    "text": "she's missing her scarf on this image",
+    "status": "resolved",
+    "created": "2026-10-06T05:58:14.288Z",
+    "resolution": "Done: wk9c retaken with her whole mustard scarf streaming (pre-mend); scarf-less take kept as an alternate."
+  },
+  {
+    "id": "muw9ply0",
+    "t": 354.055,
+    "shot": "11 Leaning in",
+    "cut": "",
+    "text": "she has an extra skirt/doesn't look like her original style",
+    "status": "resolved",
+    "created": "2026-10-06T05:58:29.208Z",
+    "resolution": "Done: wk11 retaken \u2014 coat, tights, boots, shortened scarf, no skirt."
+  },
+  {
+    "id": "muw9psup",
+    "t": 391.773,
+    "shot": "12 Held",
+    "cut": "",
+    "text": "this is too zoomed in, should be zoomed out so youc an see the whole image",
+    "status": "resolved",
+    "created": "2026-10-06T05:58:38.161Z",
+    "resolution": "Done: finale camera now sits at 1.0 scale centered, so the whole plate (girl, line, kite, swifts) is visible; verified in stills."
+  }
+]

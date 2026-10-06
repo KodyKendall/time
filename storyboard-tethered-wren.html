@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tethered (Wren &amp; the Kite) — storyboard</title>
+<style>
+  :root{--ink:#1c1a16;--muted:#5c564c;--line:#e2ddd2;--bg:#fff;--card:#fff;
+    --accent:#c8372d;--pine:#1f4d3a;--panel:#f3f4f1;--gold:#e8a33d;--moralbg:#fff8e8;--vo:#f4f1ea}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+  header,main,footer,.moral,.extras{max-width:1060px;margin:0 auto}
+  header{border-bottom:3px solid var(--ink);padding:32px 16px 24px}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:42px;margin:0 0 6px;letter-spacing:-.5px}
+  header h1 span{color:var(--accent);font-size:.55em;font-weight:400}
+  .sub{color:var(--muted);font-size:15.5px;max-width:72ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta div{border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:999px;background:var(--card)}
+  .moral{margin-top:20px;padding:16px 20px;border-left:5px solid var(--gold);background:var(--moralbg);font-size:15.5px}
+  .moral q{font-family:Georgia,serif;font-size:21px;display:block;margin:4px 0 8px;quotes:none}
+  .extras{padding:24px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--card)}
+  .card h3{font-family:Georgia,serif;margin:0 0 8px;font-size:18px}
+  .card p,.card li{font-size:14px;margin:4px 0}
+  .card ul{padding-left:18px;margin:6px 0}
+  .arc{grid-column:1/-1}
+  .arc svg{width:100%;height:auto;display:block}
+  main{padding:8px 16px 24px}
+  .act{font-family:Georgia,serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+    margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .beat{display:grid;grid-template-columns:440px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;align-self:start}
+  .frame img{display:block;width:100%;height:auto;aspect-ratio:3/2}
+  .tcode{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+    font-size:13px;border-top:1px solid var(--line);background:var(--card)}
+  .tcode b{background:var(--ink);color:var(--bg);padding:2px 8px;border-radius:6px;font-size:12px}
+  .body h2{font-family:Georgia,serif;font-size:23px;margin:0 0 2px}
+  .body h2 small{color:var(--accent);font-size:13px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+  .vo{background:var(--vo);border-left:3px solid var(--gold);padding:10px 14px;margin:10px 0;
+    font-family:Georgia,serif;font-size:15.5px}
+  .vo p{margin:8px 0}
+  .rows{display:grid;grid-template-columns:90px 1fr;font-size:13.5px;margin-top:10px}
+  .rows dt{color:var(--pine);font-weight:700;padding:3px 0}
+  .rows dd{margin:0;padding:3px 0 3px 8px;opacity:.88}
+  .alts{display:flex;gap:8px;margin-top:8px;align-items:flex-start}
+  .alts img{width:150px;border:1px solid var(--line);border-radius:6px}
+  .alts span{font-size:12px;color:var(--muted);max-width:220px}
+  footer{padding:20px 16px 60px;color:var(--muted);font-size:13px}
+  @media(max-width:760px){.beat,.extras{grid-template-columns:1fr}header h1{font-size:30px}}
+  @media print{.beat{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tethered <span>storyboard · Wren &amp; the Kite, told by the Kite</span></h1>
+  <p class="sub"><b>Logline:</b> A red kite envies the wild swifts and fights the string that holds it.
+  When the string snaps it gets its freedom — and learns why kites need a string — while Wren, the
+  ten-year-old who never lets go first, waits, searches, and mends. All narration is the Kite speaking,
+  in first person. The Kite is the main character and the dynamic one; Wren is static.</p>
+  <div class="meta">
+    <div><b>Runtime</b> ~7:30 · 18 plates + credits</div>
+    <div><b>Format</b> 16:9, one narrator (the Kite), painted style</div>
+    <div><b>Cast</b> Kite (dynamic, voice), Wren age 10 (static holder), swifts</div>
+    <div><b>Image spend</b> $0.73 of $3 (gpt-image-2, low, chained refs)</div>
+    <div><b>Narration spend</b> ~$2.46 ceiling of $5 (12 beats; beat 8 re-voiced with sobs)</div>
+    <div><b>Music</b> original score “Wren’s Lullaby and the Kite’s Cry” (piano lullaby + flute, $0 local synth), composed to the measured VO; score ducks under her voice in the mix</div>
+    <div><b>VO pace</b> ~140 wpm · every word of the story is on this page</div>
+  </div>
+  <div class="moral">
+    <b>Moral / point</b>
+    <q>“The string isn’t what holds you down. It’s what holds you up.”</q>
+    Same moral as <i>Tether</i>, retold from inside the kite: the pull we resent is the other half of our shape.
+    Wren does not change — she holds, waits, searches, mends, holds again. The Kite does.
+  </div>
+</header>
+
+<section class="extras">
+  <div class="card arc">
+    <h3>Story arc (Kite’s altitude = emotion)</h3>
+    <svg viewBox="0 0 1000 210" role="img" aria-label="Emotional arc across 12 beats">
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="40" y1="180" x2="980" y2="180"/>
+        <line x1="40" y1="20" x2="40" y2="180"/>
+      </g>
+      <path d="M40 140 C100 130 150 120 200 105 S300 60 350 70 S420 40 470 35 S540 150 590 165 S660 175 700 150 S760 90 820 60 S920 30 980 30"
+            fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+      <g font-size="14" fill="var(--ink)" font-family="Georgia,serif">
+        <text x="330" y="90">snap</text>
+        <text x="440" y="25">false freedom</text>
+        <text x="600" y="160">all is lost</text>
+        <text x="830" y="50">true flight</text>
+      </g>
+      <g font-size="12" fill="var(--muted)" letter-spacing="1.5">
+        <text x="120" y="200">ACT I · THE PULL (1–4)</text>
+        <text x="470" y="200">ACT II · LOOSE (5–8)</text>
+        <text x="790" y="200">ACT III · TAUT (9–12)</text>
+      </g>
+    </svg>
+  </div>
+  <div class="card">
+    <h3>Characters (locked across all 12 plates)</h3>
+    <ul>
+      <li><b>Kite</b> (main, dynamic, narrator): red diamond, no face, long tail ribbon with small bows.
+        The ribbon is the face: curls with want, whips angry, hangs limp when hopeless, streams straight at peace.
+        Carries a yellow scarf patch + lumpy knot from beat 10 on.</li>
+      <li><b>Wren</b> (static holder, age 10): dark brown ponytail, mid-blue coat, mustard-yellow scarf —
+        shortened after she cuts a square from it to patch the kite. Never lets go first.</li>
+      <li><b>Swifts</b>: wild and untethered — what the Kite wants to be.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Voice &amp; holds — how the 5–10s rule works</h3>
+    <p>Narrator: one voice, the Kite, first person, ~140 words/minute. Each plate below carries its exact
+    passage of the story (<b>all words are on this page</b>). A plate stays on screen for its passage
+    (~24–56s), but <b>no single hold lasts longer than 10 seconds</b>: each plate is covered in slow
+    7–9s push-in / reframe chapters with very, very slight motion, per the animation direction —
+    the paintings are the star, stillness does the work.</p>
+  </div>
+  <div class="card">
+    <h3>Provenance &amp; cost</h3>
+    <p>17 plates: <code>gpt-image-2</code>, low, 1536×1024, one per call, each chained
+    <code>--ref</code> to a previous plate for consistency. Total <b>$0.732 of $3</b> in
+    <code>web/assets/wren-kite/manifest.json</code> (33 calls; manifest reconciled after parallel
+    calls raced on it — run gen one at a time). Picks: <code>web/assets/wren-kite/plates/wk1–wk12.png</code>
+    + bridges <code>wk4b, wk5b, wk6b, wk7b, wk8b, wk9b, wk9c</code> (wk4→alt2, wk5→age-locked take,
+    wk5b→age-locked take, wk9c→scarf take, wk11→no-skirt take; wk5 retaken 4×, wk5b 4× for a shocked,
+    ten-year-old Wren who never smiles; wk9 retaken so she faces the tree).
+    Full prose: <code>wren-tethered-kite.md</code>.
+    Narration ledger: <code>audio/build/tts/manifest.json</code> — 12 beats kept, 5,506 chars
+    (<code>wk_beat01</code>: 324, <code>wk_beat02</code>: 414, <code>wk_beat03</code>: 519,
+    <code>wk_beat04</code>: 719, <code>wk_beat05</code>: 355, <code>wk_beat06</code>: 355,
+    <code>wk_beat07</code>: 706, <code>wk_beat08</code>: 426 (re-voiced: desolate whisper, sobs, fragile hope),
+    <code>wk_beat09</code>: 445,
+    <code>wk_beat10</code>: 455, <code>wk_beat11</code>: 589, <code>wk_beat12</code>: 199;
+    Lauren / eleven_v4, seed 7, chained with --prev for continuity; ~$2.46 ceiling of $5).</p>
+  </div>
+</section>
+
+<main>
+  <div class="act">Act I · The Pull</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk1.png" alt="Wren carrying the folded red kite up the hill at dawn" loading="lazy">
+      <div class="tcode"><b>BEAT 1</b><span>0:00 – 0:24 · ~55 words · 3× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>1. First memory <small>the bond</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat01.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>I woke in Wren’s hands.</p>
+      <p>That is my first memory: grass smell, the warmth of her fingers around my sticks, careful the way she holds everything she loves. She carried me under her arm up the hill to the sea wind, her yellow scarf streaming out behind her like a second tail.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Wide dawn hill → slow push toward girl → hold on folded kite.</dd><dt>Sound</dt><dd>Wind, grass, soft morning. Narrator (the Kite) intimate, close-mic.</dd><dt>Ends on</dt><dd>The folded red kite, ribbon trailing, safe under her arm.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk2.png" alt="Wren running with the string, kite high above" loading="lazy">
+      <div class="tcode"><b>BEAT 2</b><span>0:24 – 0:58 · ~80 words · 4× 8.5s holds</span></div>
+    </div>
+    <div class="body"><h2>2. She ran, I caught <small>the bond</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat02.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>She ran. I caught. That is how it works.</p>
+      <p>The wind got under me and I jumped, and the string sang. Up through my spine I felt every step she took — her boots drumming, her sudden stop, her laugh. She let out more string and more, and I climbed, and her scarf flew straight out, and for a while we were one line: girl, string, me.</p>
+      <p>For a while that was enough.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Follow the string girl→kite → kite soaring → wide one-line shot.</dd><dt>Sound</dt><dd>The Tug motif whole: low + high together. Joyful.</dd><dt>Ends on</dt><dd>One unbroken line: girl, string, kite.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk3.png" alt="Kite at the end of its string as swifts pour past" loading="lazy">
+      <div class="tcode"><b>BEAT 3</b><span>0:58 – 1:39 · ~95 words · 5× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>3. The end of the string <small>the want</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat03.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Then I hit the end of the string.</p>
+      <p>It stopped me with a jerk that went through my sticks. And just past me, where I could not go, the swifts came pouring over the cliff.</p>
+      <p>They did not flap the way gulls flap. They cut. They poured and swirled and dove out over the open sea, screaming thin screams, and never once looked down at a string. My tail curled out toward them before I told it to. It wanted to follow.</p>
+      <p>I leaned. The string said no.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Kite POV as swifts sweep past → tail curling → tiny girl below.</dd><dt>Sound</dt><dd>Swift-screams, woodwind swirl; motif cut off by the string going taut.</dd><dt>Ends on</dt><dd>Tail ribbon curled toward the horizon.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk4.png" alt="Kite thrashing, string fraying over the fence post" loading="lazy">
+      <div class="tcode"><b>BEAT 4</b><span>1:39 – 2:35 · ~130 words · 7× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>4. Fighting the string <small>rising tension</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat04.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Anyone who has never been tied will tell you the tie is simple. It is not. It hums. It pulls at the center of you and will not let you forget it, even when the wind is good.</p>
+      <p>So I fought it.</p>
+      <p>I dove left. I swung right. I yanked. Below me Wren thought it was a game. She laughed and dug in her heels, skidding a little in the grass, delighted. That made me yank harder. I hated her a little then, for laughing.</p>
+      <p>The string sawed back and forth over the old fence post on the cliff. I felt each pass as a shiver. I did not know — I know now — that with every pass one more fiber let go. Wren did not see it either. She was watching me, not the post.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Kite thrashing wide → post extreme close-up, fraying → faster cutting.</dd><dt>Sound</dt><dd>Motif faster, off-balance; each scrape a rasp.</dd><dt>Ends on</dt><dd>One last strand, still taut.</dd></dl>
+      <p class="alts"><span>Alternates, not in film:</span><img src="web/assets/wren-kite/gen/wk4_fray_2026-10-06T02-25-13-247Z_0.png" alt="wk4 original" loading="lazy"><img src="web/assets/wren-kite/gen/wk4_fight_alt1_2026-10-06T06-00-03-886Z_0.png" alt="wk4 alt1" loading="lazy"></p>
+    </div>
+  </section>
+
+  <div class="act">Act II · Loose</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk4b.png" alt="String bursting apart over the fence post" loading="lazy">
+      <div class="tcode"><b>BEAT 5a</b><span>2:22 – 2:28 · the string breaks, hold through Ping</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk5.png" alt="Shocked ten-year-old Wren flat on her back, tearful" loading="lazy">
+      <div class="tcode"><b>BEAT 5b</b><span>2:28 – 2:37 · shocked, flat</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk5b.png" alt="Wren on her back, crying and reaching after the kite" loading="lazy">
+      <div class="tcode"><b>BEAT 5c</b><span>2:37 – 2:51 · on her back, reaching, crying</span></div>
+    </div>
+    <div class="body"><h2>5. Snap <small>turning point</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat05.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>A big gust came off the sea.</p>
+      <p><i>Ping.</i></p>
+      <p>The pull vanished. I shot up like a cork out of water. For one second I saw her flat on her back in the grass, hands empty, mouth open, the limp end of the string falling beside her. She pushed up on one elbow and reached after me.</p>
+      <p>I did not stay to watch. I was free.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>White flash → string bursts apart at the post (hold through the spoken Ping) → shocked Wren flat, kite flung up → cut to her on her back, crying, reaching after it.</dd><dt>Sound</dt><dd><i>Ping</i>, two beats of silence, then a huge upbeat swell.</dd><dt>Ends on</dt><dd>Her reaching hand; the kite a high speck.</dd></dl>
+      <p class="alts"><span>Alternates, not in film:</span><img src="web/assets/wren-kite/gen/wk5_snap_alt1_2026-10-06T06-01-00-288Z_0.png" alt="wk5 alt1" loading="lazy"><img src="web/assets/wren-kite/gen/wk5b_reach_take2_2026-10-06T06-01-47-355Z_0.png" alt="wk5b take2" loading="lazy"><img src="web/assets/wren-kite/gen/wk5b_reach_age2_2026-10-06T06-07-45-708Z_0.png" alt="wk5b age2 close-up" loading="lazy"></p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk6.png" alt="Free above golden clouds with the swift flock" loading="lazy">
+      <div class="tcode"><b>BEAT 6a</b><span>2:51 – 3:09 · soaring with the flock</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk6b.png" alt="Swifts streaming away, kite left alone in gold clouds" loading="lazy">
+      <div class="tcode"><b>BEAT 6b</b><span>3:09 – 3:24 · the parting, pan up into clouds</span></div>
+    </div>
+    <div class="body"><h2>6. Free <small>false victory</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat06.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Oh, the climb. I broke through the cloud into gold. The sea below went copper. The air was smooth and huge and mine. The swifts took me in. They ringed me and screamed and I looped with them, rolled with them, dove with them. My broken end trailed under me, swaying, useless and light. I thought: this is what I am. Not a toy. This.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Soaring inside the flock → swifts stream away, kite left alone → camera pans up through the clouds into the fall.</dd><dt>Sound</dt><dd>High note alone on flute, soaring, never answered. Thrilling, then hollow.</dd><dt>Ends on</dt><dd>Alone above the clouds, broken end swaying.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk7.png" alt="Kite tumbling down through purple dusk" loading="lazy">
+      <div class="tcode"><b>BEAT 7a</b><span>3:24 – 4:00 · tumbling, spinning down</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk7b.png" alt="Kite plunging toward the thorn branches" loading="lazy">
+      <div class="tcode"><b>BEAT 7b</b><span>4:00 – 4:14 · branches rushing up</span></div>
+    </div>
+    <div class="body"><h2>7. Nothing to push against <small>the fall</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat07.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Then they peeled away toward the horizon.</p>
+      <p>They went faster than I can go. I tried to follow and the wind shifted, just a small shift, the kind Wren’s hands used to answer without thinking.</p>
+      <p>A tethered kite leans against its string and climbs. I had nothing to lean against.</p>
+      <p>I flipped over.</p>
+      <p>I righted myself. I flipped again. I spun down through the cloud into purple and then into dark, spinning faster, the air slapping me first on one face then the other. There was no one holding the other end of me. I understood, falling, that the string had never been a leash. It had been the other half of my shape.</p>
+      <p>The thorn tree caught me.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Stall and wobble → spinning fall, swaying → thorn branches rushing up to meet it.</dd><dt>Sound</dt><dd>Flute tries its high note, keeps getting cut off; wind louder.</dd><dt>Ends on</dt><dd>A rough <i>crunch</i> in branches.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk8.png" alt="Torn kite tangled in the thorn tree at night in rain" loading="lazy">
+      <div class="tcode"><b>BEAT 8a</b><span>4:14 – 4:42 · tangled, rain, sobbing</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk8b.png" alt="Past the branches: the lantern climbing the hill" loading="lazy">
+      <div class="tcode"><b>BEAT 8b</b><span>4:42 – 4:46 · the warm dot of light</span></div>
+    </div>
+    <div class="body"><h2>8. The thorn tree <small>all is lost</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat08.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Rain came in the night. It was the only thing that moved. I hung torn, my tail knotted in the branches, my red face dark with wet. The sky was empty. The swifts were gone. Wren was gone. For the first time I felt how small I was — a wet rag on thorns, nothing to push against, nothing to pull.</p>
+      <p>Then, on the hill below, a warm dot of light.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Still rain on the wreck — her voice breaks into sobs → cut past the branches: the lantern climbing.</dd><dt>Sound</dt><dd>Near-silence (rain, her sobs), then low D2 + piano under the light.</dd><dt>Ends on</dt><dd>Warm light on the hill below.</dd></dl>
+    </div>
+  </section>
+
+  <div class="act">Act III · Taut</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk9.png" alt="Wren crossing to the thorn tree, lantern raised" loading="lazy">
+      <div class="tcode"><b>BEAT 9a</b><span>4:46 – 5:06 · lantern walk to the tree</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk9b.png" alt="Her scratched hands about to catch the falling kite" loading="lazy">
+      <div class="tcode"><b>BEAT 9b</b><span>5:06 – 5:20 · the catch</span></div>
+    </div>
+    <div class="body"><h2>9. The search <small>reconnection</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat09.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>She came slowly. Even from far off I knew her walk in the swinging light — quick, stopping, the yellow scarf dark with rain. She carried a lantern that swung with each step. It took her a long time. She did not run. When she reached the tree she stood right under me and stretched up on her toes, fingers reaching.</p>
+      <p>She missed. She tried again. A thorn scratched the back of her hand and she gasped and kept reaching.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>She crosses to the tree, lantern high → close on her scratched hands; the kite drops toward them.</dd><dt>Sound</dt><dd>Solo piano picks up the low note, quietly, waiting.</dd><dt>Ends on</dt><dd>Cupped hands; the kite an instant from landing.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk9c.png" alt="Wren hurrying home with the kite under her coat" loading="lazy">
+      <div class="tcode"><b>BEAT 10a</b><span>5:20 – 5:31 · caught, carried home</span></div>
+    </div>
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk10.png" alt="Wren's hands patching the kite at the kitchen table" loading="lazy">
+      <div class="tcode"><b>BEAT 10b</b><span>5:31 – 5:52 · the mend</span></div>
+    </div>
+    <div class="body"><h2>10. The mend <small>reconnection</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat10.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>I dropped into her hands.</p>
+      <p>She carried me home under her coat to keep me dry. At the kitchen table, in lamplight, she worked. She cleaned the tear. She cut a square from her own yellow scarf — the streaming one, the beautiful one — and sewed it over my wound, and she tied my broken string back together. The knot is lumpy and obvious. She did not hide it. She tugged it once to test it, and it held.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Caught at last → carried home under her coat through the rain → close-ups of hands: scarf square, needle, knot pulled tight.</dd><dt>Sound</dt><dd>Piano low note holds; the high note still waited for.</dd><dt>Ends on</dt><dd>The lumpy knot, glinting.</dd></dl>
+      <p class="alts"><span>Alternate, not in film (scarf missing):</span><img src="web/assets/wren-kite/gen/wk9c_carryhome_2026-10-06T05-39-23-387Z_0.png" alt="wk9c take1, no scarf" loading="lazy"></p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk11.png" alt="Patched kite climbing high, Wren holding the string" loading="lazy">
+      <div class="tcode"><b>BEAT 11</b><span>5:52 – 6:28 · climb, then the wide arrives early</span></div>
+    </div>
+    <div class="body"><h2>11. Leaning in <small>climax</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat11.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Morning on the hill. The same wind.</p>
+      <p>She ran. I caught. The wind hit me and the old anger rose up — pull, fight, prove — and then I felt the string go taut, felt her weight at the end of it through the knot, steady, waiting, never having let go first.</p>
+      <p>So I leaned into it instead of fighting it.</p>
+      <p>The pull sent me up. Higher than the fence post. Higher than the cloud gold. The swifts came back and circled me, screaming, and left again for the open sea. I watched them go. My tail streamed straight and steady behind me.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Track along the taut string past the glinting knot → kite climbing past old heights → dissolve early to the final wide under her last lines.</dd><dt>Sound</dt><dd>The Tug complete at last: low + high together, full strings.</dd><dt>Ends on</dt><dd>Tail streaming straight and steady; her scarf visibly shorter.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/wren-kite/plates/wk12.png" alt="Final wide: tiny girl, high kite, swifts leaving" loading="lazy">
+      <div class="tcode"><b>BEAT 12</b><span>6:28 – 6:54 · the wide, the moral, fade to black</span></div>
+    </div>
+    <div class="body"><h2>12. Held <small>resolution</small></h2>
+      <audio controls preload="metadata" src="audio/build/tts/wk_beat12.mp3" style="width:100%;margin:4px 0 8px"></audio>
+      <div class="vo"><p>Below, one small girl stood with the string in her hands, scarf short now, holding.</p>
+      <p>The string isn’t what holds me down. It’s what holds me up.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Very wide: one bright line, girl to kite → cut to black. Title: <b>TETHERED</b>.</dd><dt>Sound</dt><dd>Strings resolve; swift woodwinds weave once around the motif, then silence.</dd>      <dt>Final shot</dt><dd>One bright line with a red speck at the top.</dd></dl>
+    </div>
+  </section>
+
+  <div class="act">Credits · the music plays out</div>
+
+  <section class="beat">
+    <div class="frame">
+      <div class="tcode"><b>TITLE</b><span>6:54 – 7:03 · TETHERED fades in on black</span></div>
+    </div>
+    <div class="body"><h2>13. Title <small>credits</small></h2>
+      <div class="vo"><p>No narration. The lullaby plays whole on piano under the title.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Black. The title glows in, holds, carries over.</dd><dt>Sound</dt><dd>Score coda: lullaby, piano alone.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <div class="tcode"><b>MORAL</b><span>7:03 – 7:13 · the point, on black</span></div>
+    </div>
+    <div class="body"><h2>14. Moral <small>credits</small></h2>
+      <div class="vo"><p>“The string isn’t what holds me down. It’s what holds me up.”</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Black. Her two lines, unhurried.</dd><dt>Sound</dt><dd>Piano + flute in union, strings warming.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <div class="tcode"><b>CREDITS</b><span>7:13 – 7:30 · out</span></div>
+    </div>
+    <div class="body"><h2>15. Credits <small>credits</small></h2>
+      <div class="vo"><p>a film by Kody Kendall and Ashley Adolphson · Told by the Kite · paintings, music, voice.</p>
+      <p>Storytelling principles · Stephen King · inspiration · Hayao Miyazaki · made with the time repo · github.com/KodyKendall/time.</p>
+      <p>Thank you for watching.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Black. Two cards — film-by, then thanks — then fade out.</dd><dt>Sound</dt><dd>Final D-major bloom to 448, dissolve to silence.</dd></dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>Continuity logic:</b> same girl + same kite in all 12 plates (chained refs wk1→wk12); same
+  coastal hill and sea; fence post introduced beat 4, pays off beat 5; broken string end visible
+  beats 5–6, gone 7–8, knotted beats 10–12; yellow scarf streams beats 1–4, rain-darkened 9,
+  cut-square patch + shortened scarf beats 10–12; swifts present 3, 6, 11–12, pointedly absent 7–10.</p>
+  <p><b>Before animating, decide:</b> (1) narrator casting — child or adult reading as the Kite?
+  (2) beat 4 runs ~56s on one plate — split into two plates (fight / fray close-up)?
+  (3) beat 8 could extend (sad desolate hold, still within the 10s-chapter rule).</p>
+  <p><b>Studio assembly (live):</b> <code>node tools/studio.mjs --film wrenkite --audio audio/build/wrenkite_lullaby_full.wav</code>
+   — film scene <code>web/src/wrenkite.js</code> + <code>web/src/scenes/wrenkite/index.js</code> (12 plates,
+  slow push-ins, dissolves, snap flash, title); score <code>audio/scores/wrenkite_lullaby.mjs</code> →
+  <code>audio/build/wrenkite_lullaby.wav</code> (450s with credits coda; earlier tug-motif score
+  <code>audio/scores/wrenkite.mjs</code> → <code>audio/build/wrenkite.wav</code> kept as history);
+  mixed with all 12 voice lines (score −6dB, sidechain-ducked under VO, voice +4dB, −16 LUFS) →
+  <code>audio/build/wrenkite_lullaby_full.wav</code>.
+  Notes: <code>studio-notes/wrenkite.json</code>.</p>
+  <p>Files: <code>tools/gen.mjs</code> · <code>web/assets/wren-kite/manifest.json</code> ·
+  <code>web/assets/wren-kite/plates/wk1–wk12.png</code> · prose: <code>wren-tethered-kite.md</code>
+  · superseded Milo versions kept as history: <code>milo-tethered-kite.md</code>,
+  <code>storyboard-milo-kite.html</code>, <code>web/assets/milo-kite/</code>.</p>
+</footer>
+</body>
+</html>

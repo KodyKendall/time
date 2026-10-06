@@ -3,8 +3,9 @@
 Recovered Claude session: `d6c0ec79-b97f-4c0e-aca1-ee9997fd3702`.
 Source transcript is in `~/.claude/projects/-Users-kodykendall-SoftEngineering-audio-record-backend-time/`.
 Read its `memory/animation-what-works.md` and `memory/film-image-gen-approach.md`
-alongside `docs/PROCESS_V2.md`. Later feedback supersedes the early "no rigs" plan:
-painted articulated parts are now the approved approach.
+alongside `docs/PROCESS_V2.md` and `docs/ANIMATION_DIRECTION.md`. The latest user review
+supersedes earlier rig endorsements: generated images with very, very slight motion
+are the default. The state and remaining feedback below are an earlier handoff snapshot.
 
 ## Confirmed current state
 

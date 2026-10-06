@@ -31,10 +31,10 @@ const film = args.film || 'tether';
 const DIR = path.join(ROOT, 'web', 'assets', film);
 const MANIFEST = path.join(DIR, 'manifest.json');
 const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, 'utf8')) : { film, items: [] };
-const spent = () => manifest.items.reduce((s, it) => s + (it.cost_usd || 0), 0);
+const spent = () => manifest.items.reduce((s, it) => s + (it.cost_usd ?? it.estimated_cost_usd ?? 0), 0);
 
 if (args.spend) {
-  console.log(`${film}: ${manifest.items.length} calls, $${spent().toFixed(3)} spent`);
+  console.log(`${film}: ${manifest.items.length} calls, $${spent().toFixed(3)} spent/reserved`);
   process.exit(0);
 }
 
@@ -117,4 +117,4 @@ if (chroma) {
     console.log('keyed', path.relative(ROOT, dst));
   }
 }
-console.log(`cost $${cost.toFixed(3)} · ${film} total $${spent().toFixed(3)} of $${budget}`);
+console.log(`cost $${cost.toFixed(3)} · ${film} total spent/reserved $${spent().toFixed(3)} of $${budget}`);

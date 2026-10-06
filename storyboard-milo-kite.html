@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tethered (Milo &amp; the Kite) — storyboard</title>
+<style>
+  :root{--ink:#1c1a16;--muted:#5c564c;--line:#e2ddd2;--bg:#fff;--card:#fff;
+    --accent:#c8372d;--pine:#1f4d3a;--panel:#f3f4f1;--gold:#e8a33d;--moralbg:#fff8e8;--vo:#f4f1ea}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+  header,main,footer,.moral,.extras{max-width:1060px;margin:0 auto}
+  header{border-bottom:3px solid var(--ink);padding:32px 16px 24px}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:42px;margin:0 0 6px;letter-spacing:-.5px}
+  header h1 span{color:var(--accent);font-size:.55em;font-weight:400}
+  .sub{color:var(--muted);font-size:15.5px;max-width:72ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta div{border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:999px;background:var(--card)}
+  .moral{margin-top:20px;padding:16px 20px;border-left:5px solid var(--gold);background:var(--moralbg);font-size:15.5px}
+  .moral q{font-family:Georgia,serif;font-size:21px;display:block;margin:4px 0 8px;quotes:none}
+  .extras{padding:24px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--card)}
+  .card h3{font-family:Georgia,serif;margin:0 0 8px;font-size:18px}
+  .card p,.card li{font-size:14px;margin:4px 0}
+  .card ul{padding-left:18px;margin:6px 0}
+  .arc{grid-column:1/-1}
+  .arc svg{width:100%;height:auto;display:block}
+  main{padding:8px 16px 24px}
+  .act{font-family:Georgia,serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+    margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .beat{display:grid;grid-template-columns:440px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;align-self:start}
+  .frame img{display:block;width:100%;height:auto;aspect-ratio:3/2}
+  .tcode{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+    font-size:13px;border-top:1px solid var(--line);background:var(--card)}
+  .tcode b{background:var(--ink);color:var(--bg);padding:2px 8px;border-radius:6px;font-size:12px}
+  .body h2{font-family:Georgia,serif;font-size:23px;margin:0 0 2px}
+  .body h2 small{color:var(--accent);font-size:13px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+  .vo{background:var(--vo);border-left:3px solid var(--gold);padding:10px 14px;margin:10px 0;
+    font-family:Georgia,serif;font-size:15.5px}
+  .vo p{margin:8px 0}
+  .rows{display:grid;grid-template-columns:90px 1fr;font-size:13.5px;margin-top:10px}
+  .rows dt{color:var(--pine);font-weight:700;padding:3px 0}
+  .rows dd{margin:0;padding:3px 0 3px 8px;opacity:.88}
+  footer{padding:20px 16px 60px;color:var(--muted);font-size:13px}
+  @media(max-width:760px){.beat,.extras{grid-template-columns:1fr}header h1{font-size:30px}}
+  @media print{.beat{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tethered <span>storyboard · Milo &amp; the Kite, told by the Kite</span></h1>
+  <p class="sub"><b>Logline:</b> A red kite envies the wild swifts and fights the string that holds it.
+  When the string snaps it gets its freedom — and learns why kites need a string — while Milo, the
+  fox cub who never lets go first, waits, searches, and mends. All narration is the Kite speaking.</p>
+  <div class="meta">
+    <div><b>Runtime</b> ~7:00 · 12 plates</div>
+    <div><b>Format</b> 16:9, one narrator (the Kite), painted style</div>
+    <div><b>Cast</b> Kite (dynamic, voice), Milo fox cub (static), swifts</div>
+    <div><b>Image spend</b> $0.21 of $3 (gpt-image-2, low, chained refs)</div>
+    <div><b>VO pace</b> ~140 wpm · every word of the story is on this page</div>
+  </div>
+  <div class="moral">
+    <b>Moral / point</b>
+    <q>“The string isn’t what holds you down. It’s what holds you up.”</q>
+    Same moral as <i>Tether</i>, retold from inside the kite: the pull we resent is the other half of our shape.
+    Milo does not change — anxious, mischievous, tender from first frame to last. The Kite does.
+  </div>
+</header>
+
+<section class="extras">
+  <div class="card arc">
+    <h3>Story arc (Kite’s altitude = emotion)</h3>
+    <svg viewBox="0 0 1000 210" role="img" aria-label="Emotional arc across 12 beats">
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="40" y1="180" x2="980" y2="180"/>
+        <line x1="40" y1="20" x2="40" y2="180"/>
+      </g>
+      <path d="M40 140 C100 130 150 120 200 105 S300 60 350 70 S420 40 470 35 S540 150 590 165 S660 175 700 150 S760 90 820 60 S920 30 980 30"
+            fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+      <g font-size="14" fill="var(--ink)" font-family="Georgia,serif">
+        <text x="330" y="90">snap</text>
+        <text x="440" y="25">false freedom</text>
+        <text x="600" y="160">all is lost</text>
+        <text x="830" y="50">true flight</text>
+      </g>
+      <g font-size="12" fill="var(--muted)" letter-spacing="1.5">
+        <text x="120" y="200">ACT I · THE PULL (1–4)</text>
+        <text x="470" y="200">ACT II · LOOSE (5–8)</text>
+        <text x="790" y="200">ACT III · TAUT (9–12)</text>
+      </g>
+    </svg>
+  </div>
+  <div class="card">
+    <h3>Characters (locked across all 12 plates)</h3>
+    <ul>
+      <li><b>Kite</b>: red diamond, no face, long tail ribbon with small bows. The ribbon is the face:
+        curls with want, whips angry, hangs limp when hopeless, streams straight at peace.</li>
+      <li><b>Milo</b>: small rust-red fox cub, cream chest/muzzle/tail tip. Big tail = his mood barometer.
+        Static character: holds, waits, searches, mends, holds again. Never lets go first.</li>
+      <li><b>Swifts</b>: wild and untethered — what the Kite wants to be.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Voice &amp; holds — how the 5–10s rule works</h3>
+    <p>Narrator: one voice, the Kite, ~140 words/minute. Each plate below carries its exact passage
+    of the story (<b>all ~980 words are on this page</b>). A plate stays on screen for its passage
+    (~24–56s), but <b>no single hold lasts longer than 10 seconds</b>: each plate is covered in slow
+    7–9s push-in / reframe chapters with very, very slight motion, per the animation direction —
+    the paintings are the star, stillness does the work.</p>
+  </div>
+  <div class="card">
+    <h3>Provenance &amp; cost</h3>
+    <p>All 12 plates: <code>gpt-image-2</code>, low, 1536×1024, one per call, each chained
+    <code>--ref</code> to the previous plate for consistency. Total <b>$0.209 of $3</b> in
+    <code>web/assets/milo-kite/manifest.json</code>. Picks: <code>web/assets/milo-kite/plates/mk1–mk12.png</code>.
+    Full prose: <code>milo-tethered-kite.md</code>.</p>
+  </div>
+</section>
+
+<main>
+  <div class="act">Act I · The Pull</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk1.png" alt="Milo carrying the folded red kite up the hill at dawn" loading="lazy">
+      <div class="tcode"><b>BEAT 1</b><span>0:00 – 0:24 · ~55 words · 3× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>1. First memory <small>the bond</small></h2>
+      <div class="vo"><p>I woke in Milo’s teeth.</p>
+      <p>That is my first memory: damp, the smell of grass, his breath huffing through his nose because he would not open his mouth and drop me. He carried me up the hill to the sea wind the way a cub carries something he is proud of and afraid to lose at the same time.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Wide dawn hill → slow push toward cub → hold on kite in teeth.</dd><dt>Sound</dt><dd>Wind, grass, soft morning. Narrator intimate, close-mic.</dd><dt>Ends on</dt><dd>The folded red kite, ribbon trailing, safe in his teeth.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk2.png" alt="Milo running with the string, kite high above" loading="lazy">
+      <div class="tcode"><b>BEAT 2</b><span>0:24 – 0:56 · ~75 words · 4× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>2. He ran, I caught <small>the bond</small></h2>
+      <div class="vo"><p>He ran. I caught. That is how it works.</p>
+      <p>The wind got under me and I jumped, and the string sang. Up through my spine I felt every step he took — his paws drumming, his stop, his laugh like a bark. His tail went straight up, all rust and cream tip, forty percent of him and all of his mood. When I rose, his tail rose. We were one line: cub, string, me.</p>
+      <p>For a while that was enough.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Follow the string cub→kite → kite soaring → wide one-line shot.</dd><dt>Sound</dt><dd>The Tug motif whole: low + high together. Joyful.</dd><dt>Ends on</dt><dd>One unbroken line: cub, string, kite.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk3.png" alt="Kite at the end of its string as swifts pour past" loading="lazy">
+      <div class="tcode"><b>BEAT 3</b><span>0:56 – 1:37 · ~95 words · 5× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>3. The end of the string <small>the want</small></h2>
+      <div class="vo"><p>Then I hit the end of the string.</p>
+      <p>It stopped me with a jerk that went through my sticks. And just past me, where I could not go, the swifts came pouring over the cliff.</p>
+      <p>They did not flap the way gulls flap. They cut. They poured and swirled and dove out over the open sea, screaming thin screams, and never once looked down at a string. My tail curled out toward them before I told it to. It wanted to follow.</p>
+      <p>I leaned. The string said no.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Kite POV as swifts sweep past → tail curling → tiny fox below.</dd><dt>Sound</dt><dd>Swift-screams, woodwind swirl; motif cut off by the string going taut.</dd><dt>Ends on</dt><dd>Tail ribbon curled toward the horizon.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk4.png" alt="Kite thrashing, string fraying over the fence post" loading="lazy">
+      <div class="tcode"><b>BEAT 4</b><span>1:37 – 2:33 · ~130 words · 7× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>4. Fighting the string <small>rising tension</small></h2>
+      <div class="vo"><p>Anyone who has never been tied will tell you the tie is simple. It is not. It hums. It pulls at the center of you and will not let you forget it, even when the wind is good.</p>
+      <p>So I fought it.</p>
+      <p>I dove left. I swung right. I yanked. Below me Milo thought it was a game. He laughed and dug his paws in, skidding a little in the grass, delighted. That made me yank harder. I hated him a little then, for laughing.</p>
+      <p>The string sawed back and forth over the old fence post on the cliff. I felt each pass as a shiver. I did not know — I know now — that with every pass one more fiber let go. Milo did not see it either. He was watching me, not the post.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Kite thrashing wide → post extreme close-up, fraying → faster cutting.</dd><dt>Sound</dt><dd>Motif faster, off-balance; each scrape a rasp.</dd><dt>Ends on</dt><dd>One last strand, still taut.</dd></dl>
+    </div>
+  </section>
+
+  <div class="act">Act II · Loose</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk5.png" alt="The snap: kite shooting up, Milo flat on his back" loading="lazy">
+      <div class="tcode"><b>BEAT 5</b><span>2:33 – 3:03 · ~70 words · 4× 7.5s holds</span></div>
+    </div>
+    <div class="body"><h2>5. Snap <small>turning point</small></h2>
+      <div class="vo"><p>A big gust came off the sea.</p>
+      <p><i>Ping.</i></p>
+      <p>The pull vanished. I shot up like a cork out of water. For one second I saw him flat on his back in the grass, paws empty, mouth open, the limp end of the string falling beside him. He pushed up on one foreleg and reached after me.</p>
+      <p>I did not stay to watch. I was free.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>White flash frame → kite flung up → Milo reaching (hold his face).</dd><dt>Sound</dt><dd><i>Ping</i>, two beats of silence, then a huge upbeat swell.</dd><dt>Ends on</dt><dd>Empty paws reaching after the kite.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk6.png" alt="Free above golden clouds with the swift flock" loading="lazy">
+      <div class="tcode"><b>BEAT 6</b><span>3:03 – 3:35 · ~75 words · 4× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>6. Free <small>false victory</small></h2>
+      <div class="vo"><p>Oh, the climb. I broke through the cloud into gold. The sea below went copper. The air was smooth and huge and mine. The swifts took me in. They ringed me and screamed and I looped with them, rolled with them, dove with them. My broken end trailed under me, swaying, useless and light. I thought: this is what I am. Not a pet. This.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Sweeping crane with the flock → loops → swifts peeling away.</dd><dt>Sound</dt><dd>High note alone on flute, soaring, never answered. Thrilling, then hollow.</dd><dt>Ends on</dt><dd>Alone above the clouds, broken end swaying.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk7.png" alt="Kite tumbling down through purple dusk" loading="lazy">
+      <div class="tcode"><b>BEAT 7</b><span>3:35 – 4:22 · ~110 words · 6× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>7. Nothing to push against <small>the fall</small></h2>
+      <div class="vo"><p>Then they peeled away toward the horizon.</p>
+      <p>They went faster than I can go. I tried to follow and the wind shifted, just a small shift, the kind Milo’s hands used to answer without thinking.</p>
+      <p>A tethered kite leans against its string and climbs. I had nothing to lean against.</p>
+      <p>I flipped over.</p>
+      <p>I righted myself. I flipped again. I spun down through the cloud into purple and then into dark, spinning faster, the air slapping me first on one face then the other. There was no one holding the other end of me. I understood, falling, that the string had never been a leash. It had been the other half of my shape.</p>
+      <p>The thorn tree caught me.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Stall and wobble → locked-off wide fall → shrinking into dark.</dd><dt>Sound</dt><dd>Flute tries its high note, keeps getting cut off; wind louder.</dd><dt>Ends on</dt><dd>A rough <i>crunch</i> in branches.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk8.png" alt="Torn kite tangled in the thorn tree at night in rain" loading="lazy">
+      <div class="tcode"><b>BEAT 8</b><span>4:22 – 4:48 · ~60 words · 3× 8.5s holds</span></div>
+    </div>
+    <div class="body"><h2>8. The thorn tree <small>all is lost</small></h2>
+      <div class="vo"><p>Rain came in the night. It was the only thing that moved. I hung torn, my tail knotted in the branches, my red face dark with wet. The sky was empty. The swifts were gone. Milo was gone. For the first time I felt how small I was — a wet rag on thorns, nothing to push against, nothing to pull.</p>
+      <p>Then, on the hill below, a warm dot of light.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>One long still shot; rain the only motion → lantern dot fades in.</dd><dt>Sound</dt><dd>The film’s one true silence (just rain), then a single low cello note.</dd><dt>Ends on</dt><dd>Warm light on the hill below.</dd></dl>
+    </div>
+  </section>
+
+  <div class="act">Act III · Taut</div>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk9.png" alt="Milo approaching through rain with the lantern" loading="lazy">
+      <div class="tcode"><b>BEAT 9</b><span>4:48 – 5:20 · ~75 words · 4× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>9. The search <small>reconnection</small></h2>
+      <div class="vo"><p>He came slowly. Even from far off I knew his walk — quick, stopping, ears up, tail low and wet. He carried a lantern in a way that must have hurt his teeth, and the light swung with each step. It took him a long time. He did not run. When he reached the tree he stood right under me, big-eyed in the lantern glow, and reached up on his hind legs.</p>
+      <p>He missed. He tried again. A thorn scratched his foreleg and he whimpered through the lantern handle and kept reaching.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Lantern grows on the hill → under the tree → reaching paws.</dd><dt>Sound</dt><dd>Solo piano picks up the low note, quietly, waiting.</dd><dt>Ends on</dt><dd>Paws reaching up into branches.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk10.png" alt="Milo patching the kite in the lamplit burrow" loading="lazy">
+      <div class="tcode"><b>BEAT 10</b><span>5:20 – 5:56 · ~85 words · 4× 9s holds</span></div>
+    </div>
+    <div class="body"><h2>10. The mend <small>reconnection</small></h2>
+      <div class="vo"><p>I dropped into his paw.</p>
+      <p>He carried me home under his chin to keep me dry. In the burrow, in lamplight, he worked. He cleaned the tear. He pressed a dry sycamore leaf over it and stuck it with pine sap, and he tied my broken string back together with his teeth and paws. The knot is lumpy and obvious. He did not hide it. He nosed it once to test it, and it held.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Close-ups of paws: leaf, sap, knot pulled tight → knot in close-up.</dd><dt>Sound</dt><dd>Piano low note holds; the high note still waited for.</dd><dt>Ends on</dt><dd>The lumpy knot, glinting.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk11.png" alt="Patched kite climbing high, Milo holding the string" loading="lazy">
+      <div class="tcode"><b>BEAT 11</b><span>5:56 – 6:43 · ~110 words · 6× 8s holds</span></div>
+    </div>
+    <div class="body"><h2>11. Leaning in <small>climax</small></h2>
+      <div class="vo"><p>Morning on the hill. The same wind.</p>
+      <p>He ran. I caught. The wind hit me and the old anger rose up — pull, fight, prove — and then I felt the string go taut, felt his weight at the end of it through the knot, steady, waiting, never having let go first.</p>
+      <p>So I leaned into it instead of fighting it.</p>
+      <p>The pull sent me up. Higher than the fence post. Higher than the cloud gold. The swifts came back and circled me, screaming, and left again for the open sea. I watched them go. My tail streamed straight and steady behind me.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Track along the taut string past the glinting knot → kite climbing past old heights.</dd><dt>Sound</dt><dd>The Tug complete at last: low + high together, full strings.</dd><dt>Ends on</dt><dd>Tail streaming straight and steady.</dd></dl>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="frame">
+      <img src="web/assets/milo-kite/plates/mk12.png" alt="Final wide: tiny fox, high kite, swifts leaving" loading="lazy">
+      <div class="tcode"><b>BEAT 12</b><span>6:43 – 7:00 · ~40 words · 2× 8.5s holds</span></div>
+    </div>
+    <div class="body"><h2>12. Held <small>resolution</small></h2>
+      <div class="vo"><p>Below, one small fox sat with the string in his teeth, tail straight up, holding.</p>
+      <p>The string isn’t what holds me down. It’s what holds me up.</p></div>
+      <dl class="rows"><dt>Holds</dt><dd>Very wide: one bright line, fox to kite → cut to black. Title: <b>TETHERED</b>.</dd><dt>Sound</dt><dd>Strings resolve; swift woodwinds weave once around the motif, then silence.</dd><dt>Final shot</dt><dd>One bright line with a red speck at the top.</dd></dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>Continuity logic:</b> same fox + same kite in all 12 plates (chained refs mk1→mk12); same
+  coastal hill and sea; fence post introduced beat 4, pays off beat 5; broken string end visible
+  beats 5–6, gone 7–8, knotted beats 10–12; leaf patch appears beat 10, visible beats 11–12;
+  swifts present 3, 6, 11–12, pointedly absent 7–10.</p>
+  <p><b>Before animating, decide:</b> (1) narrator casting — child or adult reading as the Kite?
+  (2) beat 4 runs ~56s on one plate — split into two plates (fight / fray close-up)?
+  (3) beat 8 could extend past 4:48 (sad desolate hold, still within the 10s-chapter rule).</p>
+  <p>Files: <code>tools/gen.mjs</code> · <code>web/assets/milo-kite/manifest.json</code> ·
+  <code>web/assets/milo-kite/plates/mk1–mk12.png</code> · prose: <code>milo-tethered-kite.md</code>.</p>
+</footer>
+</body>
+</html>

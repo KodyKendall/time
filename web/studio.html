@@ -62,6 +62,9 @@
   #zoom img{max-width:94vw;max-height:94vh}
   button.hold{user-select:none;-webkit-user-select:none}
   #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;pointer-events:none}
+  body.watching #panel,body.watching #notebox,body.watching #drawer,body.watching #gallery{display:none!important}
+  body.watching #stage{height:100vh;padding:0;background:#000}
+  body.watching #stage canvas{box-shadow:none}
 </style>
 <script>
   // p5.brush sizes its fill masks from the page's pixel density; on a 2x (Retina) screen they no
@@ -110,10 +113,11 @@
     <label class="chk"><input type="checkbox" class="layer" value="fx" checked> fx</label>
     <span class="sep"></span>
     <select id="res" title="preview resolution (reloads)"><option>640</option><option>960</option><option>1280</option><option>1920</option></select>
+    <button id="fs" title="fullscreen watch mode (Esc exits)">⛶ Fullscreen</button>
     <span id="fps"></span>
     <span id="stamp" style="color:var(--muted);font-family:ui-monospace,Menlo,monospace" title="when this page last loaded the film; it reloads by itself on every change"></span>
   </div>
-  <div id="help">Hold F (or ⏩) to fast-forward 2×, Shift+F 4× · N pin a note here (Enter saves, Esc cancels) · Reloads by itself when the film's files change, at the same spot · Space play/pause · ←/→ one frame · [ / ] previous/next shot or cut · L loop · click or drag the timeline to scrub. Frames are drawn live by the same engine as the final render (motion blur off).</div>
+  <div id="help">Hold F (or ⏩) to fast-forward 2×, Shift+F 4× · N pin a note here (Enter saves, Esc cancels) · Reloads by itself when the film's files change, at the same spot · Space play/pause · ←/→ one frame · [ / ] previous/next shot or cut · L loop · click or drag the timeline to scrub · ⛶ hides everything for fullscreen watching (Esc exits). Frames are drawn live by the same engine as the final render (motion blur off).</div>
 </div>
 <script type="module">
   import './src/main.js';
@@ -205,6 +209,19 @@
   }
   addEventListener('keyup', (e) => { if (e.key === 'f' || e.key === 'F') holdOff(); });
   $('music').onchange = () => setPlaying(playing);
+  $('fs').onclick = async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await $('stage').requestFullscreen();
+    } catch { toast('Fullscreen blocked by the browser'); }
+  };
+  document.addEventListener('fullscreenchange', () => {
+    const w = !!document.fullscreenElement;
+    document.body.classList.toggle('watching', w);
+    $('fs').textContent = w ? '⛶ Exit fullscreen' : '⛶ Fullscreen';
+    $('fs').classList.toggle('on', w);
+    dirty = true;
+  });
   let drag = false;
   const scrub = (e) => { const r = track.getBoundingClientRect(); seek(((e.clientX - r.left) / r.width) * D); };
   track.onpointerdown = (e) => { drag = true; track.setPointerCapture(e.pointerId); scrub(e); };

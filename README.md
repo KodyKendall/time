@@ -34,6 +34,7 @@ original smooth-jazz score played by real sampled instruments, composed in code 
 
 ```bash
 npm install
+npm run vendor:gsap                                        # copy GSAP core for browser rendering
 node tools/patch-brush.mjs                                   # vendor p5 + patched p5.brush into web/vendor
 node tools/cli.mjs sheet --film film --w 1280 --from 0 --to 30 --n 16 --name look   # contact sheet
 node tools/cli.mjs still --film film --w 3840 --t 26 --name galaxy                   # 4K still
@@ -53,3 +54,7 @@ audio/              toolchain (synth, SFZ sampler, mixer, SFX), scores/, assets/
 docs/               shot list, authoring guide, music plan
 tools/              render CLI, parallel renderer, p5.brush patcher
 ```
+
+Current visual direction: preserve AI-generated paintings with very, very slight
+animation. See [the animation lesson](docs/ANIMATION_DIRECTION.md). The
+[GSAP rig trial](docs/GSAP_RIGS.md) is a historical experiment, not the default.

@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Long Grass — storyboard v1</title>
+<style>
+  :root{
+    --ink:#1c1a16; --muted:#5c564c; --line:#e2ddd2; --bg:#fff; --card:#fff;
+    --accent:#3f6b3a; --pine:#1f4d3a; --panel:#f1f2ee; --gold:#e8a33d; --moralbg:#f2f7f0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#efeae0; --muted:#a8a194; --line:#38342d; --bg:#16140f; --card:#1f1c16;
+      --accent:#8fc47f; --pine:#7cc4a2; --panel:#24211b; --gold:#e8a33d; --moralbg:#1e241a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#efeae0; --muted:#a8a194; --line:#38342d; --bg:#16140f; --card:#1f1c16;
+    --accent:#8fc47f; --pine:#7cc4a2; --panel:#24211b; --gold:#e8a33d; --moralbg:#1e241a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.5}
+  header,main,footer,.moral,.extras{max-width:1060px;margin:0 auto}
+  header{border-bottom:3px solid var(--ink);padding:32px 16px 24px}
+  header h1{font-family:Georgia,"Times New Roman",serif;font-size:44px;margin:0 0 6px;letter-spacing:-.5px}
+  header h1 span{color:var(--accent);font-size:.6em;font-weight:400}
+  .sub{color:var(--muted);font-size:15.5px;max-width:70ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta div{border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:999px;background:var(--card)}
+  .moral{margin-top:20px;padding:16px 20px;border-left:5px solid var(--gold);background:var(--moralbg);font-size:15.5px}
+  .moral q{font-family:Georgia,serif;font-size:21px;display:block;margin:4px 0 8px;quotes:none}
+  .extras{padding:24px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--card)}
+  .card h3{font-family:Georgia,serif;margin:0 0 8px;font-size:18px}
+  .card p,.card li{font-size:14px;margin:4px 0}
+  .card ul{padding-left:18px;margin:6px 0}
+  .arc{grid-column:1/-1}
+  .arc svg{width:100%;height:auto;display:block}
+  main{padding:8px 16px 24px}
+  .act{font-family:Georgia,serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+    margin:28px 0 0;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .beat{display:grid;grid-template-columns:440px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .frame{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .frame svg{display:block;width:100%;height:auto}
+  .frame img{display:block;width:100%;height:auto;aspect-ratio:3/2}
+  .plate{margin-top:6px;font-size:11px;color:var(--muted);padding:0 12px 8px}
+  .cast{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 12px 0}
+  .cast figure{margin:0;text-align:center}
+  .cast img{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:6px;aspect-ratio:2/3;object-fit:contain}
+  .cast figcaption{font-size:10.5px;color:var(--muted);padding:4px 2px 0}
+  .motion{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+  .motion th{text-align:left;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--pine);
+    border-bottom:1px solid var(--line);padding:4px 8px 4px 0}
+  .motion td{border-bottom:1px solid var(--line);padding:5px 8px 5px 0;vertical-align:top}
+  .motion td:first-child{white-space:nowrap;font-weight:600}
+  audio{width:100%;margin:10px 0 4px;display:block}
+  .wave{width:100%;margin-top:10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);display:block}
+  .cue{font-size:13px;margin:6px 0}
+  .cue b{color:var(--accent)}
+  .tcode{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+    font-size:13px;border-top:1px solid var(--line);background:var(--card)}
+  .tcode b{background:var(--ink);color:var(--bg);padding:2px 8px;border-radius:6px;font-size:12px}
+  .body h2{font-family:Georgia,serif;font-size:23px;margin:0 0 2px}
+  .body h2 small{color:var(--accent);font-family:inherit;font-size:13px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+  .body p{margin:8px 0;font-size:15px}
+  .rows{display:grid;grid-template-columns:96px 1fr;font-size:13.5px;margin-top:10px}
+  .rows dt{color:var(--pine);font-weight:700;padding:3px 0}
+  .rows dd{margin:0;padding:3px 0 3px 8px;color:var(--ink);opacity:.88}
+  footer{padding:20px 16px 60px;color:var(--muted);font-size:13px}
+  .q{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--card);margin:0 0 14px}
+  .q h3{font-family:Georgia,serif;margin:0 0 8px;font-size:18px}
+  .q p{font-size:14.5px;margin:6px 0}
+  .q b{color:var(--accent)}
+  .pair{grid-column:1/-1;border-left:5px solid var(--accent);background:var(--moralbg);padding:14px 18px;font-size:14.5px}
+  @media(max-width:760px){.beat,.extras{grid-template-columns:1fr}header h1{font-size:32px}}
+  @media print{.beat{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Forty Years of Stripes <span>storyboard v2 · all plates generated</span></h1>
+  <p class="sub"><b>Logline:</b> A woman has kept one public lawn for forty years. When the park is
+  sold and the mowing is taken over by machine, she finishes the season the only way she knows how.
+  Years later the grass is long, and people are lying down in it.</p>
+  <p style="border-left:5px solid var(--gold);background:var(--moralbg);padding:14px 18px;font-size:15px;margin-top:18px">
+    <b>Title card.</b> The title fades in over the opening plate at <b>0:04</b> and is gone by
+    <b>0:11</b> — sitting inside beat 1 rather than delaying it, so the film opens on grass and
+    mist instead of on type. Georgia italic, centred, small, unboxed, in the same ink as the card in
+    beat 10. No opening credits, no director's name, no production card. We are already inside her
+    morning when the words arrive, and that is the correct first thing to feel.
+  </p>
+
+  <div class="meta">
+    <div><b>Runtime</b> 2:58 · 11 beats</div>
+    <div><b>Format</b> 16:9, no dialogue, painted style</div>
+    <div><b>Cast</b> The greenkeeper (40 years), her wife (never seen)</div>
+    <div><b>Music</b> no score until 2:22</div>
+    <div><b>Plates</b> 10 plates + 7 cut-outs generated, $0.693 · gpt-image-2</div>
+    <div><b>Music</b> original score, composed and rendered · listen below</div>
+    <div><b>Status</b> all art generated, score awaiting review</div>
+  </div>
+</header>
+
+<section class="moral">
+  <b>Moral.</b>
+  <q>The work outlives the worker, and that is not a consolation — it is the whole point.</q>
+  <p>Devotion that nobody witnesses is not smaller for being unwitnessed. Her wife's ashes are in the
+  north bank; the lawn she cut for forty years is the reason two strangers are lying in the grass at
+  the end. She made the thing she'll never have, and she'll never know she made it.</p>
+</section>
+
+<section class="extras">
+  <div class="card">
+    <h3>How this departs from Tether</h3>
+    <p>Tether had nine beats and a shape: bond, want, tension, snap, <b>false victory</b>, fall,
+    all-is-lost, reconnection, climax. This film has no false victory and no fall. The tension comes
+    from <i>narrowing</i>, not from an event. Nothing breaks. The lawn simply stops being hers.</p>
+    <ul>
+      <li>Eleven beats, not nine — two of them are held images rather than action.</li>
+      <li>Two mirrored pairs carry the film instead of a plot: <b>1↔9</b> and <b>3↔11</b>.</li>
+      <li>The sound carries the turn. The birds stop in beat 6 and never return.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Who she is</h3>
+    <p>Locked to one generated character description and reused as a reference, as with Wren.
+    She appears small or distant in 7 of 11 beats, which is the insurance policy: the film is
+    mostly about the grass, and the grass is easy to keep consistent.</p>
+    <p><b>Never named.</b> Neither is her wife. The only words in the film are the card, and they
+    are spoken by no one.</p>
+    <p><b>No dialogue, no backstory beyond the bank.</b> The film never says why she started.</p>
+  </div>
+
+  <div class="card arc">
+    <h3>The arc — two lines, not one</h3>
+    <svg viewBox="0 0 980 300" role="img" aria-label="Arc graph: her hours fall to zero while the number of people at rest in the grass rises to a peak after she has gone">
+      <line x1="70" y1="260" x2="950" y2="260" stroke="#8a8378" stroke-width="1"/>
+      <line x1="70" y1="60" x2="70" y2="260" stroke="#8a8378" stroke-width="1"/>
+      <text x="64" y="64" text-anchor="end" font-size="12" fill="#8a8378">1.0</text>
+      <text x="64" y="264" text-anchor="end" font-size="12" fill="#8a8378">0</text>
+
+      <line x1="772" y1="60" x2="772" y2="260" stroke="#e8a33d" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="778" y="76" font-size="12" fill="#a2761f">2:22 — she walks out of frame</text>
+      <text x="778" y="92" font-size="12" fill="#a2761f">everything below happens after this</text>
+
+      <polyline fill="none" stroke="#3f6b3a" stroke-width="3"
+        points="70,110 149,100 228,100 288,120 367,110 446,120 545,140 634,150 713,200 772,260 950,260"/>
+      <polyline fill="none" stroke="#c8372d" stroke-width="3" stroke-dasharray="7 5"
+        points="70,250 149,244 228,250 288,250 367,170 446,180 545,220 634,230 713,240 772,250 812,220 886,120 950,70"/>
+
+      <circle cx="762" cy="250" r="5" fill="#1c1a16"/>
+      <text x="700" y="282" font-size="12.5" fill="#1c1a16">the lines meet at almost nothing</text>
+
+      <text x="70" y="30" font-size="13.5" fill="#3f6b3a" font-weight="700">— her hours in the park</text>
+      <text x="300" y="30" font-size="13.5" fill="#c8372d" font-weight="700">— people at rest in the grass</text>
+      <text x="70" y="278" font-size="11.5" fill="#8a8378">0:00</text>
+      <text x="326" y="278" font-size="11.5" fill="#8a8378">0:50</text>
+      <text x="600" y="278" font-size="11.5" fill="#8a8378">1:40</text>
+      <text x="930" y="278" font-size="11.5" fill="#8a8378">2:58</text>
+    </svg>
+    <p style="margin-top:8px">Her hours fall to zero and stay there. The grass only starts doing its
+    work <i>after</i> that — the red line's entire climb happens in the last 26 seconds, and she is
+    not in any of it. That gap is the entire moral, drawn.</p>
+  </div>
+
+  <div class="card">
+    <h3>Sound, which is doing the real work</h3>
+    <ul>
+      <li><b>Beats 1–5:</b> birds. Dawn chorus, then a full Sunday park — dogs, greetings, a gate.</li>
+      <li><b>Beat 6, the turn:</b> the birds stop mid-shot. The mower idles. Nothing under it.</li>
+      <li><b>Beats 7–9:</b> birds never come back. Construction under silence.</li>
+      <li><b>Beat 10:</b> total silence for 8 seconds. Then wind.</li>
+      <li><b>Beat 11:</b> city. Traffic, distant voices, glass. No birds, no mower, no score.</li>
+      <li><b>No music at all</b> until the card, and none after it.</li>
+    </ul>
+  </div>
+
+  <div class="card arc">
+    <h3>What actually moves, beat by beat</h3>
+    <p>Per the current direction, every plate is a held painting and the artwork is preserved. Only
+    these things move, all of them painted in code by p5.brush over the top of a plate, all of them
+    slow. <b>She is never animated between poses.</b> She is placed, scaled and drifted — that is
+    the whole performance.</p>
+    <table class="motion">
+      <tr><th>Beat</th><th>Plates</th><th>She</th><th>What moves in code</th></tr>
+      <tr><td>1</td><td>bg1</td><td>gk_push, tiny</td><td>Mist drifting; grass shimmer; her walking loop, 0.4 px/frame, one pass across frame in 16 s. Birds, painted.</td></tr>
+      <tr><td>2</td><td>bg2</td><td>gk_push</td><td>Clippings lifting off the blade and hanging in the light — the one moment of real particulate motion in the film. Slow bloom as the sun sits in frame.</td></tr>
+      <tr><td>3</td><td>bg3</td><td>—</td><td>Grass texture only, a slow travelling wave. Camera rises 3%.</td></tr>
+      <tr><td>4</td><td>bg4</td><td>gk_bank</td><td>Long grass moving in wind; her hands open once; a pale drift leaving the tin and gone. Nothing else.</td></tr>
+      <tr><td>5</td><td>bg5</td><td>gk_smile</td><td>Slow pan 5%; the dog crosses to her and stops. The small figures drift at different speeds. The warmest grade in the film.</td></tr>
+      <tr><td>6</td><td>bg6</td><td>gk_board</td><td>Nothing. Held frame. Grass only. The stillness after beat 5 is the point of the shot.</td></tr>
+      <tr><td>7</td><td>bg7</td><td>gk_hand</td><td>Her walking loop through the gap, 0.3 px/frame. Dust in the flat light. Desaturated slightly.</td></tr>
+      <tr><td>8</td><td>bg8</td><td>gk_hand</td><td>Her straight line, slow. The two stripe patterns stay absolutely static — they are the argument, they must not move.</td></tr>
+      <tr><td>9</td><td>bg9</td><td>gk_walk</td><td>She walks out of frame right over 9 s and we do not follow. Long grass moving. Camera locked.</td></tr>
+      <tr><td>10</td><td>—</td><td>—</td><td>Nothing. Black.</td></tr>
+      <tr><td>11</td><td>bg11 + 2 cut-outs</td><td>—</td><td>Grass moving, continuous and slow. One arm goes behind a head, once, at 2:36. Camera drift 2% over 20 s.</td></tr>
+    </table>
+    <p style="margin-top:10px"><b>The one rule.</b> Nothing in this film moves fast, and nothing in
+    it loops visibly. If a viewer notices the motion, it is wrong.</p>
+  </div>
+</section>
+
+<section class="pair">
+  <b>The score — listen before anything is animated.</b> Original, composed in code against this
+  shot list at 60 BPM so one beat is one second and every cue below is the film's own timecode.
+  <audio controls preload="metadata" src="audio/build/greenkeeper.wav"></audio>
+  <img class="wave" src="audio/build/greenkeeper.waveform.png" alt="Waveform of the score, with the eight-second silence visible before the final section">
+  <p class="cue"><b>THE STRIPE</b> is the entire score: two notes a tone apart — F then G — six-tenths
+  apart, repeating every 1.2 seconds. It is the sound of a mower making a pass and turning. It is
+  also the sound of a stripe: an alternation, forever, going nowhere in particular. The mower sound
+  effect runs on that same 1.2-second cycle, so the machine and the music are one rhythm.</p>
+  <p class="cue"><b>0:00–1:16</b> — the motif complete, on piano and cello. Warmest and fullest at
+  1:00, when a second voice takes it a third above.</p>
+  <p class="cue"><b>1:16, the turn</b> — it loses its high note. One note, repeating, going nowhere.
+  The birds stop here at 1:16.4 and never return.</p>
+  <p class="cue"><b>1:54, the choice</b> — she mows her own line and the motif completes <i>once</i>,
+  deliberately. The only full statement after the turn.</p>
+  <p class="cue"><b>2:10</b> — the single note held nine seconds, then let go. It does not resolve.</p>
+  <p class="cue"><b>2:22–2:30</b> — total silence. The only silence in the film.</p>
+  <p class="cue"><b>2:30</b> — the motif returns <i>complete</i>, a third higher, on celesta and
+  vibes, with chords around it. It gets its harmony only after she has gone, played by nobody she
+  knows. That is the last statement in the film and it is not hers.</p>
+  <p class="cue" style="color:var(--muted);font-size:12.5px">−16 LUFS integrated, true peak
+  −2.2 dBTP. Cues marked with times are the film; <code>audio/scores/greenkeeper.mjs</code> is the
+  source. The balance is measured but whether the motif reads as a mower is an ear judgement.</p>
+</section>
+
+<section class="pair">
+  <b>Her cast, generated from a single reference</b> — gk_ref is the canonical version; every other
+  pose was generated with it passed as a reference, so the jacket, apron, gloves and boots are
+  identical throughout. She is 65, weathered and capable, and her mouth is closed and neutral in
+  every pose except one.
+  <div class="cast">
+    <figure><img src="web/assets/greenkeeper/plates/gk_ref.png" alt="Canonical reference: she stands facing the camera, neutral"><figcaption>gk_ref · canonical</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_push.png" alt="Three-quarter behind, pushing the mower away"><figcaption>gk_push · beats 1, 2</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_smile.png" alt="Standing by the mower, the only smile in the film"><figcaption>gk_smile · beat 5</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_bank.png" alt="Kneeling in long grass, opening a small tin over a flat stone"><figcaption>gk_bank · beat 4</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_hand.png" alt="Directly from behind, pushing the mower in a straight line"><figcaption>gk_hand · beats 7, 8</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_walk.png" alt="From behind, walking away out of frame, empty hands"><figcaption>gk_walk · beat 9</figcaption></figure>
+    <figure><img src="web/assets/greenkeeper/plates/gk_board.png" alt="Standing still, head bowed, reading"><figcaption>gk_board · beat 6</figcaption></figure>
+  </div>
+  <p style="margin-top:12px"><b>The smile happens once.</b> Beat 5, when the dog comes over, and
+  nowhere else in forty years of the film. It is small and closed-mouth and slightly surprised. That
+  single moment is what the last three minutes are about, and it costs nothing to remove.</p>
+  <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">All 10 plates and all 7 cut-outs are
+  generated: 17 calls, $0.693. The four matched plate pairs were generated with the first plate
+  passed as a reference to the second, so the camera and the railings genuinely rhyme rather than
+  merely resembling each other.</p>
+</section>
+
+<main>
+
+<div class="act">Act one — the ordinary world</div>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg1.png" alt="Generated plate: the park at dawn, mist, bare trees and iron railings, mown stripes running away from camera, a tiny figure with a mower lost in the mist at the right">
+    <div class="plate">Plate bg1.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_push.png" alt=""><figcaption>gk_push</figcaption></figure></div>
+    <div class="tcode"><span><b>1</b> The ordinary world</span><span>0:00 – 0:16</span></div>
+  </div>
+  <div class="body">
+    <h2>Dawn, the park<small>the ritual</small></h2>
+    <p>The lawn at first light, mist still in the low field. Stripes are already cut — someone has
+    been here before us. She is at the far end with the mower, small in frame, and we join her
+    mid-task rather than watching her arrive.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Very slow push in, 4% over the shot. Nothing else.</dd>
+      <dt>LIGHT</dt><dd>Low sun just over the horizon, behind mist. Warm rim on the grass.</dd>
+      <dt>MOTION</dt><dd>Mist drifting, grass moving, her small walking loop.</dd>
+      <dt>SOUND</dt><dd>Dawn birds. The mower starts up, distant.</dd>
+      <dt>ENDS ON</dt><dd>Her reaching the end of a stripe and turning.</dd>
+      <dt>ART</dt><dd>Plate P1 — new. Also the base for beat 9.</dd>
+      <dt>IN</dt><dd>Fade up from black, 3 s.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg2.png" alt="Generated plate: low sun glaring across a mown lawn, stripes running into the light, cut clippings hanging in the air">
+    <div class="plate">Plate bg2.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_push.png" alt=""><figcaption>gk_push</figcaption></figure></div>
+    <div class="tcode"><span><b>2</b> The joy in the work</span><span>0:16 – 0:32</span></div>
+  </div>
+  <div class="body">
+    <h2>Pushing<small>the joy, not the drudgery</small></h2>
+    <p>Closer, and backlit. Clippings lift off the blade and hang in the low sun. This shot exists
+    so the film is not about endurance — it is about something she is genuinely good at and
+    genuinely loves.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Locked off. Slow drift right, 2%.</dd>
+      <dt>LIGHT</dt><dd>Sun behind her. Her face is in shadow and stays there.</dd>
+      <dt>MOTION</dt><dd>Her walking loop; clippings drifting; the slow sway of the machine.</dd>
+      <dt>SOUND</dt><dd>The cut of the machine, close now. Steady, rhythmic, almost musical.</dd>
+      <dt>ENDS ON</dt><dd>A stripe completed behind her.</dd>
+      <dt>ART</dt><dd>Plate P2 — new. Closest we get to her face.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s, matching the stripe direction.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg3.png" alt="Generated plate: high overhead view of an empty park lawn cut into perfect mown stripes, low morning sun raking across, mist and bare trees beyond iron railings">
+    <div class="plate">Plate bg3.png · generated, $0.013 · gpt-image-2, low</div>
+    <div class="tcode"><span><b>3</b> The work without her</span><span>0:32 – 0:44</span></div>
+  </div>
+  <div class="body">
+    <h2>Stripes<small>fall in love with the pattern</small></h2>
+    <p>High and near-empty. Nothing but perfect mown stripes and no person at all. We make the
+    audience love this image before we tell them what it costs — which is why beat 11 can come back
+    to it and mean something else entirely.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Very slow rise, as if drifting up a balloon, 3%.</dd>
+      <dt>LIGHT</dt><dd>Early light raking across, so the stripes read as relief, not paint.</dd>
+      <dt>MOTION</dt><dd>Grass moving. Nothing else. The mower is off-screen and audible.</dd>
+      <dt>SOUND</dt><dd>The machine, off-axis. Still birds under it.</dd>
+      <dt>ENDS ON</dt><dd>The frame full of stripes.</dd>
+      <dt>ART</dt><dd>Plate P3 — new. Matched pair with P11.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg4.png" alt="Generated plate: a quiet shaded bank of long tussocky grass with a single small flat pale worn stone lying flush with the ground">
+    <div class="plate">Plate bg4.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_bank.png" alt=""><figcaption>gk_bank</figcaption></figure></div>
+    <div class="tcode"><span><b>4</b> The bank</span><span>0:44 – 1:00</span></div>
+  </div>
+  <div class="body">
+    <h2>The north bank<small>why she is here</small></h2>
+    <p>Kneeling in long grass beside a flat stone, worn pale and unmown, out of the stripes. Both
+    hands opening a small tin. The wind takes it. We do not see her face and we do not need to —
+    the posture is a person letting go of something and not watching where it goes.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Very slow push, 3%. Held longer than any other shot.</dd>
+      <dt>LIGHT</dt><dd>Cooler than the rest of Act one. She is out of the sun, in the shade of the bank.</dd>
+      <dt>MOTION</dt><dd>Long grass moving. Her hands opening, once. The pale drift going.</dd>
+      <dt>SOUND</dt><dd>Wind in long grass. Birds. No mower — she has stopped for this.</dd>
+      <dt>ENDS ON</dt><dd>The grass closing over the place where it was.</dd>
+      <dt>ART</dt><dd>Plate P4 — new. The only genuinely intimate frame in the film.</dd>
+      <dt>IN</dt><dd>Dissolve 2.5 s, out of the stripes into uncut grass.</dd>
+    </dl>
+    <p style="border-left:3px solid var(--gold);padding-left:12px"><b>Production note.</b> We asked
+    for this to be unmistakable, and it is — but by act, not by lettering. Image models cannot paint
+    a legible name on a stone. The stone is weathered and pale; she opens the tin; the wind takes it.
+    The card in beat 10 supplies the actual words, which is stronger anyway.</p>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg5.png" alt="Generated plate: a busy park on a bright Sunday, many small distant anonymous figures, dog walkers, a pushchair, a bench, warm bright morning light">
+    <div class="plate">Plate bg5.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_smile.png" alt=""><figcaption>gk_smile</figcaption></figure></div>
+    <div class="tcode"><span><b>5</b> Proof it is received</span><span>1:00 – 1:16</span></div>
+  </div>
+  <div class="body">
+    <h2>Sunday<small>the work is not pointless</small></h2>
+    <p>The park fills. Dogs, prams, a man on the bench. A dog comes over to sniff the mower and she
+    lets it, and stops for a second. This beat is the film's only evidence that forty years of
+    invisible work is landing somewhere — and we give it to strangers, not to her.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Slow pan left to right, 5%, the only real pan in the film.</dd>
+      <dt>LIGHT</dt><dd>Full morning. The warmest, brightest frame we allow ourselves.</dd>
+      <dt>MOTION</dt><dd>People crossing. The dog. Grass. Everything at once, gently.</dd>
+      <dt>SOUND</dt><dd>The busiest the film gets. Greetings, dogs, a gate, children.</dd>
+      <dt>ENDS ON</dt><dd>Her starting off again.</dd>
+      <dt>ART</dt><dd>Plate P5 — new. The hardest plate: many small figures.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s, out of the empty stripes into the crowd.</dd>
+    </dl>
+    <p style="border-left:3px solid var(--gold);padding-left:12px"><b>Production note.</b> Keep the
+    figures small and slightly soft. A crowd of legible generated people is the single most likely
+    thing in this film to look wrong, and the shot works <i>because</i> they are anonymous.</p>
+  </div>
+</section>
+
+<div class="act">Act two — the narrowing</div>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg6.png" alt="Generated plate: a blank white property board pushed into the mown grass beside an iron gate and railing, flat cool overcast light">
+    <div class="plate">Plate bg6.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_board.png" alt=""><figcaption>gk_board</figcaption></figure></div>
+    <div class="tcode"><span><b>6</b> The board</span><span>1:16 – 1:36</span></div>
+  </div>
+  <div class="body">
+    <h2>For sale<small>the turn</small></h2>
+    <p>A board pushed into the grass by the gate. She has stopped and is reading it, and the mower
+    is idling. Nothing dramatic happens. The turn in this film is a woman standing still.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Locked off. The stillness is the point.</dd>
+      <dt>LIGHT</dt><dd>Same light as beat 5. Continuity is deliberate — the day has not changed, the world has.</dd>
+      <dt>MOTION</dt><dd>Her reading. Grass. The idle running. Nothing else in the frame moves.</dd>
+      <dt>SOUND</dt><dd><b>The birds stop.</b> The mower idles under nothing. This is the only cut in the film's sound.</dd>
+      <dt>ENDS ON</dt><dd>Her starting to walk back to the mower.</dd>
+      <dt>ART</dt><dd>Plate P6 — new.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg7.png" alt="Generated plate: grey construction hoarding with a narrow gap cut in it and scaffolding behind, mown lawn continuing in front, flat grey overcast light">
+    <div class="plate">Plate bg7.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_hand.png" alt=""><figcaption>gk_hand</figcaption></figure></div>
+    <div class="tcode"><span><b>7</b> The cost</span><span>1:36 – 1:54</span></div>
+  </div>
+  <div class="body">
+    <h2>The hoarding<small>one flicker, then gentle</small></h2>
+    <p>Scaffolding and hoarding around the park. The gate is a gap in a construction fence now, and
+    she mows through it. She is the only person here still doing the work properly, and she is
+    trespassing to do it.</p>
+    <p>Her jaw sets and her hand grips the handle a beat too long. Then it lets go. That is the
+    entire performance — we get one flicker of real anger and she chooses, deliberately, to stay
+    gentle. It is the bravest thing anyone does in this film.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Slow drift, 3%, following her through the gap.</dd>
+      <dt>LIGHT</dt><dd>Flat and cool under the hoarding. First time the film loses warmth.</dd>
+      <dt>MOTION</dt><dd>Her walking loop. The grip: knuckles tighten once, release. Nothing else.</dd>
+      <dt>SOUND</dt><dd>Construction somewhere off. No birds.</dd>
+      <dt>ENDS ON</dt><dd>The grip released.</dd>
+      <dt>ART</dt><dd>Plate P7 — new. May need a second painting for the released hand.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg8.png" alt="Generated plate: two lawns side by side, ragged crooked machine-cut stripes on the left and narrow dead-straight hand-cut stripes on the right, warm low evening light">
+    <div class="plate">Plate bg8.png · $0.037 · composed with bg3</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_hand.png" alt=""><figcaption>gk_hand</figcaption></figure></div>
+    <div class="tcode"><span><b>8</b> The choice</span><span>1:54 – 2:10</span></div>
+  </div>
+  <div class="body">
+    <h2>Two patterns<small>she chooses</small></h2>
+    <p>Their stripes are already in the grass behind her: quicker, cheaper, and slightly crooked.
+    She looks at them for a long moment. Then she mows her own last line by hand, straight, the way
+    she always has. She is not making a point. She just cannot do it any other way.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Locked off. Her looking is the whole cut; we do not move while she decides.</dd>
+      <dt>LIGHT</dt><dd>Evening starting. Warmer than beat 7, but dimming.</dd>
+      <dt>MOTION</dt><dd>Her walking loop on the hand mower. Both patterns still. Nothing clever.</dd>
+      <dt>SOUND</dt><dd>Her hand mower. Everything else quiet.</dd>
+      <dt>ENDS ON</dt><dd>The line finished.</dd>
+      <dt>ART</dt><dd>Plate P8 — new. Needs both stripe patterns correct in one image.</dd>
+      <dt>IN</dt><dd>Dissolve 2 s.</dd>
+    </dl>
+    <p style="border-left:3px solid var(--gold);padding-left:12px"><b>Production note.</b> This is
+    the hardest plate in the film and the riskiest prompt. Two mowing patterns with different
+    geometry in one coherent painting. If it fails, we cheat it: paint them as two plates and
+    composite the crooked ones in behind her.</p>
+  </div>
+</section>
+
+<div class="act">Act three — after</div>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg9.png" alt="Generated plate: the same park from the same viewpoint years later, long unkempt grass, no stripes, empty, glass office buildings rising above the tree line in the mist">
+    <div class="plate">Plate bg9.png · $0.037 · composed with bg1</div>
+    <div class="cast" style="grid-template-columns:repeat(3,1fr)"><figure><img src="web/assets/greenkeeper/plates/gk_walk.png" alt=""><figcaption>gk_walk</figcaption></figure></div>
+    <div class="tcode"><span><b>9</b> The leaving</span><span>2:10 – 2:22</span></div>
+  </div>
+  <div class="body">
+    <h2>Out of frame<small>mirror of beat 1</small></h2>
+    <p>The exact camera position of beat 1. The mower is parked and not running. The grass is long.
+    Above the trees, two buildings that were not there in beat 1. She walks out of frame and the
+    camera does not follow her.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Identical to beat 1, then nothing. No push. It is a held frame and we let it be held.</dd>
+      <dt>LIGHT</dt><dd>Later in the day than beat 1. Same sun, further along.</dd>
+      <dt>MOTION</dt><dd>Her leaving frame. Long grass moving.</dd>
+      <dt>SOUND</dt><dd>Mower off. Wind. <b>One bird, briefly, then nothing.</b></dd>
+      <dt>ENDS ON</dt><dd>The empty frame. Hold 3 s past her exit.</dd>
+      <dt>ART</dt><dd>Plate P9 — variant of P1, generated as a pair.</dd>
+      <dt>IN</dt><dd>Dissolve 2.5 s.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <svg viewBox="0 0 440 248" role="img" aria-label="Black frame with one line of text">
+      <rect width="440" height="248" fill="#111111"/>
+      <text x="220" y="126" text-anchor="middle" font-size="15" fill="#e8e2d4"
+        font-family="Georgia,serif" font-style="italic">The north bank, where we scattered her ashes.</text>
+      <text x="220" y="152" text-anchor="middle" font-size="11" fill="#6b6459">no image. 8 seconds.</text>
+    </svg>
+    <div class="tcode"><span><b>10</b> The telling</span><span>2:22 – 2:30</span></div>
+  </div>
+  <div class="body">
+    <h2>The card<small>the only words in the film</small></h2>
+    <p>Black. One line, centred, held for eight full seconds:
+    <i>The north bank, where we scattered her ashes.</i></p>
+    <p>It is the only hard cut in the film and it is placed to re-frame the next twenty-six seconds.
+    When you come out of black onto the long grass, you will not be looking at a lawn. You will be
+    looking at where she is.</p>
+    <dl class="rows">
+      <dt>TYPE</dt><dd>Georgia italic, small, centred, on black. No title card, no opening titles.</dd>
+      <dt>MOTION</dt><dd>None.</dd>
+      <dt>SOUND</dt><dd>Total silence for 5 s, then wind returning underneath the last of the card.</dd>
+      <dt>ART</dt><dd>None. Text only.</dd>
+      <dt>IN</dt><dd><b>Hard cut.</b> The only one.</dd>
+    </dl>
+    <p style="border-left:3px solid var(--gold);padding-left:12px"><b>Open.</b> The word
+    <i>we</i> is the one thing in this film I haven't resolved. Her voice would be <i>I</i>; the
+    park's voice would be <i>we</i>; a narrator's would be <i>they</i>. <i>We</i> is the most
+    interesting of the three and it is genuinely ambiguous, but you should know it's a choice before
+    we bake it into a plate.</p>
+  </div>
+</section>
+
+<section class="beat">
+  <div class="frame">
+    <img src="web/assets/greenkeeper/plates/bg11.png" alt="Generated plate: the same park years later, long unkempt grass, two small figures lying down in it, glass office buildings cropped at the left and right edges, cool evening light">
+    <div class="plate">Plate bg11.png · generated, $0.037 · gpt-image-2, low · composed with bg3</div>
+    <div class="tcode"><span><b>11</b> The strangers</span><span>2:30 – 2:58</span></div>
+  </div>
+  <div class="body">
+    <h2>Long grass<small>mirror of beat 3 · the resolution</small></h2>
+    <p>The same high angle as beat 3, and the stripes are gone — a year of not cutting, the grass up
+    to their chests. Two strangers come and lie down in it. One of them puts an arm behind their
+    head. Then we hold on the grass moving for a very long time, and that is the end.</p>
+    <p>They are lying in the north bank. They don't know. She isn't there and will never be.</p>
+    <dl class="rows">
+      <dt>CAMERA</dt><dd>Locked off, then the slowest drift in the film — 2% over 20 seconds. Barely perceptible, which is correct.</dd>
+      <dt>LIGHT</dt><dd>Evening. Cooler than anything else. Two buildings at the edges, deliberately cropped so we never see them properly.</dd>
+      <dt>MOTION</dt><dd>The grass moving. The one arm going behind a head, once, early. Nothing else for the last 20 s.</dd>
+      <dt>SOUND</dt><dd>City. Traffic, distant voices, glass. <b>No birds. No mower. No music.</b></dd>
+      <dt>ENDS ON</dt><dd>Grass. Hold, then cut to black.</dd>
+      <dt>ART</dt><dd>Plate P11 — new. Matched pair with P3.</dd>
+      <dt>IN</dt><dd>Dissolve 3 s out of black — the longest in the film.</dd>
+    </dl>
+    <p style="border-left:3px solid var(--gold);padding-left:12px"><b>Production note.</b> Keep
+    both strangers small and anonymous — the same insurance as beat 5. The moment a generated
+    stranger gets a legible face, the shot stops working.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h3 style="font-family:Georgia,serif;font-size:20px;color:var(--ink)">Open questions for the director</h3>
+  <div class="q">
+    <h3>1. Does she ever smile?</h3>
+    <p>The single biggest undecided thing in the film. Right now she is <i>content but unsmiling</i>
+    in Act one, which reads as dignity. If she smiles in beat 5 when the dog comes over, the whole
+    film warms by about ten degrees and the ending hits harder. If she never smiles at all, she
+    becomes a martyr and the moral curdles. <b>My recommendation: one smile, in beat 5, only.</b></p>
+  </div>
+  <div class="q">
+    <h3>2. The word "we".</h3>
+    <p>See beat 10. <i>We</i> / <i>I</i> / <i>they</i>. Ambiguity is good here but it should be a
+    decision, not an oversight.</p>
+  </div>
+  <div class="q">
+    <h3>3. Title.</h3>
+    <p>Working title is <b>The Long Grass</b>. Alternatives: <i>North Bank</i> (colder, more
+    formal), <i>Forty Years of Stripes</i> (states the theme outright — probably too literal),
+    <i>The Last Stripe</i> (centres the ending, spoils it slightly).</p>
+  </div>
+  <div class="q">
+    <h3>4. Beat 5, the crowd.</h3>
+    <p>It is the best argument in the film and the plate most likely to look bad. Options: keep it
+    full, thin it to two figures and one dog, or replace it with something static — a bench with a
+    person's things still on it, which would also give her a reason to keep coming. <b>My
+    recommendation: keep it, but generate it three ways and pick.</b></p>
+  </div>
+  <div class="q">
+    <h3>5. Runtime.</h3>
+    <p>2:58 as written. Beat 11 could go to 45 seconds and the film would improve; beat 3 could lose
+    4 seconds and nobody would notice.</p>
+  </div>
+  <p style="margin-top:20px">No plates generated yet. Before any generation we check the film
+  manifest and the current budget, as required — the historical $1.71–$3.50 figures in
+  <code>PROCESS_V2.md</code> are snapshots, not this film's budget. 10 plates plus one locked
+  character reference is a comparable load to Tether.</p>
+</footer>
+
+</body>
+</html>

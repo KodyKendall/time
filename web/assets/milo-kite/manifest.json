@@ -1,0 +1,363 @@
+{
+  "film": "milo-kite",
+  "items": [
+    {
+      "id": "mk1_carry",
+      "files": [
+        "gen/mk1_carry_2026-10-06T02-13-55-655Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Wide shot, soft dawn. A grassy coastal hill slopes down to the open sea on the right. A small rust-red fox cub with cream chest, cream muzzle and cream tail tip carries a folded red diamond kite gently in its teeth as it trots up the hill. The kite has one long tail ribbon with small bows. Dewy grass, pale gold light, big open sky. Same fox cub and same red kite that will appear in every plate of this film. No text, no logos.",
+      "refs": [],
+      "usage": {
+        "input_tokens": 222,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 222
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 380
+      },
+      "cost_usd": 0.0062,
+      "created": "2026-10-06T02:13:55.657Z"
+    },
+    {
+      "id": "mk2_firstflight",
+      "files": [
+        "gen/mk2_firstflight_2026-10-06T02-14-14-292Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Wide shot, bright windy morning on the same grassy coastal hill above the sea. The same small rust-red fox cub with cream chest, muzzle and tail tip runs mid-stride uphill, the thin white kite string held in its teeth, leading up to the same red diamond kite flying high in the upper sky with its long tail ribbon rippling. Cub, string and kite make one joyful unbroken line. Big windy sky with drifting clouds. Same painterly look and same two characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk1.png"
+      ],
+      "usage": {
+        "input_tokens": 1765,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 229
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1923
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:14:14.295Z"
+    },
+    {
+      "id": "mk3_swifts",
+      "files": [
+        "gen/mk3_swifts_2026-10-06T02-14-30-990Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "High wide shot at the cliff edge above the open sea. The same red diamond kite strains at the very end of its taut white string, leaning hard after a flock of dark swifts pouring past it toward the horizon over the water. The kite's long tail ribbon curls out toward the birds, wanting to follow. Far below on the clifftop, the same small rust-red fox cub with cream tail tip holds the string. Tense, yearning mood, afternoon light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk2.png"
+      ],
+      "usage": {
+        "input_tokens": 1771,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 235
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1929
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:14:30.994Z"
+    },
+    {
+      "id": "mk4_fray",
+      "files": [
+        "gen/mk4_fray_2026-10-06T02-14-50-276Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dramatic shot on the same clifftop with the sea behind it: the same red diamond kite thrashes sideways in a hard wind, its white string sawed back and forth across the sharp corner of an old wooden fence post, the string visibly fraying with loose fibers. The same small rust-red fox cub digs its paws into the grass, leaning back against the pull, thinking it is a game. Fast, tense energy, low light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk3.png"
+      ],
+      "usage": {
+        "input_tokens": 1767,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 231
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1925
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:14:50.278Z"
+    },
+    {
+      "id": "mk5_snap",
+      "files": [
+        "gen/mk5_snap_2026-10-06T02-15-13-246Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright explosive moment on the same grassy hill: the white string has just snapped at the fence post, and the same red diamond kite shoots upward into a glaring white sky trailing its broken string end. Below, the same small rust-red fox cub lies flat on its back in the grass, paws empty, a limp string falling beside it, mouth open in surprise. Sudden, shocking, overexposed light. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk4.png"
+      ],
+      "usage": {
+        "input_tokens": 1758,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 222
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1916
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:15:13.249Z"
+    },
+    {
+      "id": "mk6_free",
+      "files": [
+        "gen/mk6_free_2026-10-06T02-15-30-290Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "The most beautiful shot of the film: above a golden sunset sea of clouds, the same red diamond kite loops joyfully inside a swirling flock of dark swifts, lens flare, copper light. Its broken string end hangs slack and swaying beneath it. Pure freedom, soaring, earned. The swifts begin to peel away toward the distant horizon. Same painterly look and same red kite as the reference. No fox, no text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk5.png"
+      ],
+      "usage": {
+        "input_tokens": 1750,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 214
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1908
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:15:30.293Z"
+    },
+    {
+      "id": "mk7_fall",
+      "files": [
+        "gen/mk7_fall_2026-10-06T02-15-46-871Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "The same red diamond kite flipped upside down and tumbling down through a dark purple dusk sky, spinning, small against a huge empty darkening sky, tail ribbon limp and tangled. No birds anywhere. Locked-off, lonely, the kite shrinking into the distance. Same painterly look and same red kite as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk6.png"
+      ],
+      "usage": {
+        "input_tokens": 1729,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 193
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1887
+      },
+      "cost_usd": 0.0183,
+      "created": "2026-10-06T02:15:46.874Z"
+    },
+    {
+      "id": "mk8_thorntree",
+      "files": [
+        "gen/mk8_thorntree_2026-10-06T02-16-02-305Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Night and rain: the same torn red diamond kite hangs tangled in the black branches of a thorn tree, its long tail ribbon knotted tight around a branch, sodden and small. Rain streaks through darkness, one long still mournful shot, empty sky, no birds, no fox. The kite has never looked smaller. Same painterly look and same red kite as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk7.png"
+      ],
+      "usage": {
+        "input_tokens": 1743,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 207
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1901
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:16:02.310Z"
+    },
+    {
+      "id": "mk9_lantern",
+      "files": [
+        "gen/mk9_lantern_2026-10-06T02-16-21-819Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Dark rainy night on a hill: the same small rust-red fox cub with cream tail tip walks slowly toward the viewer carrying a small glowing lantern in its teeth, light swinging warm through the rain, wet fur, ears up, determined. Behind it in the dark looms the black thorn tree. A single warm dot of hope in vast darkness. Same painterly look and same fox cub as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk8.png"
+      ],
+      "usage": {
+        "input_tokens": 1746,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 210
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1904
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:16:21.824Z"
+    },
+    {
+      "id": "mk10_mend",
+      "files": [
+        "gen/mk10_mend_2026-10-06T02-16-40-608Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Cozy burrow interior in warm lamplight: close-up of the same small rust-red fox cub's paws gently patching the same torn red diamond kite, pressing a dry sycamore leaf over the tear with pine sap, a lumpy obvious hand-tied knot joining the broken white string beside it. Tender, quiet, safe after the storm. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk9.png"
+      ],
+      "usage": {
+        "input_tokens": 1748,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 212
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1906
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:16:40.613Z"
+    },
+    {
+      "id": "mk11_lean",
+      "files": [
+        "gen/mk11_lean_2026-10-06T02-16-58-560Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Bright morning on the same grassy coastal hill above the sea: the same red diamond kite with its sycamore-leaf patch climbs high on a taut white string with a visible lumpy knot glinting in the sun, tail ribbon streaming straight and steady. Below, the same small rust-red fox cub sits holding the string, tail straight up with joy. Fresh, hopeful, higher than ever. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk10.png"
+      ],
+      "usage": {
+        "input_tokens": 1756,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 220
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1914
+      },
+      "cost_usd": 0.0184,
+      "created": "2026-10-06T02:16:58.563Z"
+    },
+    {
+      "id": "mk12_wide",
+      "files": [
+        "gen/mk12_wide_2026-10-06T02-17-16-747Z_0.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "low",
+      "size": "1536x1024",
+      "n": 1,
+      "transparent": false,
+      "prompt": "Vast final wide shot: an enormous blue morning sky over the sea and the tiny coastal hill far below. The same small red diamond kite flies very high and steady at the top of one bright taut line running all the way down to a tiny rust-red fox cub on the hill. A flock of dark swifts circles the kite once and leaves toward the horizon; the kite stays. Peaceful, lasting, the highest flight of the film. Same painterly look and same characters as the reference. No text, no logos.",
+      "refs": [
+        "web/assets/milo-kite/plates/mk11.png"
+      ],
+      "usage": {
+        "input_tokens": 1765,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 229
+        },
+        "output_tokens": 158,
+        "output_tokens_details": {
+          "image_tokens": 158,
+          "text_tokens": 0
+        },
+        "total_tokens": 1923
+      },
+      "cost_usd": 0.0185,
+      "created": "2026-10-06T02:17:16.753Z"
+    }
+  ]
+}
