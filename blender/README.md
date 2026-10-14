@@ -16,3 +16,10 @@ Agent skill: `blender/skills/blender-5x-mcp/SKILL.md`.
   persisted here (`neon_helix.blend`, `assets/`) because addon downloads land
   in system temp, which macOS cleaned mid-session. Final still:
   `renders/neon_helix_final.png`.
+- 2026-10-14 — "Wren & the Kite" (`wren_kite.blend`, `renders/wren_kite_final.png`,
+  fresh scene): dawn Preetham sky, grass clifftop disc + sea, fence post + rail,
+  red diamond kite with mustard scarf-mend patch, tail bows, string via post
+  coils to her spool; stylized Wren (rust coat, tights, boots, mustard scarf
+  with fluttering 8-segment tail, spool in hand); 4 slate swifts; orbiting-free
+  slow push-in camera, kite bob. Canon: red kite, mustard scarf, age-10 holder,
+  cliff/sea/fence-post from board + notes.

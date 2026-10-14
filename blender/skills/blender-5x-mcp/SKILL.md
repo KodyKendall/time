@@ -53,3 +53,10 @@ unsupported) — full checks need the GUI open.
   Persist from inside Blender: `img.filepath_raw/file_format` + `img.save()`
   into the repo, then `bpy.ops.wm.save_as_mainfile`. Never trust temp paths
   past the current hour.
+- **After `read_homefile`, the exec context is degraded**: `active_object`
+  is missing and `select_all/delete` silently keeps startup junk (a stray
+  2m Cube photobombed a render). Delete by datablock
+  (`bpy.data.objects.remove`) and resolve new objects by set-diff, never by
+  `active_object`.
+- **Preetham sky in 5.2**: `atmosphere_turbidity` is gone — set each sky attr
+  in its own try/except and always wire the links.
