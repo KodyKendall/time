@@ -40,3 +40,16 @@ in the response). Then `bpy.ops.render.render(write_still=True)` to
 `/tmp/<name>.png` at 50% and read it back with `read_file` before declaring
 done. `execute_code` cannot start the socket server (`blender -b`
 unsupported) — full checks need the GUI open.
+
+## World, assets, persistence
+
+- **Find shader nodes by connections, not names.** Duplicate node names
+  (`Background`, `Background.001`) caused a mis-wire; locate the HDRI
+  background via its incoming `TEX_ENVIRONMENT` link.
+- **EEVEE 5.2: skip the LightPath camera-ray world split** (hide-HDRI-from-
+  camera trick renders wrong/unreliable). Dim the HDRI `Background` strength
+  (~0.12) instead — dark void, keeps reflections.
+- **PolyHaven downloads go to system temp and vanish** (cleaned mid-session).
+  Persist from inside Blender: `img.filepath_raw/file_format` + `img.save()`
+  into the repo, then `bpy.ops.wm.save_as_mainfile`. Never trust temp paths
+  past the current hour.
